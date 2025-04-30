@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_Boutique
 {
-    public partial class Form1 : Form
+    public partial class Inicio_Sesion : Form
     {
-        public Form1()
+        public Inicio_Sesion()
         {
             InitializeComponent();
         }

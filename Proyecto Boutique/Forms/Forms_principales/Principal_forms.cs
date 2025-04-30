@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Proyecto_Boutique
 {
-    public partial class Movimientos : Form
+    public partial class Principal_forms : Form
     {
-        public Movimientos()
+        public Principal_forms()
         {
             InitializeComponent();
+        }
+
+        private void lbl_Usuarios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -39,12 +39,6 @@
             this.lbl_Cantidad = new System.Windows.Forms.Label();
             this.txtbox_CantidadProducto = new System.Windows.Forms.TextBox();
             this.lbl_CrearMovimiento = new System.Windows.Forms.Label();
-            this.btn_CerrarSesion = new System.Windows.Forms.Button();
-            this.btn_Reportes = new System.Windows.Forms.Button();
-            this.btn_Movimientos = new System.Windows.Forms.Button();
-            this.btn_Productos = new System.Windows.Forms.Button();
-            this.btn_Categorias = new System.Windows.Forms.Button();
-            this.btn_Usuarios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Producto
@@ -142,60 +136,6 @@
             this.lbl_CrearMovimiento.TabIndex = 111;
             this.lbl_CrearMovimiento.Text = "Crear Movimiento";
             // 
-            // btn_CerrarSesion
-            // 
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(947, 26);
-            this.btn_CerrarSesion.Name = "btn_CerrarSesion";
-            this.btn_CerrarSesion.Size = new System.Drawing.Size(153, 45);
-            this.btn_CerrarSesion.TabIndex = 110;
-            this.btn_CerrarSesion.Text = "Cerrar sesion";
-            this.btn_CerrarSesion.UseVisualStyleBackColor = true;
-            // 
-            // btn_Reportes
-            // 
-            this.btn_Reportes.Location = new System.Drawing.Point(770, 26);
-            this.btn_Reportes.Name = "btn_Reportes";
-            this.btn_Reportes.Size = new System.Drawing.Size(153, 45);
-            this.btn_Reportes.TabIndex = 109;
-            this.btn_Reportes.Text = "Reportes";
-            this.btn_Reportes.UseVisualStyleBackColor = true;
-            // 
-            // btn_Movimientos
-            // 
-            this.btn_Movimientos.Location = new System.Drawing.Point(584, 26);
-            this.btn_Movimientos.Name = "btn_Movimientos";
-            this.btn_Movimientos.Size = new System.Drawing.Size(153, 45);
-            this.btn_Movimientos.TabIndex = 108;
-            this.btn_Movimientos.Text = "Movimientos";
-            this.btn_Movimientos.UseVisualStyleBackColor = true;
-            // 
-            // btn_Productos
-            // 
-            this.btn_Productos.Location = new System.Drawing.Point(407, 26);
-            this.btn_Productos.Name = "btn_Productos";
-            this.btn_Productos.Size = new System.Drawing.Size(153, 45);
-            this.btn_Productos.TabIndex = 107;
-            this.btn_Productos.Text = "Productos";
-            this.btn_Productos.UseVisualStyleBackColor = true;
-            // 
-            // btn_Categorias
-            // 
-            this.btn_Categorias.Location = new System.Drawing.Point(228, 26);
-            this.btn_Categorias.Name = "btn_Categorias";
-            this.btn_Categorias.Size = new System.Drawing.Size(153, 45);
-            this.btn_Categorias.TabIndex = 106;
-            this.btn_Categorias.Text = "Categorias";
-            this.btn_Categorias.UseVisualStyleBackColor = true;
-            // 
-            // btn_Usuarios
-            // 
-            this.btn_Usuarios.Location = new System.Drawing.Point(51, 26);
-            this.btn_Usuarios.Name = "btn_Usuarios";
-            this.btn_Usuarios.Size = new System.Drawing.Size(153, 45);
-            this.btn_Usuarios.TabIndex = 105;
-            this.btn_Usuarios.Text = "Usuarios";
-            this.btn_Usuarios.UseVisualStyleBackColor = true;
-            // 
             // CrearMovimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -212,12 +152,6 @@
             this.Controls.Add(this.lbl_Cantidad);
             this.Controls.Add(this.txtbox_CantidadProducto);
             this.Controls.Add(this.lbl_CrearMovimiento);
-            this.Controls.Add(this.btn_CerrarSesion);
-            this.Controls.Add(this.btn_Reportes);
-            this.Controls.Add(this.btn_Movimientos);
-            this.Controls.Add(this.btn_Productos);
-            this.Controls.Add(this.btn_Categorias);
-            this.Controls.Add(this.btn_Usuarios);
             this.Name = "CrearMovimiento";
             this.Text = "CrearMovimiento";
             this.Load += new System.EventHandler(this.CrearMovimiento_Load);
@@ -239,11 +173,5 @@
         private System.Windows.Forms.Label lbl_Cantidad;
         private System.Windows.Forms.TextBox txtbox_CantidadProducto;
         private System.Windows.Forms.Label lbl_CrearMovimiento;
-        private System.Windows.Forms.Button btn_CerrarSesion;
-        private System.Windows.Forms.Button btn_Reportes;
-        private System.Windows.Forms.Button btn_Movimientos;
-        private System.Windows.Forms.Button btn_Productos;
-        private System.Windows.Forms.Button btn_Categorias;
-        private System.Windows.Forms.Button btn_Usuarios;
     }
 }

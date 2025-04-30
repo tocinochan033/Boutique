@@ -35,12 +35,6 @@
             this.lbl_NombreProducto = new System.Windows.Forms.Label();
             this.txtbox_NombreCategoria = new System.Windows.Forms.TextBox();
             this.lbl_CrearProducto = new System.Windows.Forms.Label();
-            this.btn_CerrarSesion = new System.Windows.Forms.Button();
-            this.btn_Reportes = new System.Windows.Forms.Button();
-            this.btn_Movimientos = new System.Windows.Forms.Button();
-            this.btn_Productos = new System.Windows.Forms.Button();
-            this.btn_Categorias = new System.Windows.Forms.Button();
-            this.btn_Usuarios = new System.Windows.Forms.Button();
             this.cmb_Categoria = new System.Windows.Forms.ComboBox();
             this.lbl_Categoria = new System.Windows.Forms.Label();
             this.lbl_Talla = new System.Windows.Forms.Label();
@@ -51,7 +45,7 @@
             // 
             // btn_CrearProducto
             // 
-            this.btn_CrearProducto.Location = new System.Drawing.Point(524, 647);
+            this.btn_CrearProducto.Location = new System.Drawing.Point(524, 589);
             this.btn_CrearProducto.Name = "btn_CrearProducto";
             this.btn_CrearProducto.Size = new System.Drawing.Size(153, 45);
             this.btn_CrearProducto.TabIndex = 79;
@@ -60,7 +54,7 @@
             // 
             // btn_Regresar
             // 
-            this.btn_Regresar.Location = new System.Drawing.Point(338, 647);
+            this.btn_Regresar.Location = new System.Drawing.Point(338, 589);
             this.btn_Regresar.Name = "btn_Regresar";
             this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
             this.btn_Regresar.TabIndex = 78;
@@ -70,7 +64,7 @@
             // lbl_Precio
             // 
             this.lbl_Precio.AutoSize = true;
-            this.lbl_Precio.Location = new System.Drawing.Point(302, 534);
+            this.lbl_Precio.Location = new System.Drawing.Point(302, 476);
             this.lbl_Precio.Name = "lbl_Precio";
             this.lbl_Precio.Size = new System.Drawing.Size(46, 16);
             this.lbl_Precio.TabIndex = 77;
@@ -78,7 +72,7 @@
             // 
             // txtbox_Precio
             // 
-            this.txtbox_Precio.Location = new System.Drawing.Point(305, 553);
+            this.txtbox_Precio.Location = new System.Drawing.Point(305, 495);
             this.txtbox_Precio.Name = "txtbox_Precio";
             this.txtbox_Precio.Size = new System.Drawing.Size(407, 22);
             this.txtbox_Precio.TabIndex = 76;
@@ -86,7 +80,7 @@
             // lbl_NombreProducto
             // 
             this.lbl_NombreProducto.AutoSize = true;
-            this.lbl_NombreProducto.Location = new System.Drawing.Point(304, 226);
+            this.lbl_NombreProducto.Location = new System.Drawing.Point(304, 168);
             this.lbl_NombreProducto.Name = "lbl_NombreProducto";
             this.lbl_NombreProducto.Size = new System.Drawing.Size(56, 16);
             this.lbl_NombreProducto.TabIndex = 75;
@@ -94,7 +88,7 @@
             // 
             // txtbox_NombreCategoria
             // 
-            this.txtbox_NombreCategoria.Location = new System.Drawing.Point(307, 245);
+            this.txtbox_NombreCategoria.Location = new System.Drawing.Point(307, 187);
             this.txtbox_NombreCategoria.Name = "txtbox_NombreCategoria";
             this.txtbox_NombreCategoria.Size = new System.Drawing.Size(407, 22);
             this.txtbox_NombreCategoria.TabIndex = 74;
@@ -102,71 +96,17 @@
             // lbl_CrearProducto
             // 
             this.lbl_CrearProducto.AutoSize = true;
-            this.lbl_CrearProducto.Location = new System.Drawing.Point(470, 167);
+            this.lbl_CrearProducto.Location = new System.Drawing.Point(470, 109);
             this.lbl_CrearProducto.Name = "lbl_CrearProducto";
             this.lbl_CrearProducto.Size = new System.Drawing.Size(97, 16);
             this.lbl_CrearProducto.TabIndex = 73;
             this.lbl_CrearProducto.Text = "Crear Producto";
             // 
-            // btn_CerrarSesion
-            // 
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(947, 49);
-            this.btn_CerrarSesion.Name = "btn_CerrarSesion";
-            this.btn_CerrarSesion.Size = new System.Drawing.Size(153, 45);
-            this.btn_CerrarSesion.TabIndex = 72;
-            this.btn_CerrarSesion.Text = "Cerrar sesion";
-            this.btn_CerrarSesion.UseVisualStyleBackColor = true;
-            // 
-            // btn_Reportes
-            // 
-            this.btn_Reportes.Location = new System.Drawing.Point(770, 49);
-            this.btn_Reportes.Name = "btn_Reportes";
-            this.btn_Reportes.Size = new System.Drawing.Size(153, 45);
-            this.btn_Reportes.TabIndex = 71;
-            this.btn_Reportes.Text = "Reportes";
-            this.btn_Reportes.UseVisualStyleBackColor = true;
-            // 
-            // btn_Movimientos
-            // 
-            this.btn_Movimientos.Location = new System.Drawing.Point(584, 49);
-            this.btn_Movimientos.Name = "btn_Movimientos";
-            this.btn_Movimientos.Size = new System.Drawing.Size(153, 45);
-            this.btn_Movimientos.TabIndex = 70;
-            this.btn_Movimientos.Text = "Movimientos";
-            this.btn_Movimientos.UseVisualStyleBackColor = true;
-            // 
-            // btn_Productos
-            // 
-            this.btn_Productos.Location = new System.Drawing.Point(407, 49);
-            this.btn_Productos.Name = "btn_Productos";
-            this.btn_Productos.Size = new System.Drawing.Size(153, 45);
-            this.btn_Productos.TabIndex = 69;
-            this.btn_Productos.Text = "Productos";
-            this.btn_Productos.UseVisualStyleBackColor = true;
-            // 
-            // btn_Categorias
-            // 
-            this.btn_Categorias.Location = new System.Drawing.Point(228, 49);
-            this.btn_Categorias.Name = "btn_Categorias";
-            this.btn_Categorias.Size = new System.Drawing.Size(153, 45);
-            this.btn_Categorias.TabIndex = 68;
-            this.btn_Categorias.Text = "Categorias";
-            this.btn_Categorias.UseVisualStyleBackColor = true;
-            // 
-            // btn_Usuarios
-            // 
-            this.btn_Usuarios.Location = new System.Drawing.Point(51, 49);
-            this.btn_Usuarios.Name = "btn_Usuarios";
-            this.btn_Usuarios.Size = new System.Drawing.Size(153, 45);
-            this.btn_Usuarios.TabIndex = 67;
-            this.btn_Usuarios.Text = "Usuarios";
-            this.btn_Usuarios.UseVisualStyleBackColor = true;
-            // 
             // cmb_Categoria
             // 
             this.cmb_Categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Categoria.FormattingEnabled = true;
-            this.cmb_Categoria.Location = new System.Drawing.Point(305, 324);
+            this.cmb_Categoria.Location = new System.Drawing.Point(305, 266);
             this.cmb_Categoria.Name = "cmb_Categoria";
             this.cmb_Categoria.Size = new System.Drawing.Size(409, 24);
             this.cmb_Categoria.TabIndex = 80;
@@ -174,7 +114,7 @@
             // lbl_Categoria
             // 
             this.lbl_Categoria.AutoSize = true;
-            this.lbl_Categoria.Location = new System.Drawing.Point(304, 305);
+            this.lbl_Categoria.Location = new System.Drawing.Point(304, 247);
             this.lbl_Categoria.Name = "lbl_Categoria";
             this.lbl_Categoria.Size = new System.Drawing.Size(66, 16);
             this.lbl_Categoria.TabIndex = 81;
@@ -183,7 +123,7 @@
             // lbl_Talla
             // 
             this.lbl_Talla.AutoSize = true;
-            this.lbl_Talla.Location = new System.Drawing.Point(304, 383);
+            this.lbl_Talla.Location = new System.Drawing.Point(304, 325);
             this.lbl_Talla.Name = "lbl_Talla";
             this.lbl_Talla.Size = new System.Drawing.Size(38, 16);
             this.lbl_Talla.TabIndex = 83;
@@ -193,7 +133,7 @@
             // 
             this.cmb_Talla.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Talla.FormattingEnabled = true;
-            this.cmb_Talla.Location = new System.Drawing.Point(305, 402);
+            this.cmb_Talla.Location = new System.Drawing.Point(305, 344);
             this.cmb_Talla.Name = "cmb_Talla";
             this.cmb_Talla.Size = new System.Drawing.Size(409, 24);
             this.cmb_Talla.TabIndex = 82;
@@ -201,7 +141,7 @@
             // lbl_Color
             // 
             this.lbl_Color.AutoSize = true;
-            this.lbl_Color.Location = new System.Drawing.Point(302, 461);
+            this.lbl_Color.Location = new System.Drawing.Point(302, 403);
             this.lbl_Color.Name = "lbl_Color";
             this.lbl_Color.Size = new System.Drawing.Size(39, 16);
             this.lbl_Color.TabIndex = 85;
@@ -211,7 +151,7 @@
             // 
             this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Location = new System.Drawing.Point(305, 480);
+            this.cmb_Color.Location = new System.Drawing.Point(305, 422);
             this.cmb_Color.Name = "cmb_Color";
             this.cmb_Color.Size = new System.Drawing.Size(409, 24);
             this.cmb_Color.TabIndex = 84;
@@ -234,12 +174,6 @@
             this.Controls.Add(this.lbl_NombreProducto);
             this.Controls.Add(this.txtbox_NombreCategoria);
             this.Controls.Add(this.lbl_CrearProducto);
-            this.Controls.Add(this.btn_CerrarSesion);
-            this.Controls.Add(this.btn_Reportes);
-            this.Controls.Add(this.btn_Movimientos);
-            this.Controls.Add(this.btn_Productos);
-            this.Controls.Add(this.btn_Categorias);
-            this.Controls.Add(this.btn_Usuarios);
             this.Name = "CrearProducto";
             this.Text = "CrearProducto";
             this.Load += new System.EventHandler(this.CrearProducto_Load);
@@ -257,12 +191,6 @@
         private System.Windows.Forms.Label lbl_NombreProducto;
         private System.Windows.Forms.TextBox txtbox_NombreCategoria;
         private System.Windows.Forms.Label lbl_CrearProducto;
-        private System.Windows.Forms.Button btn_CerrarSesion;
-        private System.Windows.Forms.Button btn_Reportes;
-        private System.Windows.Forms.Button btn_Movimientos;
-        private System.Windows.Forms.Button btn_Productos;
-        private System.Windows.Forms.Button btn_Categorias;
-        private System.Windows.Forms.Button btn_Usuarios;
         private System.Windows.Forms.ComboBox cmb_Categoria;
         private System.Windows.Forms.Label lbl_Categoria;
         private System.Windows.Forms.Label lbl_Talla;

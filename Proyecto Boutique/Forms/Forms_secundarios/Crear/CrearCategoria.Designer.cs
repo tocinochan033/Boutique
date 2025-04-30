@@ -33,12 +33,6 @@
             this.lbl_NombreCategoria = new System.Windows.Forms.Label();
             this.txtbox_NombreCategoria = new System.Windows.Forms.TextBox();
             this.lbl_CrearCategoria = new System.Windows.Forms.Label();
-            this.btn_CerrarSesion = new System.Windows.Forms.Button();
-            this.btn_Reportes = new System.Windows.Forms.Button();
-            this.btn_Movimientos = new System.Windows.Forms.Button();
-            this.btn_Productos = new System.Windows.Forms.Button();
-            this.btn_Categorias = new System.Windows.Forms.Button();
-            this.btn_Usuarios = new System.Windows.Forms.Button();
             this.btn_CrearCategoria = new System.Windows.Forms.Button();
             this.btn_Regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -85,60 +79,6 @@
             this.lbl_CrearCategoria.TabIndex = 47;
             this.lbl_CrearCategoria.Text = "Crear Categoria";
             // 
-            // btn_CerrarSesion
-            // 
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(943, 53);
-            this.btn_CerrarSesion.Name = "btn_CerrarSesion";
-            this.btn_CerrarSesion.Size = new System.Drawing.Size(153, 45);
-            this.btn_CerrarSesion.TabIndex = 46;
-            this.btn_CerrarSesion.Text = "Cerrar sesion";
-            this.btn_CerrarSesion.UseVisualStyleBackColor = true;
-            // 
-            // btn_Reportes
-            // 
-            this.btn_Reportes.Location = new System.Drawing.Point(766, 53);
-            this.btn_Reportes.Name = "btn_Reportes";
-            this.btn_Reportes.Size = new System.Drawing.Size(153, 45);
-            this.btn_Reportes.TabIndex = 45;
-            this.btn_Reportes.Text = "Reportes";
-            this.btn_Reportes.UseVisualStyleBackColor = true;
-            // 
-            // btn_Movimientos
-            // 
-            this.btn_Movimientos.Location = new System.Drawing.Point(580, 53);
-            this.btn_Movimientos.Name = "btn_Movimientos";
-            this.btn_Movimientos.Size = new System.Drawing.Size(153, 45);
-            this.btn_Movimientos.TabIndex = 44;
-            this.btn_Movimientos.Text = "Movimientos";
-            this.btn_Movimientos.UseVisualStyleBackColor = true;
-            // 
-            // btn_Productos
-            // 
-            this.btn_Productos.Location = new System.Drawing.Point(403, 53);
-            this.btn_Productos.Name = "btn_Productos";
-            this.btn_Productos.Size = new System.Drawing.Size(153, 45);
-            this.btn_Productos.TabIndex = 43;
-            this.btn_Productos.Text = "Productos";
-            this.btn_Productos.UseVisualStyleBackColor = true;
-            // 
-            // btn_Categorias
-            // 
-            this.btn_Categorias.Location = new System.Drawing.Point(224, 53);
-            this.btn_Categorias.Name = "btn_Categorias";
-            this.btn_Categorias.Size = new System.Drawing.Size(153, 45);
-            this.btn_Categorias.TabIndex = 42;
-            this.btn_Categorias.Text = "Categorias";
-            this.btn_Categorias.UseVisualStyleBackColor = true;
-            // 
-            // btn_Usuarios
-            // 
-            this.btn_Usuarios.Location = new System.Drawing.Point(47, 53);
-            this.btn_Usuarios.Name = "btn_Usuarios";
-            this.btn_Usuarios.Size = new System.Drawing.Size(153, 45);
-            this.btn_Usuarios.TabIndex = 41;
-            this.btn_Usuarios.Text = "Usuarios";
-            this.btn_Usuarios.UseVisualStyleBackColor = true;
-            // 
             // btn_CrearCategoria
             // 
             this.btn_CrearCategoria.Location = new System.Drawing.Point(527, 406);
@@ -169,12 +109,6 @@
             this.Controls.Add(this.lbl_NombreCategoria);
             this.Controls.Add(this.txtbox_NombreCategoria);
             this.Controls.Add(this.lbl_CrearCategoria);
-            this.Controls.Add(this.btn_CerrarSesion);
-            this.Controls.Add(this.btn_Reportes);
-            this.Controls.Add(this.btn_Movimientos);
-            this.Controls.Add(this.btn_Productos);
-            this.Controls.Add(this.btn_Categorias);
-            this.Controls.Add(this.btn_Usuarios);
             this.Name = "CrearCategoria";
             this.Text = "CrearCategoria";
             this.ResumeLayout(false);
@@ -189,12 +123,6 @@
         private System.Windows.Forms.Label lbl_NombreCategoria;
         private System.Windows.Forms.TextBox txtbox_NombreCategoria;
         private System.Windows.Forms.Label lbl_CrearCategoria;
-        private System.Windows.Forms.Button btn_CerrarSesion;
-        private System.Windows.Forms.Button btn_Reportes;
-        private System.Windows.Forms.Button btn_Movimientos;
-        private System.Windows.Forms.Button btn_Productos;
-        private System.Windows.Forms.Button btn_Categorias;
-        private System.Windows.Forms.Button btn_Usuarios;
         private System.Windows.Forms.Button btn_CrearCategoria;
         private System.Windows.Forms.Button btn_Regresar;
     }
