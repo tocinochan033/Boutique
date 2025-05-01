@@ -51,6 +51,7 @@
             this.btn_CrearCategoria.TabIndex = 22;
             this.btn_CrearCategoria.Text = "Crear Categoria";
             this.btn_CrearCategoria.UseVisualStyleBackColor = true;
+            this.btn_CrearCategoria.Click += new System.EventHandler(this.btn_CrearCategoria_Click);
             // 
             // DataGrid_Categorias
             // 

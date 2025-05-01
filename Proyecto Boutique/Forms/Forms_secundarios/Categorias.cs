@@ -16,5 +16,10 @@ namespace Proyecto_Boutique
         {
             InitializeComponent();
         }
+
+        private void btn_CrearCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
