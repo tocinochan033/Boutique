@@ -17,6 +17,9 @@ namespace Proyecto_Boutique
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Principal_forms());
+
+            int s = 0;
+            Console.WriteLine("Hola Mundo" + s);
         }
     }
 }
