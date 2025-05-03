@@ -63,7 +63,7 @@ namespace Proyecto_Boutique
             using(var command = new SqlCommand())
             {
                 command.Connection = db.getConnection();
-                command.CommandText = "SELECT * FROM USUARIO WHERE Nombre = @usuario and Correo = @correo";
+                command.CommandText = "SELECT Nombre, Correo FROM USUARIO WHERE Nombre = @usuario and Correo = @correo";
                 command.Parameters.AddWithValue("@usuario", usuarioSolicitando);
                 command.Parameters.AddWithValue("@correo", usuarioSolicitando);
                 command.CommandType = System.Data.CommandType.Text;
