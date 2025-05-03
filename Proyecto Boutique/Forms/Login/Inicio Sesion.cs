@@ -45,7 +45,7 @@ namespace Proyecto_Boutique
                 {
                     MessageBox.Show("Inicio de sesión exitoso.");
                     this.Hide();
-                    Principal_forms principal = new Principal_forms(); // otro form
+                    Principal_forms principal = new Principal_forms();
                     principal.Show();
                 }
                 else
