@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="databaseConnection.cs" />
     <Compile Include="Forms\Forms_secundarios\Categorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +169,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fonts\" />
+    <Folder Include="imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -43,6 +43,7 @@
             this.btn_IniciarSesion.TabIndex = 9;
             this.btn_IniciarSesion.Text = "Iniciar Sesion";
             this.btn_IniciarSesion.UseVisualStyleBackColor = true;
+            this.btn_IniciarSesion.Click += new System.EventHandler(this.btn_IniciarSesion_Click);
             // 
             // lbl_Correo
             // 
