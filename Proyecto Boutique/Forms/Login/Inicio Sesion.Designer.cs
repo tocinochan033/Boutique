@@ -32,7 +32,7 @@
             this.lbl_Correo = new System.Windows.Forms.Label();
             this.lbl_Contra = new System.Windows.Forms.Label();
             this.txt_Contra = new System.Windows.Forms.TextBox();
-            this.txt_Correo = new System.Windows.Forms.TextBox();
+            this.txt_usuario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_IniciarSesion
@@ -50,9 +50,9 @@
             this.lbl_Correo.AutoSize = true;
             this.lbl_Correo.Location = new System.Drawing.Point(156, 106);
             this.lbl_Correo.Name = "lbl_Correo";
-            this.lbl_Correo.Size = new System.Drawing.Size(118, 16);
+            this.lbl_Correo.Size = new System.Drawing.Size(54, 16);
             this.lbl_Correo.TabIndex = 8;
-            this.lbl_Correo.Text = "Correo Electronico";
+            this.lbl_Correo.Text = "Usuario";
             // 
             // lbl_Contra
             // 
@@ -70,12 +70,12 @@
             this.txt_Contra.Size = new System.Drawing.Size(485, 22);
             this.txt_Contra.TabIndex = 6;
             // 
-            // txt_Correo
+            // txt_usuario
             // 
-            this.txt_Correo.Location = new System.Drawing.Point(159, 125);
-            this.txt_Correo.Name = "txt_Correo";
-            this.txt_Correo.Size = new System.Drawing.Size(485, 22);
-            this.txt_Correo.TabIndex = 5;
+            this.txt_usuario.Location = new System.Drawing.Point(159, 125);
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.Size = new System.Drawing.Size(485, 22);
+            this.txt_usuario.TabIndex = 5;
             // 
             // Inicio_Sesion
             // 
@@ -86,7 +86,7 @@
             this.Controls.Add(this.lbl_Correo);
             this.Controls.Add(this.lbl_Contra);
             this.Controls.Add(this.txt_Contra);
-            this.Controls.Add(this.txt_Correo);
+            this.Controls.Add(this.txt_usuario);
             this.Name = "Inicio_Sesion";
             this.Text = "Inicio_Sesion";
             this.ResumeLayout(false);
@@ -100,6 +100,6 @@
         private System.Windows.Forms.Label lbl_Correo;
         private System.Windows.Forms.Label lbl_Contra;
         private System.Windows.Forms.TextBox txt_Contra;
-        private System.Windows.Forms.TextBox txt_Correo;
+        private System.Windows.Forms.TextBox txt_usuario;
     }
 }
