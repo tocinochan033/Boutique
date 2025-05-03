@@ -63,7 +63,7 @@ namespace Proyecto_Boutique
             using(var command = new SqlCommand())
             {
                 command.Connection = db.getConnection();
-                command.CommandText = "SELECT Nombre, Correo FROM USUARIO WHERE Nombre = @usuario and Correo = @correo";
+                command.CommandText = "SELECT Nombre, Correo, Contrasena FROM USUARIO WHERE Nombre = @usuario OR Correo = @correo";
                 command.Parameters.AddWithValue("@usuario", usuarioSolicitando);
                 command.Parameters.AddWithValue("@correo", usuarioSolicitando);
                 command.CommandType = System.Data.CommandType.Text;
@@ -71,15 +71,19 @@ namespace Proyecto_Boutique
                 SqlDataReader reader = command.ExecuteReader();
                 if(reader.Read() == true)
                 {
-                    string nombreUsuario = reader.GetString(1);
-                    string correo = reader.GetString(4);
+
+                    string nombreUsuario = reader.GetString(0);
+                    string correo = reader.GetString(1);
                     string contrasena = reader.GetString(2);
+
 
                     var mailService = new DCorreoSoporte();
                     mailService.sendMail(
                         subject: "SISTEMA DE BOUTIQUE: Recuperación de contraseña",
                         body: $"Hola {nombreUsuario},\n\n" +
-                        $"Ha recibido una solicitud para recuperar la contraseña\n\nSaludos,\nSistema de Boutique",
+                        $"Ha recibido una solicitud para recuperar la contraseña" +
+                        $"\nSu contraseña es: {contrasena}" +
+                        $"\n\nSaludos,\nSistema de Boutique",
                         destinariocorreo: new List<string> { correo }
                         );
                     return "hola " + nombreUsuario + ",\n\nUsted ha aceptado una solicitud de recuperacion de contraseña\n" +
