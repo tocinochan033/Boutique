@@ -7,20 +7,42 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Boutique
 {
+
+    /*
+        Martin: MARTIN\\SQLEXPRESS
+    */
     internal class databaseConnection
     {
-        private static string Conexion = "Data Source =DESKTOP-JGTCE3J; Initial Catalog = BKDOS; integrated security=true";
+        string connection = "Data Source= MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
+        public SqlConnection connectiondb = new SqlConnection();
 
-        public static SqlConnection GetConnection()
+        public databaseConnection()
         {
-            SqlConnection db = new SqlConnection(Conexion);
+            connectiondb.ConnectionString = connection;
+        }
 
-            //Valida el estado de la conexion
-            if (db.State != System.Data.ConnectionState.Open)
+        public void open()
+        {
+            try
             {
-                db.Open();
+                connectiondb.Open();
+                Console.WriteLine("Conexion Abierta.");
             }
-            return db;
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al abir la base de datos. ", ex.Message);
+            }
+        }
+
+        public void close()
+        {
+            connectiondb.Close();
+        }
+
+        public SqlConnection getConnection()
+        {
+            return connectiondb;
         }
     }
 }
+

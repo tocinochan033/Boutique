@@ -12,9 +12,11 @@ namespace Proyecto_Boutique
 {
     public partial class Inicio_Sesion : Form
     {
+        databaseConnection db = new databaseConnection();
         public Inicio_Sesion()
         {
             InitializeComponent();
+            
         }
 
         private void btn_IniciarSesion_Click(object sender, EventArgs e)
