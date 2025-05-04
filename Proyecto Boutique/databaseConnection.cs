@@ -13,7 +13,10 @@ namespace Proyecto_Boutique
     */
     internal class databaseConnection
     {
-        string connection = "Data Source= MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
+        string connection = "Data Source=DESKTOP-BF3NJMJ; Initial Catalog= BOUTIQUE; Integrated Security=True";
+        //Equipos:
+        //Chuy: DESKTOP-BF3NJMJ
+
         public SqlConnection connectiondb = new SqlConnection();
 
         public databaseConnection()
@@ -30,7 +33,7 @@ namespace Proyecto_Boutique
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al abir la base de datos. ", ex.Message);
+                Console.WriteLine("Error al abrir la base de datos. ", ex.Message);
             }
         }
 
