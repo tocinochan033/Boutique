@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Forms_secundarios\Crear\CrearCausa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms_secundarios\Crear\CrearCausa.Designer.cs">
+      <DependentUpon>CrearCausa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms_secundarios\Crear\CrearColores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms_secundarios\Crear\CrearColores.Designer.cs">
+      <DependentUpon>CrearColores.cs</DependentUpon>
+    </Compile>
     <Compile Include="databaseConnection.cs" />
     <Compile Include="Forms\Forms_secundarios\Categorias.cs">
       <SubType>Form</SubType>
@@ -58,6 +70,12 @@
     </Compile>
     <Compile Include="Forms\Forms_secundarios\Crear\CrearCategoria.Designer.cs">
       <DependentUpon>CrearCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms_secundarios\Crear\CrearMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms_secundarios\Crear\CrearMarca.Designer.cs">
+      <DependentUpon>CrearMarca.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Forms_secundarios\Crear\CrearMovimiento.cs">
       <SubType>Form</SubType>
@@ -120,6 +138,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forms_secundarios\Crear\CrearCategoria.resx">
       <DependentUpon>CrearCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms_secundarios\Crear\CrearCausa.resx">
+      <DependentUpon>CrearCausa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms_secundarios\Crear\CrearColores.resx">
+      <DependentUpon>CrearColores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms_secundarios\Crear\CrearMarca.resx">
+      <DependentUpon>CrearMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forms_secundarios\Crear\CrearMovimiento.resx">
       <DependentUpon>CrearMovimiento.cs</DependentUpon>

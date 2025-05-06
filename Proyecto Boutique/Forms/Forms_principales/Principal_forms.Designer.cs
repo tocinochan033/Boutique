@@ -30,11 +30,31 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_ModificarUsuario = new System.Windows.Forms.Button();
+            this.rdbtn_EstadoVisibilidad = new System.Windows.Forms.RadioButton();
+            this.lbl_OpcionesBusqueda = new System.Windows.Forms.Label();
+            this.lbl_Busqueda = new System.Windows.Forms.Label();
+            this.rdbtn_Rol = new System.Windows.Forms.RadioButton();
+            this.rdbtn_Nombre = new System.Windows.Forms.RadioButton();
+            this.rdbtn_ID = new System.Windows.Forms.RadioButton();
+            this.txtbox_BuscarUsuario = new System.Windows.Forms.TextBox();
+            this.btn_Eliminar = new System.Windows.Forms.Button();
             this.lbl_Usuarios = new System.Windows.Forms.Label();
             this.btn_CrearUsuario = new System.Windows.Forms.Button();
             this.DataGrid_Usuarios = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btn_categorias = new System.Windows.Forms.Button();
+            this.btn_ModificarProducto = new System.Windows.Forms.Button();
+            this.btn_EliminarProducto = new System.Windows.Forms.Button();
+            this.Btn_RegistrarColor = new System.Windows.Forms.Button();
+            this.rdbtn_EstadoProducto = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rdbtn_CategoriaProducto = new System.Windows.Forms.RadioButton();
+            this.rdbtn_NombreProducto = new System.Windows.Forms.RadioButton();
+            this.rdbtn_IDProducto = new System.Windows.Forms.RadioButton();
+            this.txtbox_BusquedaProductos = new System.Windows.Forms.TextBox();
+            this.btn_CrearMarca = new System.Windows.Forms.Button();
+            this.btn_CrearCategorias = new System.Windows.Forms.Button();
             this.lbl_Productos = new System.Windows.Forms.Label();
             this.btn_CrearProducto = new System.Windows.Forms.Button();
             this.DataGrid_Productos = new System.Windows.Forms.DataGridView();
@@ -46,6 +66,8 @@
             this.btn_RepAuditoria = new System.Windows.Forms.Button();
             this.btn_RepMovimientos = new System.Windows.Forms.Button();
             this.btn_RepStock = new System.Windows.Forms.Button();
+            this.btn_Causas = new System.Windows.Forms.Button();
+            this.btn_EliminarMovimientos = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Usuarios)).BeginInit();
@@ -70,6 +92,15 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_ModificarUsuario);
+            this.tabPage1.Controls.Add(this.rdbtn_EstadoVisibilidad);
+            this.tabPage1.Controls.Add(this.lbl_OpcionesBusqueda);
+            this.tabPage1.Controls.Add(this.lbl_Busqueda);
+            this.tabPage1.Controls.Add(this.rdbtn_Rol);
+            this.tabPage1.Controls.Add(this.rdbtn_Nombre);
+            this.tabPage1.Controls.Add(this.rdbtn_ID);
+            this.tabPage1.Controls.Add(this.txtbox_BuscarUsuario);
+            this.tabPage1.Controls.Add(this.btn_Eliminar);
             this.tabPage1.Controls.Add(this.lbl_Usuarios);
             this.tabPage1.Controls.Add(this.btn_CrearUsuario);
             this.tabPage1.Controls.Add(this.DataGrid_Usuarios);
@@ -81,10 +112,100 @@
             this.tabPage1.Text = "Usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btn_ModificarUsuario
+            // 
+            this.btn_ModificarUsuario.Location = new System.Drawing.Point(1133, 569);
+            this.btn_ModificarUsuario.Name = "btn_ModificarUsuario";
+            this.btn_ModificarUsuario.Size = new System.Drawing.Size(153, 45);
+            this.btn_ModificarUsuario.TabIndex = 38;
+            this.btn_ModificarUsuario.Text = "Modificar Usuarios";
+            this.btn_ModificarUsuario.UseVisualStyleBackColor = true;
+            this.btn_ModificarUsuario.Click += new System.EventHandler(this.btn_ModificarUsuario_Click);
+            // 
+            // rdbtn_EstadoVisibilidad
+            // 
+            this.rdbtn_EstadoVisibilidad.AutoSize = true;
+            this.rdbtn_EstadoVisibilidad.Location = new System.Drawing.Point(750, 16);
+            this.rdbtn_EstadoVisibilidad.Name = "rdbtn_EstadoVisibilidad";
+            this.rdbtn_EstadoVisibilidad.Size = new System.Drawing.Size(71, 20);
+            this.rdbtn_EstadoVisibilidad.TabIndex = 37;
+            this.rdbtn_EstadoVisibilidad.TabStop = true;
+            this.rdbtn_EstadoVisibilidad.Text = "Estado";
+            this.rdbtn_EstadoVisibilidad.UseVisualStyleBackColor = true;
+            // 
+            // lbl_OpcionesBusqueda
+            // 
+            this.lbl_OpcionesBusqueda.AutoSize = true;
+            this.lbl_OpcionesBusqueda.Location = new System.Drawing.Point(321, 18);
+            this.lbl_OpcionesBusqueda.Name = "lbl_OpcionesBusqueda";
+            this.lbl_OpcionesBusqueda.Size = new System.Drawing.Size(65, 16);
+            this.lbl_OpcionesBusqueda.TabIndex = 36;
+            this.lbl_OpcionesBusqueda.Text = "Opciones";
+            // 
+            // lbl_Busqueda
+            // 
+            this.lbl_Busqueda.AutoSize = true;
+            this.lbl_Busqueda.Location = new System.Drawing.Point(317, 45);
+            this.lbl_Busqueda.Name = "lbl_Busqueda";
+            this.lbl_Busqueda.Size = new System.Drawing.Size(69, 16);
+            this.lbl_Busqueda.TabIndex = 35;
+            this.lbl_Busqueda.Text = "Busqueda";
+            // 
+            // rdbtn_Rol
+            // 
+            this.rdbtn_Rol.AutoSize = true;
+            this.rdbtn_Rol.Location = new System.Drawing.Point(643, 16);
+            this.rdbtn_Rol.Name = "rdbtn_Rol";
+            this.rdbtn_Rol.Size = new System.Drawing.Size(49, 20);
+            this.rdbtn_Rol.TabIndex = 34;
+            this.rdbtn_Rol.TabStop = true;
+            this.rdbtn_Rol.Text = "Rol";
+            this.rdbtn_Rol.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_Nombre
+            // 
+            this.rdbtn_Nombre.AutoSize = true;
+            this.rdbtn_Nombre.Location = new System.Drawing.Point(501, 16);
+            this.rdbtn_Nombre.Name = "rdbtn_Nombre";
+            this.rdbtn_Nombre.Size = new System.Drawing.Size(77, 20);
+            this.rdbtn_Nombre.TabIndex = 33;
+            this.rdbtn_Nombre.TabStop = true;
+            this.rdbtn_Nombre.Text = "Nombre";
+            this.rdbtn_Nombre.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_ID
+            // 
+            this.rdbtn_ID.AutoSize = true;
+            this.rdbtn_ID.Location = new System.Drawing.Point(392, 16);
+            this.rdbtn_ID.Name = "rdbtn_ID";
+            this.rdbtn_ID.Size = new System.Drawing.Size(41, 20);
+            this.rdbtn_ID.TabIndex = 32;
+            this.rdbtn_ID.TabStop = true;
+            this.rdbtn_ID.Text = "ID";
+            this.rdbtn_ID.UseVisualStyleBackColor = true;
+            // 
+            // txtbox_BuscarUsuario
+            // 
+            this.txtbox_BuscarUsuario.Location = new System.Drawing.Point(392, 42);
+            this.txtbox_BuscarUsuario.Name = "txtbox_BuscarUsuario";
+            this.txtbox_BuscarUsuario.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_BuscarUsuario.TabIndex = 31;
+            this.txtbox_BuscarUsuario.TextChanged += new System.EventHandler(this.txtbox_Buscar_TextChanged);
+            // 
+            // btn_Eliminar
+            // 
+            this.btn_Eliminar.Location = new System.Drawing.Point(942, 39);
+            this.btn_Eliminar.Name = "btn_Eliminar";
+            this.btn_Eliminar.Size = new System.Drawing.Size(153, 45);
+            this.btn_Eliminar.TabIndex = 18;
+            this.btn_Eliminar.Text = "Eliminar Usuario";
+            this.btn_Eliminar.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
+            // 
             // lbl_Usuarios
             // 
             this.lbl_Usuarios.AutoSize = true;
-            this.lbl_Usuarios.Location = new System.Drawing.Point(65, 53);
+            this.lbl_Usuarios.Location = new System.Drawing.Point(21, 53);
             this.lbl_Usuarios.Name = "lbl_Usuarios";
             this.lbl_Usuarios.Size = new System.Drawing.Size(124, 16);
             this.lbl_Usuarios.TabIndex = 17;
@@ -113,7 +234,18 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.btn_categorias);
+            this.tabPage5.Controls.Add(this.btn_ModificarProducto);
+            this.tabPage5.Controls.Add(this.btn_EliminarProducto);
+            this.tabPage5.Controls.Add(this.Btn_RegistrarColor);
+            this.tabPage5.Controls.Add(this.rdbtn_EstadoProducto);
+            this.tabPage5.Controls.Add(this.label1);
+            this.tabPage5.Controls.Add(this.label2);
+            this.tabPage5.Controls.Add(this.rdbtn_CategoriaProducto);
+            this.tabPage5.Controls.Add(this.rdbtn_NombreProducto);
+            this.tabPage5.Controls.Add(this.rdbtn_IDProducto);
+            this.tabPage5.Controls.Add(this.txtbox_BusquedaProductos);
+            this.tabPage5.Controls.Add(this.btn_CrearMarca);
+            this.tabPage5.Controls.Add(this.btn_CrearCategorias);
             this.tabPage5.Controls.Add(this.lbl_Productos);
             this.tabPage5.Controls.Add(this.btn_CrearProducto);
             this.tabPage5.Controls.Add(this.DataGrid_Productos);
@@ -123,15 +255,127 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Productos";
             this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
-            // btn_categorias
+            // btn_ModificarProducto
             // 
-            this.btn_categorias.Location = new System.Drawing.Point(966, 55);
-            this.btn_categorias.Name = "btn_categorias";
-            this.btn_categorias.Size = new System.Drawing.Size(127, 41);
-            this.btn_categorias.TabIndex = 36;
-            this.btn_categorias.Text = "Ver categorias";
-            this.btn_categorias.UseVisualStyleBackColor = true;
+            this.btn_ModificarProducto.Location = new System.Drawing.Point(906, 565);
+            this.btn_ModificarProducto.Name = "btn_ModificarProducto";
+            this.btn_ModificarProducto.Size = new System.Drawing.Size(149, 45);
+            this.btn_ModificarProducto.TabIndex = 47;
+            this.btn_ModificarProducto.Text = "Modificar Producto";
+            this.btn_ModificarProducto.UseVisualStyleBackColor = true;
+            this.btn_ModificarProducto.Click += new System.EventHandler(this.btn_ModificarProducto_Click);
+            // 
+            // btn_EliminarProducto
+            // 
+            this.btn_EliminarProducto.Location = new System.Drawing.Point(1164, 565);
+            this.btn_EliminarProducto.Name = "btn_EliminarProducto";
+            this.btn_EliminarProducto.Size = new System.Drawing.Size(149, 45);
+            this.btn_EliminarProducto.TabIndex = 46;
+            this.btn_EliminarProducto.Text = "Eliminar Producto";
+            this.btn_EliminarProducto.UseVisualStyleBackColor = true;
+            this.btn_EliminarProducto.Click += new System.EventHandler(this.btn_EliminarProducto_Click);
+            // 
+            // Btn_RegistrarColor
+            // 
+            this.Btn_RegistrarColor.Location = new System.Drawing.Point(906, 20);
+            this.Btn_RegistrarColor.Name = "Btn_RegistrarColor";
+            this.Btn_RegistrarColor.Size = new System.Drawing.Size(127, 41);
+            this.Btn_RegistrarColor.TabIndex = 45;
+            this.Btn_RegistrarColor.Text = "Registrar Color";
+            this.Btn_RegistrarColor.UseVisualStyleBackColor = true;
+            this.Btn_RegistrarColor.Click += new System.EventHandler(this.Btn_RegistrarColor_Click);
+            // 
+            // rdbtn_EstadoProducto
+            // 
+            this.rdbtn_EstadoProducto.AutoSize = true;
+            this.rdbtn_EstadoProducto.Location = new System.Drawing.Point(663, 53);
+            this.rdbtn_EstadoProducto.Name = "rdbtn_EstadoProducto";
+            this.rdbtn_EstadoProducto.Size = new System.Drawing.Size(71, 20);
+            this.rdbtn_EstadoProducto.TabIndex = 44;
+            this.rdbtn_EstadoProducto.TabStop = true;
+            this.rdbtn_EstadoProducto.Text = "Estado";
+            this.rdbtn_EstadoProducto.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(234, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 16);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Opciones";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(230, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 16);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Busqueda";
+            // 
+            // rdbtn_CategoriaProducto
+            // 
+            this.rdbtn_CategoriaProducto.AutoSize = true;
+            this.rdbtn_CategoriaProducto.Location = new System.Drawing.Point(556, 53);
+            this.rdbtn_CategoriaProducto.Name = "rdbtn_CategoriaProducto";
+            this.rdbtn_CategoriaProducto.Size = new System.Drawing.Size(87, 20);
+            this.rdbtn_CategoriaProducto.TabIndex = 41;
+            this.rdbtn_CategoriaProducto.TabStop = true;
+            this.rdbtn_CategoriaProducto.Text = "Categoria";
+            this.rdbtn_CategoriaProducto.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_NombreProducto
+            // 
+            this.rdbtn_NombreProducto.AutoSize = true;
+            this.rdbtn_NombreProducto.Location = new System.Drawing.Point(414, 53);
+            this.rdbtn_NombreProducto.Name = "rdbtn_NombreProducto";
+            this.rdbtn_NombreProducto.Size = new System.Drawing.Size(77, 20);
+            this.rdbtn_NombreProducto.TabIndex = 40;
+            this.rdbtn_NombreProducto.TabStop = true;
+            this.rdbtn_NombreProducto.Text = "Nombre";
+            this.rdbtn_NombreProducto.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_IDProducto
+            // 
+            this.rdbtn_IDProducto.AutoSize = true;
+            this.rdbtn_IDProducto.Location = new System.Drawing.Point(305, 53);
+            this.rdbtn_IDProducto.Name = "rdbtn_IDProducto";
+            this.rdbtn_IDProducto.Size = new System.Drawing.Size(41, 20);
+            this.rdbtn_IDProducto.TabIndex = 39;
+            this.rdbtn_IDProducto.TabStop = true;
+            this.rdbtn_IDProducto.Text = "ID";
+            this.rdbtn_IDProducto.UseVisualStyleBackColor = true;
+            // 
+            // txtbox_BusquedaProductos
+            // 
+            this.txtbox_BusquedaProductos.Location = new System.Drawing.Point(305, 79);
+            this.txtbox_BusquedaProductos.Name = "txtbox_BusquedaProductos";
+            this.txtbox_BusquedaProductos.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_BusquedaProductos.TabIndex = 38;
+            this.txtbox_BusquedaProductos.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btn_CrearMarca
+            // 
+            this.btn_CrearMarca.Location = new System.Drawing.Point(832, 67);
+            this.btn_CrearMarca.Name = "btn_CrearMarca";
+            this.btn_CrearMarca.Size = new System.Drawing.Size(127, 41);
+            this.btn_CrearMarca.TabIndex = 37;
+            this.btn_CrearMarca.Text = "Registrar Marca";
+            this.btn_CrearMarca.UseVisualStyleBackColor = true;
+            this.btn_CrearMarca.Click += new System.EventHandler(this.btn_CrearMarca_Click);
+            // 
+            // btn_CrearCategorias
+            // 
+            this.btn_CrearCategorias.Location = new System.Drawing.Point(979, 67);
+            this.btn_CrearCategorias.Name = "btn_CrearCategorias";
+            this.btn_CrearCategorias.Size = new System.Drawing.Size(127, 41);
+            this.btn_CrearCategorias.TabIndex = 36;
+            this.btn_CrearCategorias.Text = "Crear Categoria";
+            this.btn_CrearCategorias.UseVisualStyleBackColor = true;
+            this.btn_CrearCategorias.Click += new System.EventHandler(this.btn_CrearCategorias_Click);
             // 
             // lbl_Productos
             // 
@@ -144,7 +388,7 @@
             // 
             // btn_CrearProducto
             // 
-            this.btn_CrearProducto.Location = new System.Drawing.Point(1113, 53);
+            this.btn_CrearProducto.Location = new System.Drawing.Point(1164, 63);
             this.btn_CrearProducto.Name = "btn_CrearProducto";
             this.btn_CrearProducto.Size = new System.Drawing.Size(149, 45);
             this.btn_CrearProducto.TabIndex = 34;
@@ -155,7 +399,7 @@
             // DataGrid_Productos
             // 
             this.DataGrid_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Productos.Location = new System.Drawing.Point(52, 135);
+            this.DataGrid_Productos.Location = new System.Drawing.Point(52, 122);
             this.DataGrid_Productos.Name = "DataGrid_Productos";
             this.DataGrid_Productos.RowHeadersWidth = 51;
             this.DataGrid_Productos.RowTemplate.Height = 24;
@@ -164,6 +408,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btn_EliminarMovimientos);
+            this.tabPage3.Controls.Add(this.btn_Causas);
             this.tabPage3.Controls.Add(this.lbl_Movimientos);
             this.tabPage3.Controls.Add(this.btn_CrearMovimiento);
             this.tabPage3.Controls.Add(this.DataGrid_Movimientos);
@@ -173,6 +419,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Movimientos";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // lbl_Movimientos
             // 
@@ -191,16 +438,18 @@
             this.btn_CrearMovimiento.TabIndex = 43;
             this.btn_CrearMovimiento.Text = "Crear Movimiento";
             this.btn_CrearMovimiento.UseVisualStyleBackColor = true;
+            this.btn_CrearMovimiento.Click += new System.EventHandler(this.btn_CrearMovimiento_Click);
             // 
             // DataGrid_Movimientos
             // 
             this.DataGrid_Movimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Movimientos.Location = new System.Drawing.Point(153, 135);
+            this.DataGrid_Movimientos.Location = new System.Drawing.Point(139, 120);
             this.DataGrid_Movimientos.Name = "DataGrid_Movimientos";
             this.DataGrid_Movimientos.RowHeadersWidth = 51;
             this.DataGrid_Movimientos.RowTemplate.Height = 24;
             this.DataGrid_Movimientos.Size = new System.Drawing.Size(1043, 437);
             this.DataGrid_Movimientos.TabIndex = 42;
+            this.DataGrid_Movimientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Movimientos_CellContentClick);
             // 
             // tabPage4
             // 
@@ -240,6 +489,26 @@
             this.btn_RepStock.TabIndex = 137;
             this.btn_RepStock.Text = "Generar Reporte de Stock";
             this.btn_RepStock.UseVisualStyleBackColor = true;
+            // 
+            // btn_Causas
+            // 
+            this.btn_Causas.Location = new System.Drawing.Point(834, 53);
+            this.btn_Causas.Name = "btn_Causas";
+            this.btn_Causas.Size = new System.Drawing.Size(153, 45);
+            this.btn_Causas.TabIndex = 45;
+            this.btn_Causas.Text = "Crear Causa";
+            this.btn_Causas.UseVisualStyleBackColor = true;
+            this.btn_Causas.Click += new System.EventHandler(this.btn_Causas_Click);
+            // 
+            // btn_EliminarMovimientos
+            // 
+            this.btn_EliminarMovimientos.Location = new System.Drawing.Point(1029, 576);
+            this.btn_EliminarMovimientos.Name = "btn_EliminarMovimientos";
+            this.btn_EliminarMovimientos.Size = new System.Drawing.Size(153, 45);
+            this.btn_EliminarMovimientos.TabIndex = 48;
+            this.btn_EliminarMovimientos.Text = "Eliminar Movimiento";
+            this.btn_EliminarMovimientos.UseVisualStyleBackColor = true;
+            this.btn_EliminarMovimientos.Click += new System.EventHandler(this.btn_EliminarMovimientos_Click);
             // 
             // Principal_forms
             // 
@@ -284,6 +553,28 @@
         private System.Windows.Forms.Label lbl_Movimientos;
         private System.Windows.Forms.Button btn_CrearMovimiento;
         private System.Windows.Forms.DataGridView DataGrid_Movimientos;
-        private System.Windows.Forms.Button btn_categorias;
+        private System.Windows.Forms.Button btn_CrearCategorias;
+        private System.Windows.Forms.Button btn_CrearMarca;
+        private System.Windows.Forms.Button btn_Eliminar;
+        private System.Windows.Forms.TextBox txtbox_BuscarUsuario;
+        private System.Windows.Forms.RadioButton rdbtn_Rol;
+        private System.Windows.Forms.RadioButton rdbtn_Nombre;
+        private System.Windows.Forms.RadioButton rdbtn_ID;
+        private System.Windows.Forms.Label lbl_OpcionesBusqueda;
+        private System.Windows.Forms.Label lbl_Busqueda;
+        private System.Windows.Forms.RadioButton rdbtn_EstadoVisibilidad;
+        private System.Windows.Forms.Button btn_ModificarUsuario;
+        private System.Windows.Forms.RadioButton rdbtn_EstadoProducto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton rdbtn_CategoriaProducto;
+        private System.Windows.Forms.RadioButton rdbtn_NombreProducto;
+        private System.Windows.Forms.RadioButton rdbtn_IDProducto;
+        private System.Windows.Forms.TextBox txtbox_BusquedaProductos;
+        private System.Windows.Forms.Button Btn_RegistrarColor;
+        private System.Windows.Forms.Button btn_EliminarProducto;
+        private System.Windows.Forms.Button btn_ModificarProducto;
+        private System.Windows.Forms.Button btn_EliminarMovimientos;
+        private System.Windows.Forms.Button btn_Causas;
     }
 }
