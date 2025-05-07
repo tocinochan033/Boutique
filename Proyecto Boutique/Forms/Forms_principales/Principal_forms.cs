@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DinkToPdf;
 using DinkToPdf.Contracts;
+using Proyecto_Boutique.Forms.GenerarPDF;
 
 namespace Proyecto_Boutique
 {
