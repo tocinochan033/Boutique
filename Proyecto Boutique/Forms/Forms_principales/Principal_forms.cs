@@ -34,33 +34,26 @@ namespace Proyecto_Boutique
 
         private void btn_RepStock_Click(object sender, EventArgs e)
         {
-            
+            using (var form = new ReporteStockForm())
+            {
+                form.ShowDialog();
+            }
         }
 
-        private void GenerarPDFDesdeHTML(string nombreArchivo, string htmlContent)
+        private void btn_RepMovimientos_Click(object sender, EventArgs e)
         {
-            var doc = new HtmlToPdfDocument()
+            using (var form = new ReporteMovimientosForm())
             {
-                GlobalSettings = {
-                    ColorMode = ColorMode.Color,
-                    Orientation = DinkToPdf.Orientation.Portrait,
-                    PaperSize = PaperKind.A4
-                },
-                Objects =
-                {
-                    new ObjectSettings()
-                    {
-                        HtmlContent = htmlContent,
-                        WebSettings = {DefaultEncoding="utf-8"}
-                    }
-                }
+                form.ShowDialog();
+            }
+        }
 
-            };
-            var pdf=_converter.Convert(doc);
-            string ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), nombreArchivo + ".pdf");
-            File.WriteAllBytes(ruta, pdf);
-            MessageBox.Show("PDF Generado","Exito",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+        private void btn_RepAuditoria_Click(object sender, EventArgs e)
+        {
+            using (var form = new ReporteAuditoriaForm())
+            {
+                form.ShowDialog();
+            }
         }
     }
 }

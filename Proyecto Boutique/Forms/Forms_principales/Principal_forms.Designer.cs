@@ -234,6 +234,7 @@
             this.btn_RepAuditoria.TabIndex = 139;
             this.btn_RepAuditoria.Text = "Generar Reporte de Auditoria";
             this.btn_RepAuditoria.UseVisualStyleBackColor = true;
+            this.btn_RepAuditoria.Click += new System.EventHandler(this.btn_RepAuditoria_Click);
             // 
             // btn_RepMovimientos
             // 
@@ -244,6 +245,7 @@
             this.btn_RepMovimientos.TabIndex = 138;
             this.btn_RepMovimientos.Text = "Generar Reporte de Movimientos";
             this.btn_RepMovimientos.UseVisualStyleBackColor = true;
+            this.btn_RepMovimientos.Click += new System.EventHandler(this.btn_RepMovimientos_Click);
             // 
             // btn_RepStock
             // 
