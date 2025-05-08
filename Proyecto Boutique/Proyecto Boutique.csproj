@@ -263,6 +263,18 @@
       <DependentUpon>EditarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\GenerarPDF\PDFGenerador.cs" />
+    <Compile Include="Forms\GenerarPDF\ReporteAuditoriaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GenerarPDF\ReporteAuditoriaForm.Designer.cs">
+      <DependentUpon>ReporteAuditoriaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GenerarPDF\ReporteMoviminetosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GenerarPDF\ReporteMoviminetosForm.Designer.cs">
+      <DependentUpon>ReporteMoviminetosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GenerarPDF\ReporteStockForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +321,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forms_secundarios\Editar\EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GenerarPDF\ReporteAuditoriaForm.resx">
+      <DependentUpon>ReporteAuditoriaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GenerarPDF\ReporteMoviminetosForm.resx">
+      <DependentUpon>ReporteMoviminetosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GenerarPDF\ReporteStockForm.resx">
       <DependentUpon>ReporteStockForm.cs</DependentUpon>

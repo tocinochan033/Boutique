@@ -43,7 +43,7 @@ namespace Proyecto_Boutique
 
         private void btn_RepMovimientos_Click(object sender, EventArgs e)
         {
-            using (var form = new ReporteMovimientosForm())
+            using (var form = new ReporteMoviminetosForm())
             {
                 form.ShowDialog();
             }

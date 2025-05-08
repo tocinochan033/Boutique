@@ -36,7 +36,7 @@
             // 
             // btnGenerar_Click
             // 
-            this.btnGenerar_Click.Location = new System.Drawing.Point(393, 86);
+            this.btnGenerar_Click.Location = new System.Drawing.Point(448, 83);
             this.btnGenerar_Click.Name = "btnGenerar_Click";
             this.btnGenerar_Click.Size = new System.Drawing.Size(92, 33);
             this.btnGenerar_Click.TabIndex = 0;
@@ -46,22 +46,22 @@
             // 
             // dtpFechaDesde
             // 
-            this.dtpFechaDesde.Location = new System.Drawing.Point(47, 34);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(31, 34);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 26);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(316, 26);
             this.dtpFechaDesde.TabIndex = 1;
             // 
             // dtpFechaHasta
             // 
-            this.dtpFechaHasta.Location = new System.Drawing.Point(285, 35);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(393, 34);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 26);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(323, 26);
             this.dtpFechaHasta.TabIndex = 2;
             // 
             // cbCategorias
             // 
             this.cbCategorias.FormattingEnabled = true;
-            this.cbCategorias.Location = new System.Drawing.Point(47, 91);
+            this.cbCategorias.Location = new System.Drawing.Point(104, 86);
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(223, 28);
             this.cbCategorias.TabIndex = 3;
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(734, 280);
             this.Controls.Add(this.cbCategorias);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.dtpFechaDesde);
