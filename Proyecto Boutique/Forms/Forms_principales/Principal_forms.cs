@@ -570,5 +570,72 @@ namespace Proyecto_Boutique
                 MessageBox.Show("Ha ocurrido un error inesperado");
             }
         }
+
+        private void txtbox_BusquedaMovimiento_TextChanged(object sender, EventArgs e)
+        {
+            /*try
+            {*/
+                if (rdbtn_IDMovimiento.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BusquedaMovimiento.Text, out int id))
+                    {
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = $"ID_Movimiento = {txtbox_BusquedaMovimiento.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else if (rdbtn_ProductoMovimiento.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BusquedaMovimiento.Text, out int id))
+                    {
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = $"Producto = {txtbox_BusquedaMovimiento.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else if (rdbtn_TipoMovimiento.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BusquedaMovimiento.Text, out int id))
+                    {
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = $"TipoMovimiento = {txtbox_BusquedaMovimiento.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else if (rdbtn_UsuarioMovimiento.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BusquedaMovimiento.Text, out int id))
+                    {
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = $"Usuario = {txtbox_BusquedaMovimiento.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Favor de elegir una opcion de filtrado");
+                }
+          /*  }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
+            }*/
+        }
     }
 }
