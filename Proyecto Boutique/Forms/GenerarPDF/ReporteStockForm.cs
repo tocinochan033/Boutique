@@ -75,7 +75,6 @@ namespace Proyecto_Boutique.Forms.GenerarPDF
             var html = new StringBuilder();
 
             //REPORTE
-
             //DATOS DEL REPORTE
             
             return html.ToString();

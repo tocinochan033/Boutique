@@ -13,7 +13,7 @@ namespace Proyecto_Boutique.Forms.GenerarPDF
 {
     public partial class ReporteMoviminetosForm : Form
     {
-        private string connectionString = "Tu cadena de conexión aquí";
+        private string connectionString = "Data Source= MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
         public ReporteMoviminetosForm()
         {
             InitializeComponent();
