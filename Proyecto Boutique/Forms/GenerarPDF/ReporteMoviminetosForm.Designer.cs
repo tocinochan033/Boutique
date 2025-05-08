@@ -28,52 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.cmbTipoMovimiento = new System.Windows.Forms.ComboBox();
+            this.Generar_Click = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpFechaDesde
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(318, 26);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpFechaDesde.Location = new System.Drawing.Point(12, 12);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(318, 26);
+            this.dtpFechaDesde.TabIndex = 0;
             // 
-            // dateTimePicker2
+            // dtpFechaHasta
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(394, 12);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(317, 26);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dtpFechaHasta.Location = new System.Drawing.Point(394, 12);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(317, 26);
+            this.dtpFechaHasta.TabIndex = 1;
             // 
-            // comboBox1
+            // cmbTipoMovimiento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(138, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 28);
-            this.comboBox1.TabIndex = 2;
+            this.cmbTipoMovimiento.FormattingEnabled = true;
+            this.cmbTipoMovimiento.Location = new System.Drawing.Point(138, 68);
+            this.cmbTipoMovimiento.Name = "cmbTipoMovimiento";
+            this.cmbTipoMovimiento.Size = new System.Drawing.Size(192, 28);
+            this.cmbTipoMovimiento.TabIndex = 2;
             // 
-            // button1
+            // Generar_Click
             // 
-            this.button1.Location = new System.Drawing.Point(394, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 34);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Generar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Generar_Click.Location = new System.Drawing.Point(394, 64);
+            this.Generar_Click.Name = "Generar_Click";
+            this.Generar_Click.Size = new System.Drawing.Size(98, 34);
+            this.Generar_Click.TabIndex = 3;
+            this.Generar_Click.Text = "Generar";
+            this.Generar_Click.UseVisualStyleBackColor = true;
+            this.Generar_Click.Click += new System.EventHandler(this.Generar_Click_Click);
             // 
             // ReporteMoviminetosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 191);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Generar_Click);
+            this.Controls.Add(this.cmbTipoMovimiento);
+            this.Controls.Add(this.dtpFechaHasta);
+            this.Controls.Add(this.dtpFechaDesde);
             this.Name = "ReporteMoviminetosForm";
             this.Text = "ReporteMoviminetosForm";
             this.ResumeLayout(false);
@@ -82,9 +83,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
+        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
+        private System.Windows.Forms.ComboBox cmbTipoMovimiento;
+        private System.Windows.Forms.Button Generar_Click;
     }
 }
