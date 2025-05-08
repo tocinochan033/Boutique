@@ -16,7 +16,8 @@ namespace Proyecto_Boutique
     {
 
         //Declaracion de la cadena de conexion
-        SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        databaseConnection conexion = new databaseConnection();
 
         //Creacion de un objeto SqlDataAdapter para reutilizarlo mas adelante
         SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -42,7 +43,7 @@ namespace Proyecto_Boutique
             String ConsultaUsuarios = "Select * from USUARIO WHERE Visibilidad = 1";
 
             //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion);
+            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
 
             //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
             DataTable dtUSUARIO = new DataTable();
@@ -84,7 +85,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from ROLES", conexion);
+            SqlCommand cm = new SqlCommand("select*from ROLES", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -117,7 +118,7 @@ namespace Proyecto_Boutique
 
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm = new SqlCommand("Select*from ROLES where Nombre = '" + cmb_Rol.Text + "'", conexion);
+                    SqlCommand cm = new SqlCommand("Select*from ROLES where Nombre = '" + cmb_Rol.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr = cm.ExecuteReader();
 
@@ -138,7 +139,7 @@ namespace Proyecto_Boutique
                             $"{rolSeleccionado},Correo = '{txtbox_Correo.Text}' WHERE ID_Usuario = {txtbox_IdUsuario.Text}";
 
                         //se crea un sql command para insertar los datos
-                        SqlCommand comandoModificacion = new SqlCommand(modificacion, conexion);
+                        SqlCommand comandoModificacion = new SqlCommand(modificacion, conexion.getConnection());
 
                         //Ejecucion del comando
                         comandoModificacion.ExecuteNonQuery();

@@ -15,7 +15,8 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
     {
 
         //Declaracion de la cadena de conexion
-        SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        databaseConnection conexion = new databaseConnection();
 
         //Creacion de un objeto SqlDataAdapter para reutilizarlo mas adelante
         SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -37,7 +38,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
             String ConsultaCausas = "Select * from CAUSA";
 
             //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaCausas, conexion);
+            adaptador = new SqlDataAdapter(ConsultaCausas, conexion.getConnection());
 
             //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
             DataTable dtCAUSA = new DataTable();
@@ -69,7 +70,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
                     int id = Convert.ToInt32(DataGrid_Causas.CurrentRow.Cells["ID_Causa"].Value);
 
                     string query = $"UPDATE CAUSA SET Visibilidad = 0 WHERE ID_Causa = {id}";
-                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
 
                     int resultado = cmd.ExecuteNonQuery();
 
@@ -110,7 +111,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
                 conexion.Open();
                 // Consulta SQL para verificar si existe un usuario con un nombre igual al recien ingresado
                 string query = "SELECT COUNT(*) FROM CAUSA WHERE Causa = @nombre";
-                SqlCommand command = new SqlCommand(query, conexion);
+                SqlCommand command = new SqlCommand(query, conexion.getConnection());
                 command.Parameters.AddWithValue("@nombre", txtbox_NombreCausa.Text);
 
                 //Ejecutar la consulta y guardar la variable resultante en una variable entera
@@ -121,7 +122,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
                 conexion.Open();
                 // Consulta SQL para verificar si existe un usuario con un ID igual al recien ingresado
                 string query2 = "SELECT COUNT(*) FROM CAUSA WHERE ID_Causa = @id";
-                SqlCommand command2 = new SqlCommand(query2, conexion);
+                SqlCommand command2 = new SqlCommand(query2, conexion.getConnection());
                 command2.Parameters.AddWithValue("@id", txtbox_IDCausa.Text);
 
                 //Ejecutar la consulta y guardar la variable resultante en una variable entera
@@ -137,7 +138,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
                     string insercion = $"INSERT INTO CAUSA (ID_Causa,Causa,Visibilidad) VALUES({txtbox_IDCausa.Text},'{txtbox_NombreCausa.Text}',1)";
 
                     //se crea un sql command para insertar los datos
-                    SqlCommand comandoInsercion = new SqlCommand(insercion, conexion);
+                    SqlCommand comandoInsercion = new SqlCommand(insercion, conexion.getConnection());
 
                     //Ejecucion del comando
                     comandoInsercion.ExecuteNonQuery();

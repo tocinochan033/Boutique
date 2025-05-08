@@ -58,7 +58,7 @@
     <Compile Include="Forms\Forms_secundarios\Crear\CrearColores.Designer.cs">
       <DependentUpon>CrearColores.cs</DependentUpon>
     </Compile>
-    <Compile Include="databaseConnection.cs" />
+    <Compile Include="Forms\Forms_principales\databaseConnection.cs" />
     <Compile Include="Forms\Forms_secundarios\Categorias.cs">
       <SubType>Form</SubType>
     </Compile>

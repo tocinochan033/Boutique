@@ -14,7 +14,8 @@ namespace Proyecto_Boutique
     public partial class CrearUsuario : Form
     {
             //Declaracion de la cadena de conexion
-            SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+            //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        databaseConnection conexion = new databaseConnection();
 
         public CrearUsuario()
         {
@@ -31,7 +32,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from ROLES", conexion);
+            SqlCommand cm = new SqlCommand("select*from ROLES", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -73,7 +74,7 @@ namespace Proyecto_Boutique
 
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm = new SqlCommand("Select*from ROLES where Nombre = '" + cmb_Rol.Text + "'", conexion);
+                    SqlCommand cm = new SqlCommand("Select*from ROLES where Nombre = '" + cmb_Rol.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr = cm.ExecuteReader();
 
@@ -88,7 +89,7 @@ namespace Proyecto_Boutique
                     conexion.Open();
                     // Consulta SQL para verificar si existe un usuario con un nombre igual al recien ingresado
                     string query = "SELECT COUNT(*) FROM USUARIO WHERE Nombre = @nombre";
-                    SqlCommand command = new SqlCommand(query, conexion);
+                    SqlCommand command = new SqlCommand(query, conexion.getConnection());
                     command.Parameters.AddWithValue("@nombre", txtbox_NombreUsuario.Text);
 
                     //Ejecutar la consulta y guardar la variable resultante en una variable entera
@@ -99,7 +100,7 @@ namespace Proyecto_Boutique
                     conexion.Open();
                     // Consulta SQL para verificar si existe un usuario con un ID igual al recien ingresado
                     string query2 = "SELECT COUNT(*) FROM USUARIO WHERE ID_Usuario = @id";
-                    SqlCommand command2 = new SqlCommand(query2, conexion);
+                    SqlCommand command2 = new SqlCommand(query2, conexion.getConnection());
                     command2.Parameters.AddWithValue("@id", txtbox_IdUsuario.Text);
 
                     //Ejecutar la consulta y guardar la variable resultante en una variable entera
@@ -122,7 +123,7 @@ namespace Proyecto_Boutique
                                 txtbox_Correo.Text + "', 1)";
 
                             //se crea un sql command para insertar los datos
-                            SqlCommand comandoInsercion = new SqlCommand(insercion, conexion);
+                            SqlCommand comandoInsercion = new SqlCommand(insercion, conexion.getConnection());
 
                             //Ejecucion del comando
                             comandoInsercion.ExecuteNonQuery();

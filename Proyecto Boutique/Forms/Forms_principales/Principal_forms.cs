@@ -36,7 +36,8 @@ namespace Proyecto_Boutique
         }
         
         //Declaracion de la cadena de conexion
-        SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        databaseConnection conexion = new databaseConnection();
 
         //Creacion de un objeto SqlDataAdapter para reutilizarlo mas adelante
         SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -61,7 +62,7 @@ namespace Proyecto_Boutique
             String ConsultaUsuarios = "Select * from USUARIO";
 
             //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion);
+            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
 
             //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
             DataTable dtUSUARIO = new DataTable();
@@ -81,7 +82,7 @@ namespace Proyecto_Boutique
             String ConsultarProductos = "Select * from PRODUCTOS";
 
             //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultarProductos, conexion);
+            adaptador = new SqlDataAdapter(ConsultarProductos, conexion.getConnection());
 
             //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
             DataTable dtPRODUCTOS = new DataTable();
@@ -101,7 +102,7 @@ namespace Proyecto_Boutique
             String ConsultaMovimientos = "Select * from MOVIMIENTOS";
 
             //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaMovimientos, conexion);
+            adaptador = new SqlDataAdapter(ConsultaMovimientos, conexion.getConnection());
 
             //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
             DataTable dtMOVIMIENTOS = new DataTable();
@@ -368,7 +369,7 @@ namespace Proyecto_Boutique
                     int id = Convert.ToInt32(DataGrid_Usuarios.CurrentRow.Cells["ID_Usuario"].Value);
 
                     string query = $"UPDATE USUARIO SET Visibilidad = 0 WHERE ID_Usuario = {id}";
-                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
 
                     int resultado = cmd.ExecuteNonQuery();
 
@@ -429,7 +430,7 @@ namespace Proyecto_Boutique
                     int id = Convert.ToInt32(DataGrid_Productos.CurrentRow.Cells["ID_Producto"].Value);
 
                     string query = $"UPDATE PRODUCTOS SET Visibilidad = 0 WHERE ID_Producto = {id}";
-                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
 
                     int resultado = cmd.ExecuteNonQuery();
 
@@ -542,7 +543,7 @@ namespace Proyecto_Boutique
                     int id = Convert.ToInt32(DataGrid_Movimientos.CurrentRow.Cells["ID_Movimiento"].Value);
 
                     string query = $"DELETE FROM MOVIMIENTOS WHERE ID_Movimiento = {id}";
-                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
 
                     int resultado = cmd.ExecuteNonQuery();
 
@@ -569,6 +570,73 @@ namespace Proyecto_Boutique
             {
                 MessageBox.Show("Ha ocurrido un error inesperado");
             }
+        }
+
+        private void txtbox_BusquedaMovimiento_TextChanged(object sender, EventArgs e)
+        {
+            /*try
+            {*/
+                if (rdbtn_IDMovimiento.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BusquedaMovimiento.Text, out int id))
+                    {
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = $"ID_Movimiento = {txtbox_BusquedaMovimiento.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else if (rdbtn_ProductoMovimiento.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BusquedaMovimiento.Text, out int id))
+                    {
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = $"Producto = {txtbox_BusquedaMovimiento.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else if (rdbtn_TipoMovimiento.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BusquedaMovimiento.Text, out int id))
+                    {
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = $"TipoMovimiento = {txtbox_BusquedaMovimiento.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else if (rdbtn_UsuarioMovimiento.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BusquedaMovimiento.Text, out int id))
+                    {
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = $"Usuario = {txtbox_BusquedaMovimiento.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Movimientos.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Favor de elegir una opcion de filtrado");
+                }
+          /*  }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
+            }*/
         }
     }
 }

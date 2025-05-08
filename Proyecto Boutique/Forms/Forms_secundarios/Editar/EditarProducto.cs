@@ -14,7 +14,8 @@ namespace Proyecto_Boutique
     public partial class EditarProducto : Form
     {
         //Declaracion de la cadena de conexion
-        SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        databaseConnection conexion = new databaseConnection();
 
         //Creacion de un objeto SqlDataAdapter para reutilizarlo mas adelante
         SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -41,7 +42,7 @@ namespace Proyecto_Boutique
             String ConsultaProductos = "Select * from PRODUCTOS WHERE Visibilidad = 1";
 
             //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaProductos, conexion);
+            adaptador = new SqlDataAdapter(ConsultaProductos, conexion.getConnection());
 
             //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
             DataTable dtPRODUCTOS = new DataTable();
@@ -80,7 +81,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from CATEGORIA WHERE Visibilidad = 1", conexion);
+            SqlCommand cm = new SqlCommand("select*from CATEGORIA WHERE Visibilidad = 1", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -103,7 +104,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from COLOR WHERE Visibilidad = 1", conexion);
+            SqlCommand cm = new SqlCommand("select*from COLOR WHERE Visibilidad = 1", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -127,7 +128,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from MARCA WHERE Visibilidad = 1", conexion);
+            SqlCommand cm = new SqlCommand("select*from MARCA WHERE Visibilidad = 1", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -200,7 +201,7 @@ namespace Proyecto_Boutique
 
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm = new SqlCommand("Select*from CATEGORIA where Nombre = '" + cmb_Categoria.Text + "'", conexion);
+                    SqlCommand cm = new SqlCommand("Select*from CATEGORIA where Nombre = '" + cmb_Categoria.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr = cm.ExecuteReader();
 
@@ -216,7 +217,7 @@ namespace Proyecto_Boutique
 
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm2 = new SqlCommand("Select*from COLOR where Nombre = '" + cmb_Color.Text + "'", conexion);
+                    SqlCommand cm2 = new SqlCommand("Select*from COLOR where Nombre = '" + cmb_Color.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr2 = cm2.ExecuteReader();
 
@@ -230,7 +231,7 @@ namespace Proyecto_Boutique
                     conexion.Open();
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm3 = new SqlCommand("Select*from MARCA where Nombre = '" + cmb_Marca.Text + "'", conexion);
+                    SqlCommand cm3 = new SqlCommand("Select*from MARCA where Nombre = '" + cmb_Marca.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr3 = cm3.ExecuteReader();
 
@@ -250,7 +251,7 @@ namespace Proyecto_Boutique
                     $"PuntoReorden = {txtbox_PuntoReorden.Text}, Maximo = {txtbox_MaximoStock.Text}, Minimo = {txtbox_MinimoStock.Text}, Visibilidad = 1 WHERE ID_Producto = {txtbox_IDProducto.Text}";
 
                     //se crea un sql command para insertar los datos
-                    SqlCommand comandoModificacion = new SqlCommand(ModificacionProducto, conexion);
+                    SqlCommand comandoModificacion = new SqlCommand(ModificacionProducto, conexion.getConnection());
 
                     //Ejecucion del comando
                     comandoModificacion.ExecuteNonQuery();

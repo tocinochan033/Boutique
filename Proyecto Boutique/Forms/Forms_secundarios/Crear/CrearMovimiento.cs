@@ -17,7 +17,8 @@ namespace Proyecto_Boutique
     {
 
         //Declaracion de la cadena de conexion
-        SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
+        databaseConnection conexion = new databaseConnection();
 
         //Creacion de un objeto SqlDataAdapter para reutilizarlo mas adelante
         SqlDataAdapter adaptador = new SqlDataAdapter();
@@ -47,7 +48,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from CAUSA WHERE Visibilidad = 1", conexion);
+            SqlCommand cm = new SqlCommand("select*from CAUSA WHERE Visibilidad = 1", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -71,7 +72,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from TIPOMOVIMIENTO", conexion);
+            SqlCommand cm = new SqlCommand("select*from TIPOMOVIMIENTO", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -95,7 +96,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from PRODUCTOS WHERE Visibilidad = 1", conexion);
+            SqlCommand cm = new SqlCommand("select*from PRODUCTOS WHERE Visibilidad = 1", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -119,7 +120,7 @@ namespace Proyecto_Boutique
             conexion.Open();
 
             //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from USUARIO WHERE Visibilidad = 1", conexion);
+            SqlCommand cm = new SqlCommand("select*from USUARIO WHERE Visibilidad = 1", conexion.getConnection());
 
             //Se crea un objeto sqldatareader para leer los Roles
             SqlDataReader dr = cm.ExecuteReader();
@@ -141,7 +142,7 @@ namespace Proyecto_Boutique
             String ConsultaUsuarios = "Select * from USUARIO WHERE Visibilidad = 1";
 
             //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion);
+            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
 
             //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
             DataTable dtUSUARIO = new DataTable();
@@ -161,7 +162,7 @@ namespace Proyecto_Boutique
             String ConsultaProductos = "Select * from PRODUCTOS WHERE Visibilidad = 1";
 
             //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaProductos, conexion);
+            adaptador = new SqlDataAdapter(ConsultaProductos, conexion.getConnection());
 
             //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
             DataTable dtPRODUCTOS = new DataTable();
@@ -281,7 +282,7 @@ namespace Proyecto_Boutique
 
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm = new SqlCommand("Select*from CAUSA where Causa = '" + cmb_Causa.Text + "'", conexion);
+                    SqlCommand cm = new SqlCommand("Select*from CAUSA where Causa = '" + cmb_Causa.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr = cm.ExecuteReader();
 
@@ -297,7 +298,7 @@ namespace Proyecto_Boutique
 
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm2 = new SqlCommand("Select*from PRODUCTOS where Nombre = '" + cmb_Producto.Text + "'", conexion);
+                    SqlCommand cm2 = new SqlCommand("Select*from PRODUCTOS where Nombre = '" + cmb_Producto.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr2 = cm2.ExecuteReader();
 
@@ -313,7 +314,7 @@ namespace Proyecto_Boutique
 
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm3 = new SqlCommand("Select*from TIPOMOVIMIENTO where Nombre = '" + cmb_TipoMovimiento.Text + "'", conexion);
+                    SqlCommand cm3 = new SqlCommand("Select*from TIPOMOVIMIENTO where Nombre = '" + cmb_TipoMovimiento.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr3 = cm3.ExecuteReader();
 
@@ -329,7 +330,7 @@ namespace Proyecto_Boutique
 
                     //Proceso para capturar la ID correspondiente al elemento seleccionado
                     //Se crea un comando para seleccionar el elemento que coincida con el nombre del rol seleccionado
-                    SqlCommand cm4 = new SqlCommand("Select*from USUARIO where Nombre = '" + cmb_UsuarioResponsable.Text + "'", conexion);
+                    SqlCommand cm4 = new SqlCommand("Select*from USUARIO where Nombre = '" + cmb_UsuarioResponsable.Text + "'", conexion.getConnection());
                     //Se crea un sqldatareader
                     SqlDataReader dr4 = cm4.ExecuteReader();
 
@@ -345,7 +346,7 @@ namespace Proyecto_Boutique
                     conexion.Open();
                     // Consulta SQL para verificar si existe un Movimiento con un ID igual al recien ingresado
                     string query = "SELECT COUNT(*) FROM MOVIMIENTOS WHERE ID_Movimiento = @id";
-                    SqlCommand command = new SqlCommand(query, conexion);
+                    SqlCommand command = new SqlCommand(query, conexion.getConnection());
                     command.Parameters.AddWithValue("@id", txt_IDMovimiento.Text);
 
                     //Ejecutar la consulta y guardar la variable resultante en una variable entera
@@ -364,7 +365,7 @@ namespace Proyecto_Boutique
                         string consulta = $"SELECT Cantidad FROM PRODUCTOS WHERE ID_Producto = {productoSeleccionado}";
 
                         //se crea un sql command para insertar los datos
-                        SqlCommand comandoConsulta = new SqlCommand(consulta, conexion);
+                        SqlCommand comandoConsulta = new SqlCommand(consulta, conexion.getConnection());
 
                         //Ejecucion del comando
                         int cantidadActual = (int)comandoConsulta.ExecuteScalar();
@@ -389,7 +390,7 @@ namespace Proyecto_Boutique
                             string consultaPuntoReorden = $"SELECT PuntoReorden FROM PRODUCTOS WHERE ID_Producto = {productoSeleccionado}";
 
                             //se crea un sql command para insertar los datos
-                            SqlCommand comandoConsultaReorden = new SqlCommand(consultaPuntoReorden, conexion);
+                            SqlCommand comandoConsultaReorden = new SqlCommand(consultaPuntoReorden, conexion.getConnection());
 
                             //Ejecucion del comando
                             int cantidadReorden = (int)comandoConsultaReorden.ExecuteScalar();
@@ -403,7 +404,7 @@ namespace Proyecto_Boutique
                             $",{causaSeleccionada},GETDATE())";
 
                             //se crea un sql command para insertar los datos
-                            SqlCommand comandoInsercion = new SqlCommand(insercion, conexion);
+                            SqlCommand comandoInsercion = new SqlCommand(insercion, conexion.getConnection());
 
                             //Ejecucion del comando
                             comandoInsercion.ExecuteNonQuery();
@@ -425,7 +426,7 @@ namespace Proyecto_Boutique
                                 string actualizacionDeCantidad = $"UPDATE PRODUCTOS SET Cantidad = {suma} WHERE ID_Producto = {productoSeleccionado}";
 
                                 //se crea un sql command para insertar los datos
-                                SqlCommand comandoActualizacionDeValores = new SqlCommand(actualizacionDeCantidad, conexion);
+                                SqlCommand comandoActualizacionDeValores = new SqlCommand(actualizacionDeCantidad, conexion.getConnection());
 
                                 comandoActualizacionDeValores.ExecuteNonQuery();
 
@@ -438,7 +439,7 @@ namespace Proyecto_Boutique
                                 string consultaMaximoProducto = $"SELECT Maximo FROM PRODUCTOS WHERE ID_Producto = {productoSeleccionado}";
 
                                 //se crea un sql command para insertar los datos
-                                SqlCommand comandoConsultaMaximo = new SqlCommand(consultaMaximoProducto, conexion);
+                                SqlCommand comandoConsultaMaximo = new SqlCommand(consultaMaximoProducto, conexion.getConnection());
 
                                 //Ejecucion del comando
                                 int cantidadMaxima = (int)comandoConsultaMaximo.ExecuteScalar();
@@ -462,7 +463,7 @@ namespace Proyecto_Boutique
                                 string actualizacionDeCantidadRESTA = $"UPDATE PRODUCTOS SET Cantidad = {resta} WHERE ID_Producto = {productoSeleccionado}";
 
                                 //se crea un sql command para insertar los datos
-                                SqlCommand comandoActualizacionDeValores = new SqlCommand(actualizacionDeCantidadRESTA, conexion);
+                                SqlCommand comandoActualizacionDeValores = new SqlCommand(actualizacionDeCantidadRESTA, conexion.getConnection());
 
                                 comandoActualizacionDeValores.ExecuteNonQuery();
 
@@ -474,7 +475,7 @@ namespace Proyecto_Boutique
                                 string consultaMinimoProducto = $"SELECT Minimo FROM PRODUCTOS WHERE ID_Producto = {productoSeleccionado}";
 
                                 //se crea un sql command para insertar los datos
-                                SqlCommand comandoConsultaMinimo = new SqlCommand(consultaMinimoProducto, conexion);
+                                SqlCommand comandoConsultaMinimo = new SqlCommand(consultaMinimoProducto, conexion.getConnection());
 
                                 //Ejecucion del comando
                                 int cantidadMinima = (int)comandoConsultaMinimo.ExecuteScalar();

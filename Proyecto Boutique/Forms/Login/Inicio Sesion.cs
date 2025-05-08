@@ -17,7 +17,7 @@ namespace Proyecto_Boutique
         public Inicio_Sesion()
         {
             InitializeComponent();
-            db.open();
+            db.Open();
         }
 
         private void btn_IniciarSesion_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace Proyecto_Boutique
 
             try
             {
-                db.open();
+                db.Open();
                 string query = "SELECT COUNT(*) FROM USUARIO WHERE Nombre = @usuario AND Contrasena = @contrasena";
                 SqlCommand cmd = new SqlCommand(query, db.getConnection());
                 cmd.Parameters.AddWithValue("@usuario", usuario);
@@ -47,6 +47,7 @@ namespace Proyecto_Boutique
                     this.Hide();
                     Principal_forms principal = new Principal_forms();
                     principal.Show();
+                    db.Close();
                 }
                 else
                 {

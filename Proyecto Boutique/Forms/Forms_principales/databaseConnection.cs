@@ -10,10 +10,11 @@ namespace Proyecto_Boutique
 
     /*
         Martin: MARTIN\\SQLEXPRESS
+        chuy; DESKTOP-BF3NJMJ
     */
     internal class databaseConnection
     {
-        string connection = "Data Source=DESKTOP-BF3NJMJ; Initial Catalog= BOUTIQUE; Integrated Security=True";
+        string connection = "Data Source=MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
         //Equipos:
         //Chuy: DESKTOP-BF3NJMJ
 
@@ -24,7 +25,7 @@ namespace Proyecto_Boutique
             connectiondb.ConnectionString = connection;
         }
 
-        public void open()
+        public void Open()
         {
             try
             {
@@ -37,7 +38,7 @@ namespace Proyecto_Boutique
             }
         }
 
-        public void close()
+        public void Close()
         {
             connectiondb.Close();
         }
