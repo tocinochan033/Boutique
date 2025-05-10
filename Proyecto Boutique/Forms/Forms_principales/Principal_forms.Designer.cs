@@ -59,6 +59,13 @@
             this.btn_CrearProducto = new System.Windows.Forms.Button();
             this.DataGrid_Productos = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.rdbtn_UsuarioMovimiento = new System.Windows.Forms.RadioButton();
+            this.lbl_OpcionesMovimiento = new System.Windows.Forms.Label();
+            this.lbl_BusquedaMovimiento = new System.Windows.Forms.Label();
+            this.rdbtn_TipoMovimiento = new System.Windows.Forms.RadioButton();
+            this.rdbtn_ProductoMovimiento = new System.Windows.Forms.RadioButton();
+            this.rdbtn_IDMovimiento = new System.Windows.Forms.RadioButton();
+            this.txtbox_BusquedaMovimiento = new System.Windows.Forms.TextBox();
             this.btn_EliminarMovimientos = new System.Windows.Forms.Button();
             this.btn_Causas = new System.Windows.Forms.Button();
             this.lbl_Movimientos = new System.Windows.Forms.Label();
@@ -68,13 +75,6 @@
             this.btn_RepAuditoria = new System.Windows.Forms.Button();
             this.btn_RepMovimientos = new System.Windows.Forms.Button();
             this.btn_RepStock = new System.Windows.Forms.Button();
-            this.rdbtn_UsuarioMovimiento = new System.Windows.Forms.RadioButton();
-            this.lbl_OpcionesMovimiento = new System.Windows.Forms.Label();
-            this.lbl_BusquedaMovimiento = new System.Windows.Forms.Label();
-            this.rdbtn_TipoMovimiento = new System.Windows.Forms.RadioButton();
-            this.rdbtn_ProductoMovimiento = new System.Windows.Forms.RadioButton();
-            this.rdbtn_IDMovimiento = new System.Windows.Forms.RadioButton();
-            this.txtbox_BusquedaMovimiento = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Usuarios)).BeginInit();
@@ -435,6 +435,76 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // rdbtn_UsuarioMovimiento
+            // 
+            this.rdbtn_UsuarioMovimiento.AutoSize = true;
+            this.rdbtn_UsuarioMovimiento.Location = new System.Drawing.Point(719, 41);
+            this.rdbtn_UsuarioMovimiento.Name = "rdbtn_UsuarioMovimiento";
+            this.rdbtn_UsuarioMovimiento.Size = new System.Drawing.Size(75, 20);
+            this.rdbtn_UsuarioMovimiento.TabIndex = 55;
+            this.rdbtn_UsuarioMovimiento.TabStop = true;
+            this.rdbtn_UsuarioMovimiento.Text = "Usuario";
+            this.rdbtn_UsuarioMovimiento.UseVisualStyleBackColor = true;
+            // 
+            // lbl_OpcionesMovimiento
+            // 
+            this.lbl_OpcionesMovimiento.AutoSize = true;
+            this.lbl_OpcionesMovimiento.Location = new System.Drawing.Point(290, 43);
+            this.lbl_OpcionesMovimiento.Name = "lbl_OpcionesMovimiento";
+            this.lbl_OpcionesMovimiento.Size = new System.Drawing.Size(65, 16);
+            this.lbl_OpcionesMovimiento.TabIndex = 54;
+            this.lbl_OpcionesMovimiento.Text = "Opciones";
+            // 
+            // lbl_BusquedaMovimiento
+            // 
+            this.lbl_BusquedaMovimiento.AutoSize = true;
+            this.lbl_BusquedaMovimiento.Location = new System.Drawing.Point(286, 70);
+            this.lbl_BusquedaMovimiento.Name = "lbl_BusquedaMovimiento";
+            this.lbl_BusquedaMovimiento.Size = new System.Drawing.Size(69, 16);
+            this.lbl_BusquedaMovimiento.TabIndex = 53;
+            this.lbl_BusquedaMovimiento.Text = "Busqueda";
+            // 
+            // rdbtn_TipoMovimiento
+            // 
+            this.rdbtn_TipoMovimiento.AutoSize = true;
+            this.rdbtn_TipoMovimiento.Location = new System.Drawing.Point(612, 41);
+            this.rdbtn_TipoMovimiento.Name = "rdbtn_TipoMovimiento";
+            this.rdbtn_TipoMovimiento.Size = new System.Drawing.Size(56, 20);
+            this.rdbtn_TipoMovimiento.TabIndex = 52;
+            this.rdbtn_TipoMovimiento.TabStop = true;
+            this.rdbtn_TipoMovimiento.Text = "Tipo";
+            this.rdbtn_TipoMovimiento.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_ProductoMovimiento
+            // 
+            this.rdbtn_ProductoMovimiento.AutoSize = true;
+            this.rdbtn_ProductoMovimiento.Location = new System.Drawing.Point(470, 41);
+            this.rdbtn_ProductoMovimiento.Name = "rdbtn_ProductoMovimiento";
+            this.rdbtn_ProductoMovimiento.Size = new System.Drawing.Size(82, 20);
+            this.rdbtn_ProductoMovimiento.TabIndex = 51;
+            this.rdbtn_ProductoMovimiento.TabStop = true;
+            this.rdbtn_ProductoMovimiento.Text = "Producto";
+            this.rdbtn_ProductoMovimiento.UseVisualStyleBackColor = true;
+            // 
+            // rdbtn_IDMovimiento
+            // 
+            this.rdbtn_IDMovimiento.AutoSize = true;
+            this.rdbtn_IDMovimiento.Location = new System.Drawing.Point(361, 41);
+            this.rdbtn_IDMovimiento.Name = "rdbtn_IDMovimiento";
+            this.rdbtn_IDMovimiento.Size = new System.Drawing.Size(41, 20);
+            this.rdbtn_IDMovimiento.TabIndex = 50;
+            this.rdbtn_IDMovimiento.TabStop = true;
+            this.rdbtn_IDMovimiento.Text = "ID";
+            this.rdbtn_IDMovimiento.UseVisualStyleBackColor = true;
+            // 
+            // txtbox_BusquedaMovimiento
+            // 
+            this.txtbox_BusquedaMovimiento.Location = new System.Drawing.Point(361, 67);
+            this.txtbox_BusquedaMovimiento.Name = "txtbox_BusquedaMovimiento";
+            this.txtbox_BusquedaMovimiento.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_BusquedaMovimiento.TabIndex = 49;
+            this.txtbox_BusquedaMovimiento.TextChanged += new System.EventHandler(this.txtbox_BusquedaMovimiento_TextChanged);
+            // 
             // btn_EliminarMovimientos
             // 
             this.btn_EliminarMovimientos.Location = new System.Drawing.Point(1029, 576);
@@ -505,6 +575,7 @@
             this.btn_RepAuditoria.TabIndex = 139;
             this.btn_RepAuditoria.Text = "Generar Reporte de Auditoria";
             this.btn_RepAuditoria.UseVisualStyleBackColor = true;
+            this.btn_RepAuditoria.Click += new System.EventHandler(this.btn_RepAuditoria_Click);
             // 
             // btn_RepMovimientos
             // 
@@ -514,6 +585,7 @@
             this.btn_RepMovimientos.TabIndex = 138;
             this.btn_RepMovimientos.Text = "Generar Reporte de Movimientos";
             this.btn_RepMovimientos.UseVisualStyleBackColor = true;
+            this.btn_RepMovimientos.Click += new System.EventHandler(this.btn_RepMovimientos_Click);
             // 
             // btn_RepStock
             // 
@@ -523,76 +595,7 @@
             this.btn_RepStock.TabIndex = 137;
             this.btn_RepStock.Text = "Generar Reporte de Stock";
             this.btn_RepStock.UseVisualStyleBackColor = true;
-            // 
-            // rdbtn_UsuarioMovimiento
-            // 
-            this.rdbtn_UsuarioMovimiento.AutoSize = true;
-            this.rdbtn_UsuarioMovimiento.Location = new System.Drawing.Point(719, 41);
-            this.rdbtn_UsuarioMovimiento.Name = "rdbtn_UsuarioMovimiento";
-            this.rdbtn_UsuarioMovimiento.Size = new System.Drawing.Size(75, 20);
-            this.rdbtn_UsuarioMovimiento.TabIndex = 55;
-            this.rdbtn_UsuarioMovimiento.TabStop = true;
-            this.rdbtn_UsuarioMovimiento.Text = "Usuario";
-            this.rdbtn_UsuarioMovimiento.UseVisualStyleBackColor = true;
-            // 
-            // lbl_OpcionesMovimiento
-            // 
-            this.lbl_OpcionesMovimiento.AutoSize = true;
-            this.lbl_OpcionesMovimiento.Location = new System.Drawing.Point(290, 43);
-            this.lbl_OpcionesMovimiento.Name = "lbl_OpcionesMovimiento";
-            this.lbl_OpcionesMovimiento.Size = new System.Drawing.Size(65, 16);
-            this.lbl_OpcionesMovimiento.TabIndex = 54;
-            this.lbl_OpcionesMovimiento.Text = "Opciones";
-            // 
-            // lbl_BusquedaMovimiento
-            // 
-            this.lbl_BusquedaMovimiento.AutoSize = true;
-            this.lbl_BusquedaMovimiento.Location = new System.Drawing.Point(286, 70);
-            this.lbl_BusquedaMovimiento.Name = "lbl_BusquedaMovimiento";
-            this.lbl_BusquedaMovimiento.Size = new System.Drawing.Size(69, 16);
-            this.lbl_BusquedaMovimiento.TabIndex = 53;
-            this.lbl_BusquedaMovimiento.Text = "Busqueda";
-            // 
-            // rdbtn_TipoMovimiento
-            // 
-            this.rdbtn_TipoMovimiento.AutoSize = true;
-            this.rdbtn_TipoMovimiento.Location = new System.Drawing.Point(612, 41);
-            this.rdbtn_TipoMovimiento.Name = "rdbtn_TipoMovimiento";
-            this.rdbtn_TipoMovimiento.Size = new System.Drawing.Size(56, 20);
-            this.rdbtn_TipoMovimiento.TabIndex = 52;
-            this.rdbtn_TipoMovimiento.TabStop = true;
-            this.rdbtn_TipoMovimiento.Text = "Tipo";
-            this.rdbtn_TipoMovimiento.UseVisualStyleBackColor = true;
-            // 
-            // rdbtn_ProductoMovimiento
-            // 
-            this.rdbtn_ProductoMovimiento.AutoSize = true;
-            this.rdbtn_ProductoMovimiento.Location = new System.Drawing.Point(470, 41);
-            this.rdbtn_ProductoMovimiento.Name = "rdbtn_ProductoMovimiento";
-            this.rdbtn_ProductoMovimiento.Size = new System.Drawing.Size(82, 20);
-            this.rdbtn_ProductoMovimiento.TabIndex = 51;
-            this.rdbtn_ProductoMovimiento.TabStop = true;
-            this.rdbtn_ProductoMovimiento.Text = "Producto";
-            this.rdbtn_ProductoMovimiento.UseVisualStyleBackColor = true;
-            // 
-            // rdbtn_IDMovimiento
-            // 
-            this.rdbtn_IDMovimiento.AutoSize = true;
-            this.rdbtn_IDMovimiento.Location = new System.Drawing.Point(361, 41);
-            this.rdbtn_IDMovimiento.Name = "rdbtn_IDMovimiento";
-            this.rdbtn_IDMovimiento.Size = new System.Drawing.Size(41, 20);
-            this.rdbtn_IDMovimiento.TabIndex = 50;
-            this.rdbtn_IDMovimiento.TabStop = true;
-            this.rdbtn_IDMovimiento.Text = "ID";
-            this.rdbtn_IDMovimiento.UseVisualStyleBackColor = true;
-            // 
-            // txtbox_BusquedaMovimiento
-            // 
-            this.txtbox_BusquedaMovimiento.Location = new System.Drawing.Point(361, 67);
-            this.txtbox_BusquedaMovimiento.Name = "txtbox_BusquedaMovimiento";
-            this.txtbox_BusquedaMovimiento.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_BusquedaMovimiento.TabIndex = 49;
-            this.txtbox_BusquedaMovimiento.TextChanged += new System.EventHandler(this.txtbox_BusquedaMovimiento_TextChanged);
+            this.btn_RepStock.Click += new System.EventHandler(this.btn_RepStock_Click);
             // 
             // Principal_forms
             // 

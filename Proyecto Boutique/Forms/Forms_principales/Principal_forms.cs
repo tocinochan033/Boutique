@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Proyecto_Boutique
 {
@@ -637,6 +638,24 @@ namespace Proyecto_Boutique
             {
                 MessageBox.Show("Ha ocurrido un error inesperado");
             }*/
+        }
+
+        private void btn_RepStock_Click(object sender, EventArgs e)
+        {
+            ReporteStockForm frm = new ReporteStockForm();
+            frm.Show();
+        }
+
+        private void btn_RepMovimientos_Click(object sender, EventArgs e)
+        {
+            ReporteMovimientosForm frm = new ReporteMovimientosForm();
+            frm.Show();
+        }
+
+        private void btn_RepAuditoria_Click(object sender, EventArgs e)
+        {
+            ReporteAuditoriaForms frm = new ReporteAuditoriaForms();
+            frm.Show();
         }
     }
 }

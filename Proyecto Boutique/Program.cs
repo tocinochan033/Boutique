@@ -16,7 +16,7 @@ namespace Proyecto_Boutique
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReporteStockForm());
+            Application.Run(new Inicio_Sesion());
         }
     }
 }
