@@ -310,11 +310,17 @@
     <Compile Include="GenerarPdf\ReporteMovimientosForm.Designer.cs">
       <DependentUpon>ReporteMovimientosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteAuditoriaForms.cs">
+    <Compile Include="GenerarPdf\ReporteAuditoriaForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteAuditoriaForms.Designer.cs">
+    <Compile Include="GenerarPdf\ReporteAuditoriaForms.Designer.cs">
       <DependentUpon>ReporteAuditoriaForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteStockForm.Designer.cs">
+      <DependentUpon>ReporteStockForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Forms_secundarios\Categorias.resx">
       <DependentUpon>Categorias.cs</DependentUpon>
@@ -373,8 +379,11 @@
     <EmbeddedResource Include="GenerarPdf\ReporteMovimientosForm.resx">
       <DependentUpon>ReporteMovimientosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteAuditoriaForms.resx">
+    <EmbeddedResource Include="GenerarPdf\ReporteAuditoriaForms.resx">
       <DependentUpon>ReporteAuditoriaForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteStockForm.resx">
+      <DependentUpon>ReporteStockForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
