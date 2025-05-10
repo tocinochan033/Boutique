@@ -9,7 +9,7 @@ using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 
-namespace Proyecto_Boutique.Forms.GenerarPDF
+namespace Proyecto_Boutique
 {
     internal class PDFGenerador
     {
@@ -47,3 +47,4 @@ namespace Proyecto_Boutique.Forms.GenerarPDF
         }
     }
 }
+

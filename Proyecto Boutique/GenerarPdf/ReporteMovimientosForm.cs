@@ -9,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto_Boutique.Forms.GenerarPDF
+namespace Proyecto_Boutique
 {
-    public partial class ReporteMoviminetosForm : Form
+    public partial class ReporteMovimientosForm : Form
     {
-        private string connectionString = "Data Source= MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
-        public ReporteMoviminetosForm()
+        databaseConnection db = new databaseConnection();
+
+        public ReporteMovimientosForm()
         {
             InitializeComponent();
 
@@ -24,16 +25,17 @@ namespace Proyecto_Boutique.Forms.GenerarPDF
 
             // Puedes cargar comboboxes si necesitas filtros adicionales
             CargarFiltrosAdicionales();
+
         }
 
         private void CargarFiltrosAdicionales()
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (db.getConnection())
             {
-                connection.Open();
+                db.Open();
                 var query = "SELECT ID_Tipo, Nombre FROM TIPOMOVIMIENTO";
 
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new SqlCommand(query, db.getConnection()))
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -63,12 +65,14 @@ namespace Proyecto_Boutique.Forms.GenerarPDF
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private string GenerateMovimientosReportHtml()
         {
             var html = new StringBuilder();
             // Agregar reporte
-           
-                return html.ToString();
-            }
+
+            return html.ToString();
         }
     }
+}
+

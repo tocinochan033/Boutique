@@ -393,7 +393,7 @@ namespace Proyecto_Boutique
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error inesperado");
+                MessageBox.Show("Ha ocurrido un error inesperado: " + ex);
             }
 
 
@@ -454,7 +454,7 @@ namespace Proyecto_Boutique
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error inesperado");
+                MessageBox.Show("Ha ocurrido un error inesperado: ", ex.Message);
             }
         }
 
@@ -511,9 +511,9 @@ namespace Proyecto_Boutique
                     MessageBox.Show("Favor de elegir una opcion de filtrado");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error inesperado");
+                MessageBox.Show("Ha ocurrido un error inesperado: " + ex.Message);
             }
         }
 
@@ -568,7 +568,7 @@ namespace Proyecto_Boutique
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error inesperado");
+                MessageBox.Show("Ha ocurrido un error inesperado: " + ex.Message);
             }
         }
 
