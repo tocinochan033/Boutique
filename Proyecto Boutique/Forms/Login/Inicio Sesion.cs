@@ -73,5 +73,22 @@ namespace Proyecto_Boutique
             recuperar.Show();
             this.Hide();
         }
+
+        private bool showPassword = false;
+
+        private void visiblePassword_Click(object sender, EventArgs e)
+        {
+            showPassword = !showPassword;
+            if (showPassword)
+            {
+                txt_Contra.PasswordChar = '\0'; // Muestra la contraseña
+                visiblePassword.Image = Properties.Resources.ojo; // Cambia la imagen a ojo abierto
+            }
+            else
+            {
+                txt_Contra.PasswordChar = '*';
+                visiblePassword.Image = Properties.Resources.hide; // Cambia la imagen a ojo cerrado
+            }
+        }
     }
 }
