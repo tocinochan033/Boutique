@@ -36,7 +36,6 @@ namespace Proyecto_Boutique
             {
                 db.Open();
 
-                // Modificamos el query para traer también el campo ROL
                 string query = "SELECT ROL FROM USUARIO WHERE Nombre = @usuario AND Contrasena = @contrasena";
                 SqlCommand cmd = new SqlCommand(query, db.getConnection());
                 cmd.Parameters.AddWithValue("@usuario", usuario);
