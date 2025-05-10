@@ -316,10 +316,10 @@
     <Compile Include="GenerarPdf\ReporteAuditoriaForms.Designer.cs">
       <DependentUpon>ReporteAuditoriaForms.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReporteStockForm.cs">
+    <Compile Include="GenerarPdf\ReporteStockForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteStockForm.Designer.cs">
+    <Compile Include="GenerarPdf\ReporteStockForm.Designer.cs">
       <DependentUpon>ReporteStockForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Forms_secundarios\Categorias.resx">
@@ -382,7 +382,7 @@
     <EmbeddedResource Include="GenerarPdf\ReporteAuditoriaForms.resx">
       <DependentUpon>ReporteAuditoriaForms.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteStockForm.resx">
+    <EmbeddedResource Include="GenerarPdf\ReporteStockForm.resx">
       <DependentUpon>ReporteStockForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
