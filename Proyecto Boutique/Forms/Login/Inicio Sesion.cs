@@ -20,6 +20,7 @@ namespace Proyecto_Boutique
             db.Open();
         }
 
+
         private void btn_IniciarSesion_Click(object sender, EventArgs e)
         {
             string usuario = txt_usuario.Text.Trim();
@@ -34,25 +35,32 @@ namespace Proyecto_Boutique
             try
             {
                 db.Open();
-                string query = "SELECT COUNT(*) FROM USUARIO WHERE Nombre = @usuario AND Contrasena = @contrasena";
+
+                // Modificamos el query para traer también el campo ROL
+                string query = "SELECT ROL FROM USUARIO WHERE Nombre = @usuario AND Contrasena = @contrasena";
                 SqlCommand cmd = new SqlCommand(query, db.getConnection());
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@contrasena", contrasena);
 
-                int count = (int)cmd.ExecuteScalar();
+                object result = cmd.ExecuteScalar();
 
-                if (count > 0)
+                if (result != null)
                 {
-                    MessageBox.Show("Inicio de sesión exitoso.");
+                    int idRol = Convert.ToInt32(result); // Aquí obtenemos el ID del rol (1 o 2)
+                    SessionData.RolId = idRol;
+
+                    MessageBox.Show("Inicio de sesión exitoso. Rol ID: " + idRol);
+
                     this.Hide();
                     Principal_forms principal = new Principal_forms();
                     principal.Show();
-                    db.Close();
                 }
                 else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos.");
                 }
+
+                db.Close();
             }
             catch (Exception ex)
             {

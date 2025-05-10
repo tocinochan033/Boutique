@@ -322,6 +322,7 @@
     <Compile Include="GenerarPdf\ReporteStockForm.Designer.cs">
       <DependentUpon>ReporteStockForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SessionData.cs" />
     <EmbeddedResource Include="Forms\Forms_secundarios\Categorias.resx">
       <DependentUpon>Categorias.cs</DependentUpon>
     </EmbeddedResource>

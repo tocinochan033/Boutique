@@ -34,6 +34,7 @@ namespace Proyecto_Boutique
         public Principal_forms()
         {
             InitializeComponent();
+            credenciales();
         }
         
         //Declaracion de la cadena de conexion
@@ -54,6 +55,8 @@ namespace Proyecto_Boutique
             ObtenerRegistrosUsuarios();
             ObtenerRegistrosProductos();
             ObtenerMovimientos();
+
+            credenciales();
         }
 
         public void ObtenerRegistrosUsuarios()
@@ -656,6 +659,23 @@ namespace Proyecto_Boutique
         {
             ReporteAuditoriaForms frm = new ReporteAuditoriaForms();
             frm.Show();
+        }
+
+        private void credenciales()
+        {
+            if(SessionData.RolId == 2) // EN CASO DE SER GENERAL ES 2
+            {
+                                // Se ocultan los botones de crear y eliminar
+                btn_CrearUsuario.Visible = false;
+                btn_CrearProducto.Visible = false;
+                btn_CrearMovimiento.Visible = false;
+                btn_CrearMarca.Visible = false;
+                btn_CrearCategorias.Visible = false;
+                btn_Eliminar.Visible = false;
+                btn_EliminarProducto.Visible = false;
+                btn_EliminarMovimientos.Visible = false;
+            }
+            
         }
     }
 }
