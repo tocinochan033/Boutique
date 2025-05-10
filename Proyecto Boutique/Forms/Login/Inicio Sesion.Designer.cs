@@ -33,6 +33,7 @@
             this.lbl_Contra = new System.Windows.Forms.Label();
             this.txt_Contra = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_IniciarSesion
@@ -77,11 +78,22 @@
             this.txt_usuario.Size = new System.Drawing.Size(485, 22);
             this.txt_usuario.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(293, 386);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "¿Has olvidado tu contraseña?";
+            this.label1.DoubleClick += new System.EventHandler(this.label1_DoubleClick);
+            // 
             // Inicio_Sesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_IniciarSesion);
             this.Controls.Add(this.lbl_Correo);
             this.Controls.Add(this.lbl_Contra);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.Label lbl_Contra;
         private System.Windows.Forms.TextBox txt_Contra;
         private System.Windows.Forms.TextBox txt_usuario;
+        private System.Windows.Forms.Label label1;
     }
 }

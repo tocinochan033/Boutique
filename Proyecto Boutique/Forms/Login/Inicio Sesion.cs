@@ -59,5 +59,10 @@ namespace Proyecto_Boutique
                 MessageBox.Show("Error al iniciar sesión: " + ex.Message);
             }
         }
+
+        private void label1_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
