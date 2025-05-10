@@ -62,7 +62,9 @@ namespace Proyecto_Boutique
 
         private void label1_DoubleClick(object sender, EventArgs e)
         {
-            
+            Recuperar_Contrasena recuperar = new Recuperar_Contrasena();
+            recuperar.Show();
+            this.Hide();
         }
     }
 }

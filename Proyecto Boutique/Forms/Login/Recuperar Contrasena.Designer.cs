@@ -32,6 +32,7 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblResult = new System.Windows.Forms.Label();
             this.btn_enviar = new System.Windows.Forms.Button();
+            this.regresar_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -68,11 +69,22 @@
             this.btn_enviar.UseVisualStyleBackColor = true;
             this.btn_enviar.Click += new System.EventHandler(this.btn_enviar_Click);
             // 
+            // regresar_btn
+            // 
+            this.regresar_btn.Location = new System.Drawing.Point(389, 190);
+            this.regresar_btn.Name = "regresar_btn";
+            this.regresar_btn.Size = new System.Drawing.Size(99, 35);
+            this.regresar_btn.TabIndex = 4;
+            this.regresar_btn.Text = "Regresar";
+            this.regresar_btn.UseVisualStyleBackColor = true;
+            this.regresar_btn.Click += new System.EventHandler(this.regresar_btn_Click);
+            // 
             // Recuperar_Contrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.regresar_btn);
             this.Controls.Add(this.btn_enviar);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.txtUsuario);
@@ -90,5 +102,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Button btn_enviar;
+        private System.Windows.Forms.Button regresar_btn;
     }
 }

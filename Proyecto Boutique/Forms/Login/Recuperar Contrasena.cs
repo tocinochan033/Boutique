@@ -23,5 +23,12 @@ namespace Proyecto_Boutique
             var result = user.recoverPassword(txtUsuario.Text);
             lblResult.Text = result;
         }
+
+        private void regresar_btn_Click(object sender, EventArgs e)
+        {
+            Inicio_Sesion inicio = new Inicio_Sesion();
+            inicio.Show();
+            this.Hide();
+        }
     }
 }

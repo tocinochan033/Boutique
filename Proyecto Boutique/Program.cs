@@ -16,7 +16,7 @@ namespace Proyecto_Boutique
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Recuperar_Contrasena());
+            Application.Run(new Inicio_Sesion());
         }
     }
 }
