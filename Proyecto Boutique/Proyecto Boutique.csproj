@@ -310,6 +310,12 @@
     <Compile Include="GenerarPdf\ReporteMovimientosForm.Designer.cs">
       <DependentUpon>ReporteMovimientosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteAuditoriaForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAuditoriaForms.Designer.cs">
+      <DependentUpon>ReporteAuditoriaForms.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Forms_secundarios\Categorias.resx">
       <DependentUpon>Categorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -366,6 +372,9 @@
     </Compile>
     <EmbeddedResource Include="GenerarPdf\ReporteMovimientosForm.resx">
       <DependentUpon>ReporteMovimientosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAuditoriaForms.resx">
+      <DependentUpon>ReporteAuditoriaForms.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
