@@ -54,6 +54,8 @@ namespace Proyecto_Boutique
             ObtenerRegistrosUsuarios();
             ObtenerRegistrosProductos();
             ObtenerMovimientos();
+
+            credenciales();
         }
 
         public void ObtenerRegistrosUsuarios()
@@ -656,6 +658,11 @@ namespace Proyecto_Boutique
         {
             ReporteAuditoriaForms frm = new ReporteAuditoriaForms();
             frm.Show();
+        }
+
+        private void credenciales()
+        {
+            btn_Eliminar.Visible = false;
         }
     }
 }
