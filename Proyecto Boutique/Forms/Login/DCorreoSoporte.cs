@@ -10,9 +10,9 @@ namespace Proyecto_Boutique
     {
         public DCorreoSoporte()
         {
-            remitenteCorreo = "l22211934@tectijuana.edu.mx";
-            password = "bqdz hsew zwnj cjxy ";
-            host = "smtp.tectijuana.edu.mx";
+            remitenteCorreo = "minwcraft78@gmail.com";
+            password = "xfmv rzxg slvd qrdw";
+            host = "smtp.gmail.com";
             port = 587;
             ssl = true;
             initializeSmtpClient();

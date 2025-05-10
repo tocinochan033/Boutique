@@ -86,6 +86,7 @@
             this.label1.Size = new System.Drawing.Size(185, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "¿Has olvidado tu contraseña?";
+            this.label1.DoubleClick += new System.EventHandler(this.label1_DoubleClick);
             // 
             // Inicio_Sesion
             // 

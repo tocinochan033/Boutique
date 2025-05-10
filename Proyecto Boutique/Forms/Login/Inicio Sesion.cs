@@ -17,8 +17,9 @@ namespace Proyecto_Boutique
         public Inicio_Sesion()
         {
             InitializeComponent();
-            db.open();
+            db.Open();
         }
+
 
         private void btn_IniciarSesion_Click(object sender, EventArgs e)
         {
@@ -33,17 +34,22 @@ namespace Proyecto_Boutique
 
             try
             {
-                db.open();
-                string query = "SELECT COUNT(*) FROM USUARIO WHERE Nombre = @usuario AND Contrasena = @contrasena";
+                db.Open();
+
+                string query = "SELECT ROL FROM USUARIO WHERE Nombre = @usuario AND Contrasena = @contrasena";
                 SqlCommand cmd = new SqlCommand(query, db.getConnection());
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@contrasena", contrasena);
 
-                int count = (int)cmd.ExecuteScalar();
+                object result = cmd.ExecuteScalar();
 
-                if (count > 0)
+                if (result != null)
                 {
-                    MessageBox.Show("Inicio de sesión exitoso.");
+                    int idRol = Convert.ToInt32(result); // Aquí obtenemos el ID del rol (1 o 2)
+                    SessionData.RolId = idRol;
+
+                    MessageBox.Show("Inicio de sesión exitoso. Rol ID: " + idRol);
+
                     this.Hide();
                     Principal_forms principal = new Principal_forms();
                     principal.Show();
@@ -52,11 +58,20 @@ namespace Proyecto_Boutique
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos.");
                 }
+
+                db.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al iniciar sesión: " + ex.Message);
             }
+        }
+
+        private void label1_DoubleClick(object sender, EventArgs e)
+        {
+            Recuperar_Contrasena recuperar = new Recuperar_Contrasena();
+            recuperar.Show();
+            this.Hide();
         }
     }
 }

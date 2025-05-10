@@ -39,12 +39,16 @@
             this.cmb_Rol = new System.Windows.Forms.ComboBox();
             this.btn_CrearUsuario = new System.Windows.Forms.Button();
             this.btn_Regresar = new System.Windows.Forms.Button();
+            this.lbl_UsuarioID = new System.Windows.Forms.Label();
+            this.txtbox_IdUsuario = new System.Windows.Forms.TextBox();
+            this.lbl_Correo = new System.Windows.Forms.Label();
+            this.txtbox_Correo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbl_CrearUsuario
             // 
             this.lbl_CrearUsuario.AutoSize = true;
-            this.lbl_CrearUsuario.Location = new System.Drawing.Point(516, 130);
+            this.lbl_CrearUsuario.Location = new System.Drawing.Point(512, 93);
             this.lbl_CrearUsuario.Name = "lbl_CrearUsuario";
             this.lbl_CrearUsuario.Size = new System.Drawing.Size(90, 16);
             this.lbl_CrearUsuario.TabIndex = 18;
@@ -124,6 +128,7 @@
             this.btn_CrearUsuario.TabIndex = 29;
             this.btn_CrearUsuario.Text = "Crear Usuario";
             this.btn_CrearUsuario.UseVisualStyleBackColor = true;
+            this.btn_CrearUsuario.Click += new System.EventHandler(this.btn_CrearUsuario_Click);
             // 
             // btn_Regresar
             // 
@@ -133,12 +138,49 @@
             this.btn_Regresar.TabIndex = 28;
             this.btn_Regresar.Text = "Regresar";
             this.btn_Regresar.UseVisualStyleBackColor = true;
+            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
+            // 
+            // lbl_UsuarioID
+            // 
+            this.lbl_UsuarioID.AutoSize = true;
+            this.lbl_UsuarioID.Location = new System.Drawing.Point(350, 130);
+            this.lbl_UsuarioID.Name = "lbl_UsuarioID";
+            this.lbl_UsuarioID.Size = new System.Drawing.Size(92, 16);
+            this.lbl_UsuarioID.TabIndex = 31;
+            this.lbl_UsuarioID.Text = "ID del Usuario";
+            // 
+            // txtbox_IdUsuario
+            // 
+            this.txtbox_IdUsuario.Location = new System.Drawing.Point(353, 149);
+            this.txtbox_IdUsuario.Name = "txtbox_IdUsuario";
+            this.txtbox_IdUsuario.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_IdUsuario.TabIndex = 30;
+            // 
+            // lbl_Correo
+            // 
+            this.lbl_Correo.AutoSize = true;
+            this.lbl_Correo.Location = new System.Drawing.Point(350, 465);
+            this.lbl_Correo.Name = "lbl_Correo";
+            this.lbl_Correo.Size = new System.Drawing.Size(48, 16);
+            this.lbl_Correo.TabIndex = 33;
+            this.lbl_Correo.Text = "Correo";
+            // 
+            // txtbox_Correo
+            // 
+            this.txtbox_Correo.Location = new System.Drawing.Point(353, 484);
+            this.txtbox_Correo.Name = "txtbox_Correo";
+            this.txtbox_Correo.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_Correo.TabIndex = 32;
             // 
             // CrearUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 685);
+            this.Controls.Add(this.lbl_Correo);
+            this.Controls.Add(this.txtbox_Correo);
+            this.Controls.Add(this.lbl_UsuarioID);
+            this.Controls.Add(this.txtbox_IdUsuario);
             this.Controls.Add(this.btn_CrearUsuario);
             this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.cmb_Rol);
@@ -169,5 +211,9 @@
         private System.Windows.Forms.ComboBox cmb_Rol;
         private System.Windows.Forms.Button btn_CrearUsuario;
         private System.Windows.Forms.Button btn_Regresar;
+        private System.Windows.Forms.Label lbl_UsuarioID;
+        private System.Windows.Forms.TextBox txtbox_IdUsuario;
+        private System.Windows.Forms.Label lbl_Correo;
+        private System.Windows.Forms.TextBox txtbox_Correo;
     }
 }
