@@ -38,7 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 85);
+            this.label1.Location = new System.Drawing.Point(338, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 16);
             this.label1.TabIndex = 0;
@@ -46,24 +46,25 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(220, 122);
+            this.txtUsuario.Location = new System.Drawing.Point(190, 44);
+            this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(172, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(394, 22);
             this.txtUsuario.TabIndex = 1;
             // 
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(44, 265);
+            this.lblResult.Location = new System.Drawing.Point(50, 285);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(0, 16);
             this.lblResult.TabIndex = 2;
             // 
             // btn_enviar
             // 
-            this.btn_enviar.Location = new System.Drawing.Point(272, 190);
+            this.btn_enviar.Location = new System.Drawing.Point(190, 190);
             this.btn_enviar.Name = "btn_enviar";
-            this.btn_enviar.Size = new System.Drawing.Size(99, 35);
+            this.btn_enviar.Size = new System.Drawing.Size(189, 37);
             this.btn_enviar.TabIndex = 3;
             this.btn_enviar.Text = "Enviar";
             this.btn_enviar.UseVisualStyleBackColor = true;
@@ -71,9 +72,9 @@
             // 
             // regresar_btn
             // 
-            this.regresar_btn.Location = new System.Drawing.Point(389, 190);
+            this.regresar_btn.Location = new System.Drawing.Point(395, 190);
             this.regresar_btn.Name = "regresar_btn";
-            this.regresar_btn.Size = new System.Drawing.Size(99, 35);
+            this.regresar_btn.Size = new System.Drawing.Size(189, 37);
             this.regresar_btn.TabIndex = 4;
             this.regresar_btn.Text = "Regresar";
             this.regresar_btn.UseVisualStyleBackColor = true;

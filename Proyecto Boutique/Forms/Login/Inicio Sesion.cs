@@ -20,6 +20,16 @@ namespace Proyecto_Boutique
             db.Open();
         }
 
+        //Metodo para impedir que se pueda pegar texto en los campos
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if(keyData == (Keys.Control | Keys.V))
+            {
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
         private void btn_IniciarSesion_Click(object sender, EventArgs e)
         {

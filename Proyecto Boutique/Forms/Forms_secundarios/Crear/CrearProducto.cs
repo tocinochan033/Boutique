@@ -18,6 +18,17 @@ namespace Proyecto_Boutique
         //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
         databaseConnection conexion = new databaseConnection();
 
+        //Metodo para impedir que se pueda pegar texto en los campos
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.V))
+            {
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         public CrearProducto()
         {
             InitializeComponent();
@@ -25,9 +36,16 @@ namespace Proyecto_Boutique
 
         private void CrearProducto_Load(object sender, EventArgs e)
         {
-            RefrescarCampoCategoria();
-            RefrescarCampoColor();
-            RefrescarCampoMarca();
+            try
+            {
+                RefrescarCampoCategoria();
+                RefrescarCampoColor();
+                RefrescarCampoMarca();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void actualizacion_TimeP_ValueChanged(object sender, EventArgs e)
@@ -187,73 +205,190 @@ namespace Proyecto_Boutique
 
         public void RefrescarCampoCategoria()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_Categoria.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from CATEGORIA WHERE Visibilidad = 1", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_Categoria.Items.Add(dr.GetString(1));
-            }
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_Categoria.Items.Clear();
 
-            //Se cierra la conexion
-            conexion.Close();
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from CATEGORIA WHERE Visibilidad = 1", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_Categoria.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
         public void RefrescarCampoColor()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_Color.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from COLOR WHERE Visibilidad = 1", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_Color.Items.Add(dr.GetString(1));
-            }
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_Color.Items.Clear();
 
-            //Se cierra la conexion
-            conexion.Close();
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from COLOR WHERE Visibilidad = 1", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_Color.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void RefrescarCampoMarca()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_Marca.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from MARCA WHERE Visibilidad = 1", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_Marca.Items.Add(dr.GetString(1));
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_Marca.Items.Clear();
+
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from MARCA WHERE Visibilidad = 1", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_Marca.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
+        }
+
+        private void txtbox_IDProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
             }
 
-            //Se cierra la conexion
-            conexion.Close();
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_Precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            //Permitir solo un punto
+            if (e.KeyChar == '.' && (sender as TextBox).Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_Cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_PuntoReorden_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_MaximoStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_MinimoStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

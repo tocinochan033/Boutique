@@ -65,6 +65,7 @@
             this.txtbox_IDCausa.Name = "txtbox_IDCausa";
             this.txtbox_IDCausa.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDCausa.TabIndex = 84;
+            this.txtbox_IDCausa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDCausa_KeyPress);
             // 
             // DataGrid_Causas
             // 
@@ -108,6 +109,7 @@
             // txtbox_NombreCausa
             // 
             this.txtbox_NombreCausa.Location = new System.Drawing.Point(49, 242);
+            this.txtbox_NombreCausa.MaxLength = 50;
             this.txtbox_NombreCausa.Name = "txtbox_NombreCausa";
             this.txtbox_NombreCausa.Size = new System.Drawing.Size(407, 22);
             this.txtbox_NombreCausa.TabIndex = 79;

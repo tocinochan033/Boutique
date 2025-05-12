@@ -1,4 +1,6 @@
-﻿using Proyecto_Boutique.Forms.Forms_secundarios.Crear;
+﻿using iTextSharp.text.pdf;
+using Proyecto_Boutique.Forms.Forms_secundarios.Crear;
+using Proyecto_Boutique.Mostrar_Detalles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +9,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -31,6 +34,17 @@ namespace Proyecto_Boutique
         //Declaracion de variable auxiliar para la busqueda en datagrid
         string dato = "";
 
+        //Metodo para impedir que se pueda pegar texto en los campos
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.V))
+            {
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         public Principal_forms()
         {
             InitializeComponent();
@@ -51,72 +65,104 @@ namespace Proyecto_Boutique
 
         private void Principal_forms_Load(object sender, EventArgs e)
         {
-            //Se mandan a llamar los metodos hechos para obtener los datos de las respectivas tablas de cada apartado
-            ObtenerRegistrosUsuarios();
-            ObtenerRegistrosProductos();
-            ObtenerMovimientos();
+            try
+            {
 
-            credenciales();
+                //Se mandan a llamar los metodos hechos para obtener los datos de las respectivas tablas de cada apartado
+                ObtenerRegistrosUsuarios();
+                VerificarFilasUsuarios();
+                ObtenerRegistrosProductos();
+                VerificarFilasProductos();
+                ObtenerMovimientos();
+                VerificarFilasMovimientos();
+
+                credenciales();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void ObtenerRegistrosUsuarios()
         {
-            conexion.Open();
-            //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-            String ConsultaUsuarios = "Select * from USUARIO";
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultaUsuarios = "Select * from USUARIO";
 
-            //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
 
-            //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
-            DataTable dtUSUARIO = new DataTable();
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtUSUARIO = new DataTable();
 
-            //Se pasan los datos del datatable al objeto adaptador
-            adaptador.Fill(dtUSUARIO);
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtUSUARIO);
 
-            //Se envian los parametros al datagridview de usuarios
-            DataGrid_Usuarios.DataSource = dtUSUARIO;
-            conexion.Close();
+                //Se envian los parametros al datagridview de usuarios
+                DataGrid_Usuarios.DataSource = dtUSUARIO;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void ObtenerRegistrosProductos()
         {
-            conexion.Open();
-            //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-            String ConsultarProductos = "Select * from PRODUCTOS";
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultarProductos = "Select * from PRODUCTOS";
 
-            //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultarProductos, conexion.getConnection());
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultarProductos, conexion.getConnection());
 
-            //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
-            DataTable dtPRODUCTOS = new DataTable();
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtPRODUCTOS = new DataTable();
 
-            //Se pasan los datos del datatable al objeto adaptador
-            adaptador.Fill(dtPRODUCTOS);
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtPRODUCTOS);
 
-            //Se envian los parametros al datagridview de usuarios
-            DataGrid_Productos.DataSource = dtPRODUCTOS;
-            conexion.Close();
+                //Se envian los parametros al datagridview de usuarios
+                DataGrid_Productos.DataSource = dtPRODUCTOS;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void ObtenerMovimientos()
         {
-            conexion.Open();
-            //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-            String ConsultaMovimientos = "Select * from MOVIMIENTOS";
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultaMovimientos = "Select * from MOVIMIENTOS";
 
-            //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaMovimientos, conexion.getConnection());
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultaMovimientos, conexion.getConnection());
 
-            //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
-            DataTable dtMOVIMIENTOS = new DataTable();
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtMOVIMIENTOS = new DataTable();
 
-            //Se pasan los datos del datatable al objeto adaptador
-            adaptador.Fill(dtMOVIMIENTOS);
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtMOVIMIENTOS);
 
-            //Se envian los parametros al datagridview de usuarios
-            DataGrid_Movimientos.DataSource = dtMOVIMIENTOS;
-            conexion.Close();
+                //Se envian los parametros al datagridview de usuarios
+                DataGrid_Movimientos.DataSource = dtMOVIMIENTOS;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
 
@@ -124,19 +170,26 @@ namespace Proyecto_Boutique
 
         private void btn_CrearUsuario_Click(object sender, EventArgs e)
         {
-            //Estructura condicional para que solo se pueda abrir una ventana para crear usuario
-            if(ventanaCrearUsuario == null)
+            try
             {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaCrearUsuario = new CrearUsuario();
+                //Estructura condicional para que solo se pueda abrir una ventana para crear usuario
+                if (ventanaCrearUsuario == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaCrearUsuario = new CrearUsuario();
 
-                //Comando auxiliar para el proceso
-                ventanaCrearUsuario.FormClosed += new FormClosedEventHandler (CierreVentanaCrearUsuario);
+                    //Comando auxiliar para el proceso
+                    ventanaCrearUsuario.FormClosed += new FormClosedEventHandler(CierreVentanaCrearUsuario);
 
-                //Se muestra la ventana correspondiente
-                ventanaCrearUsuario.Show();
+                    //Se muestra la ventana correspondiente
+                    ventanaCrearUsuario.Show();
 
-                this.Close();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
 
         }
@@ -148,19 +201,26 @@ namespace Proyecto_Boutique
 
         private void btn_CrearProducto_Click(object sender, EventArgs e)
         {
-            //Estructura condicional para que solo se pueda abrir una ventana para crear usuario
-            if (ventanaCrearProducto == null)
+            try
             {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaCrearProducto = new CrearProducto();
+                //Estructura condicional para que solo se pueda abrir una ventana para crear usuario
+                if (ventanaCrearProducto == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaCrearProducto = new CrearProducto();
 
-                //Comando auxiliar para el proceso
-                ventanaCrearProducto.FormClosed += new FormClosedEventHandler(CierreVentanaCrearProducto);
+                    //Comando auxiliar para el proceso
+                    ventanaCrearProducto.FormClosed += new FormClosedEventHandler(CierreVentanaCrearProducto);
 
-                //Se muestra la ventana correspondiente
-                ventanaCrearProducto.Show();
+                    //Se muestra la ventana correspondiente
+                    ventanaCrearProducto.Show();
 
-                this.Close();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
         }
 
@@ -171,18 +231,25 @@ namespace Proyecto_Boutique
 
         private void btn_CrearMovimiento_Click(object sender, EventArgs e)
         {
-            if (ventanaCrearMovimiento == null)
+            try
             {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaCrearMovimiento = new CrearMovimiento();
+                if (ventanaCrearMovimiento == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaCrearMovimiento = new CrearMovimiento();
 
-                //Comando auxiliar para el proceso
-                ventanaCrearMovimiento.FormClosed += new FormClosedEventHandler(CierreVentanaCrearMovimiento);
+                    //Comando auxiliar para el proceso
+                    ventanaCrearMovimiento.FormClosed += new FormClosedEventHandler(CierreVentanaCrearMovimiento);
 
-                //Se muestra la ventana correspondiente
-                ventanaCrearMovimiento.Show();
+                    //Se muestra la ventana correspondiente
+                    ventanaCrearMovimiento.Show();
 
-                this.Close();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
         }
 
@@ -193,18 +260,25 @@ namespace Proyecto_Boutique
 
         private void btn_CrearCategorias_Click(object sender, EventArgs e)
         {
-            if (ventanaCrearCategoria == null)
+            try
             {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaCrearCategoria = new CrearCategoria();
+                if (ventanaCrearCategoria == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaCrearCategoria = new CrearCategoria();
 
-                //Comando auxiliar para el proceso
-                ventanaCrearCategoria.FormClosed += new FormClosedEventHandler(CierreVentanaCrearCategoria);
+                    //Comando auxiliar para el proceso
+                    ventanaCrearCategoria.FormClosed += new FormClosedEventHandler(CierreVentanaCrearCategoria);
 
-                //Se muestra la ventana correspondiente
-                ventanaCrearCategoria.Show();
+                    //Se muestra la ventana correspondiente
+                    ventanaCrearCategoria.Show();
 
-                this.Close();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
         }
 
@@ -215,18 +289,25 @@ namespace Proyecto_Boutique
 
         private void btn_CrearMarca_Click(object sender, EventArgs e)
         {
-            if (ventanaCrearMarca == null)
+            try
             {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaCrearMarca = new CrearMarca();
+                if (ventanaCrearMarca == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaCrearMarca = new CrearMarca();
 
-                //Comando auxiliar para el proceso
-                ventanaCrearMarca.FormClosed += new FormClosedEventHandler(CierreVentanaCrearMarca);
+                    //Comando auxiliar para el proceso
+                    ventanaCrearMarca.FormClosed += new FormClosedEventHandler(CierreVentanaCrearMarca);
 
-                //Se muestra la ventana correspondiente
-                ventanaCrearMarca.Show();
-               
-                this.Close();
+                    //Se muestra la ventana correspondiente
+                    ventanaCrearMarca.Show();
+
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
         }
 
@@ -242,18 +323,25 @@ namespace Proyecto_Boutique
 
         private void Btn_RegistrarColor_Click(object sender, EventArgs e)
         {
-            if (ventanaCrearColor == null)
+            try
             {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaCrearColor = new CrearColores();
+                if (ventanaCrearColor == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaCrearColor = new CrearColores();
 
-                //Comando auxiliar para el proceso
-                ventanaCrearColor.FormClosed += new FormClosedEventHandler(CierreVentanaCrearColor);
+                    //Comando auxiliar para el proceso
+                    ventanaCrearColor.FormClosed += new FormClosedEventHandler(CierreVentanaCrearColor);
 
-                //Se muestra la ventana correspondiente
-                ventanaCrearColor.Show();
+                    //Se muestra la ventana correspondiente
+                    ventanaCrearColor.Show();
 
-                this.Close();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
         }
 
@@ -264,18 +352,25 @@ namespace Proyecto_Boutique
 
         private void btn_ModificarProducto_Click(object sender, EventArgs e)
         {
-            if (ventanaEditarProducto == null)
+            try
             {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaEditarProducto = new EditarProducto();
+                if (ventanaEditarProducto == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaEditarProducto = new EditarProducto();
 
-                //Comando auxiliar para el proceso
-                ventanaEditarProducto.FormClosed += new FormClosedEventHandler(CierreVentanaModificarProducto);
+                    //Comando auxiliar para el proceso
+                    ventanaEditarProducto.FormClosed += new FormClosedEventHandler(CierreVentanaModificarProducto);
 
-                //Se muestra la ventana correspondiente
-                ventanaEditarProducto.Show();
+                    //Se muestra la ventana correspondiente
+                    ventanaEditarProducto.Show();
 
-                this.Close();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
         }
 
@@ -286,18 +381,27 @@ namespace Proyecto_Boutique
 
         private void btn_Causas_Click(object sender, EventArgs e)
         {
-            if (ventanaCrearCausa == null)
+            try
             {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaCrearCausa = new CrearCausa();
 
-                //Comando auxiliar para el proceso
-                ventanaCrearCausa.FormClosed += new FormClosedEventHandler(CierreVentanaCrearCausa);
+                if (ventanaCrearCausa == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaCrearCausa = new CrearCausa();
 
-                //Se muestra la ventana correspondiente
-                ventanaCrearCausa.Show();
+                    //Comando auxiliar para el proceso
+                    ventanaCrearCausa.FormClosed += new FormClosedEventHandler(CierreVentanaCrearCausa);
 
-                this.Close();
+                    //Se muestra la ventana correspondiente
+                    ventanaCrearCausa.Show();
+
+                    this.Close();
+                }
+            }
+            
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
         }
 
@@ -306,89 +410,133 @@ namespace Proyecto_Boutique
             ventanaCrearCausa = null;
         }
 
+        private void btn_ModificarUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Estructura condicional para que solo se pueda abrir una ventana para crear usuario
+                if (ventanaEditarUsuario == null)
+                {
+                    //Se crea un objeto de la ventana CrearUsuario
+                    ventanaEditarUsuario = new EditarUsuario();
+
+                    //Comando auxiliar para el proceso
+                    ventanaEditarUsuario.FormClosed += new FormClosedEventHandler(CierreVentanaEditarUsuarios);
+
+                    //Se muestra la ventana correspondiente
+                    ventanaEditarUsuario.Show();
+
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
+
+
+        }
+
         //====================================================================================================================================================================================
 
 
         //Procedimiento para implementar una busqueda dinamica en la barra de busqueda (El mismo tiempo que se escribe se filtra)
         private void txtbox_Buscar_TextChanged(object sender, EventArgs e)
         {
-            if(rdbtn_Nombre.Checked == true)
+            try
             {
-                //En este caso se utiliza la consulta "LIKE" para mostrar los valores que coinciden con los caracteres escritos
-                (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre LIKE '{0}%' OR Nombre LIKE '%{0}%'", txtbox_BuscarUsuario.Text);
-            }
-            else if(rdbtn_ID.Checked == true)
-            {
-                // Para campos numéricos, no usar LIKE sino comparación directa
-                if (int.TryParse(txtbox_BuscarUsuario.Text, out int id))
+                if (rdbtn_Nombre.Checked == true)
                 {
-                    (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = $"ID_Usuario = {txtbox_BuscarUsuario.Text}";
+                    //En este caso se utiliza la consulta "LIKE" para mostrar los valores que coinciden con los caracteres escritos
+                    (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = string.Format("Nombre LIKE '{0}%' OR Nombre LIKE '%{0}%'", txtbox_BuscarUsuario.Text);
+                }
+                else if (rdbtn_ID.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BuscarUsuario.Text, out int id))
+                    {
+                        (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = $"ID_Usuario = {txtbox_BuscarUsuario.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else if (rdbtn_Rol.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BuscarUsuario.Text, out int id))
+                    {
+                        (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = $"Rol = {txtbox_BuscarUsuario.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
+                }
+                else if (rdbtn_EstadoVisibilidad.Checked == true)
+                {
+                    // Para campos numéricos, no usar LIKE sino comparación directa
+                    if (int.TryParse(txtbox_BuscarUsuario.Text, out int id))
+                    {
+                        (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = $"Visibilidad = {txtbox_BuscarUsuario.Text}";
+                    }
+                    else
+                    {
+                        // Si no es número válido, limpiar el filtro
+                        (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = "";
+                    }
                 }
                 else
                 {
-                    // Si no es número válido, limpiar el filtro
-                    (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = "";
+                    MessageBox.Show("Favor de elegir una opcion de filtrado");
                 }
             }
-            else if (rdbtn_Rol.Checked == true)
+            catch
             {
-                // Para campos numéricos, no usar LIKE sino comparación directa
-                if (int.TryParse(txtbox_BuscarUsuario.Text, out int id))
-                {
-                    (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = $"Rol = {txtbox_BuscarUsuario.Text}";
-                }
-                else
-                {
-                    // Si no es número válido, limpiar el filtro
-                    (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = "";
-                }
-            }
-            else if (rdbtn_EstadoVisibilidad.Checked == true)
-            {
-                // Para campos numéricos, no usar LIKE sino comparación directa
-                if (int.TryParse(txtbox_BuscarUsuario.Text, out int id))
-                {
-                    (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = $"Visibilidad = {txtbox_BuscarUsuario.Text}";
-                }
-                else
-                {
-                    // Si no es número válido, limpiar el filtro
-                    (DataGrid_Usuarios.DataSource as DataTable).DefaultView.RowFilter = "";
-                }
-            }
-            else
-            {
-                MessageBox.Show("Favor de elegir una opcion de filtrado");
+                MessageBox.Show("Ha ocurrido un problema inesperado");
             }
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
+            //Se declara una variable tipo "DialogResult para capturar la resultasta a la ventana de dialogo de confirmacion
+            DialogResult dg;
+
             try
             {
                 if (DataGrid_Usuarios.SelectedRows.Count == 1)
                 {
-                    conexion.Open();
+                    dg = MessageBox.Show("Desea eiminar el elemento seleccionado?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    int id = Convert.ToInt32(DataGrid_Usuarios.CurrentRow.Cells["ID_Usuario"].Value);
-
-                    string query = $"UPDATE USUARIO SET Visibilidad = 0 WHERE ID_Usuario = {id}";
-                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
-
-                    int resultado = cmd.ExecuteNonQuery();
-
-                    if (resultado > 0)
+                    //Se evalua para saber si se quiere proceder con la operacion, de ser el caso que se seleccione "Aceptar" realiza la eliminacion
+                    if(dg == DialogResult.OK)
                     {
-                        MessageBox.Show("Eliminacion exitosa");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro al eliminar");
-                    }
+                        conexion.Open();
 
-                    conexion.Close();
+                        int id = Convert.ToInt32(DataGrid_Usuarios.CurrentRow.Cells["ID_Usuario"].Value);
 
-                    ObtenerRegistrosUsuarios();
+                        string query = $"UPDATE USUARIO SET Visibilidad = 0 WHERE ID_Usuario = {id}";
+                        SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
+
+                        int resultado = cmd.ExecuteNonQuery();
+
+                        if (resultado > 0)
+                        {
+                            MessageBox.Show("Eliminacion exitosa");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro al eliminar");
+                        }
+
+                        conexion.Close();
+
+                        ObtenerRegistrosUsuarios();
+                    }
+                    
                 }
                 else
                 {
@@ -404,52 +552,44 @@ namespace Proyecto_Boutique
             
         }
 
-        private void btn_ModificarUsuario_Click(object sender, EventArgs e)
-        {
-            //Estructura condicional para que solo se pueda abrir una ventana para crear usuario
-            if (ventanaEditarUsuario == null)
-            {
-                //Se crea un objeto de la ventana CrearUsuario
-                ventanaEditarUsuario = new EditarUsuario();
-
-                //Comando auxiliar para el proceso
-                ventanaEditarUsuario.FormClosed += new FormClosedEventHandler(CierreVentanaEditarUsuarios);
-
-                //Se muestra la ventana correspondiente
-                ventanaEditarUsuario.Show();
-
-                this.Close();
-            }
         
-        }
 
         private void btn_EliminarProducto_Click(object sender, EventArgs e)
         {
+            //Se declara una variable tipo "DialogResult para capturar la resultasta a la ventana de dialogo de confirmacion
+            DialogResult dg;
+
             try
             {
                 if (DataGrid_Productos.SelectedRows.Count == 1)
                 {
-                    conexion.Open();
+                    dg = MessageBox.Show("Desea eiminar el elemento seleccionado?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    int id = Convert.ToInt32(DataGrid_Productos.CurrentRow.Cells["ID_Producto"].Value);
-
-                    string query = $"UPDATE PRODUCTOS SET Visibilidad = 0 WHERE ID_Producto = {id}";
-                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
-
-                    int resultado = cmd.ExecuteNonQuery();
-
-                    if (resultado > 0)
+                    //Se evalua para saber si se quiere proceder con la operacion, de ser el caso que se seleccione "Aceptar" realiza la eliminacion
+                    if (dg == DialogResult.OK)
                     {
-                        MessageBox.Show("Eliminacion exitosa");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al eliminar");
-                    }
+                        conexion.Open();
 
-                    conexion.Close();
+                        int id = Convert.ToInt32(DataGrid_Productos.CurrentRow.Cells["ID_Producto"].Value);
 
-                    ObtenerRegistrosProductos();
+                        string query = $"UPDATE PRODUCTOS SET Visibilidad = 0 WHERE ID_Producto = {id}";
+                        SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
+
+                        int resultado = cmd.ExecuteNonQuery();
+
+                        if (resultado > 0)
+                        {
+                            MessageBox.Show("Eliminacion exitosa");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar");
+                        }
+
+                        conexion.Close();
+
+                        ObtenerRegistrosProductos();
+                    }
                 }
                 else
                 {
@@ -538,31 +678,40 @@ namespace Proyecto_Boutique
 
         private void btn_EliminarMovimientos_Click(object sender, EventArgs e)
         {
+            //Se declara una variable tipo "DialogResult para capturar la resultasta a la ventana de dialogo de confirmacion
+            DialogResult dg;
+
             try
             {
                 if (DataGrid_Movimientos.SelectedRows.Count == 1)
                 {
-                    conexion.Open();
+                    dg = MessageBox.Show("Desea eiminar el elemento seleccionado?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    int id = Convert.ToInt32(DataGrid_Movimientos.CurrentRow.Cells["ID_Movimiento"].Value);
-
-                    string query = $"DELETE FROM MOVIMIENTOS WHERE ID_Movimiento = {id}";
-                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
-
-                    int resultado = cmd.ExecuteNonQuery();
-
-                    if (resultado > 0)
+                    //Se evalua para saber si se quiere proceder con la operacion, de ser el caso que se seleccione "Aceptar" realiza la eliminacion
+                    if (dg == DialogResult.OK)
                     {
-                        MessageBox.Show("Eliminacion exitosa");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al eliminar");
-                    }
+                        conexion.Open();
 
-                    conexion.Close();
+                        int id = Convert.ToInt32(DataGrid_Movimientos.CurrentRow.Cells["ID_Movimiento"].Value);
 
-                    ObtenerMovimientos();
+                        string query = $"DELETE FROM MOVIMIENTOS WHERE ID_Movimiento = {id}";
+                        SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
+
+                        int resultado = cmd.ExecuteNonQuery();
+
+                        if (resultado > 0)
+                        {
+                            MessageBox.Show("Eliminacion exitosa");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar");
+                        }
+
+                        conexion.Close();
+
+                        ObtenerMovimientos();
+                    }
                 }
                 else
                 {
@@ -578,8 +727,8 @@ namespace Proyecto_Boutique
 
         private void txtbox_BusquedaMovimiento_TextChanged(object sender, EventArgs e)
         {
-            /*try
-            {*/
+            try
+            {
                 if (rdbtn_IDMovimiento.Checked == true)
                 {
                     // Para campos numéricos, no usar LIKE sino comparación directa
@@ -636,11 +785,11 @@ namespace Proyecto_Boutique
                 {
                     MessageBox.Show("Favor de elegir una opcion de filtrado");
                 }
-          /*  }
+            }
             catch
             {
                 MessageBox.Show("Ha ocurrido un error inesperado");
-            }*/
+            }
         }
 
         private void btn_RepStock_Click(object sender, EventArgs e)
@@ -676,6 +825,238 @@ namespace Proyecto_Boutique
                 btn_EliminarMovimientos.Visible = false;
             }
             
+        }
+
+        private void btn_MostrarDetalles_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DataGrid_Usuarios.SelectedRows.Count == 1)
+                {
+                    int id = int.Parse(DataGrid_Usuarios.CurrentRow.Cells[0].Value.ToString());
+                    string nombre = DataGrid_Usuarios.CurrentRow.Cells[1].Value.ToString();
+                    string contrasena = DataGrid_Usuarios.CurrentRow.Cells[2].Value.ToString();
+                    int rol = int.Parse(DataGrid_Usuarios.CurrentRow.Cells[3].Value.ToString());
+                    string correo = DataGrid_Usuarios.CurrentRow.Cells[4].Value.ToString();
+
+                    MostrarDetallesUsuarios mostrarDetallesUsuarios = new MostrarDetallesUsuarios(id, nombre, contrasena, rol, correo);
+
+                    mostrarDetallesUsuarios.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Favor de seleccionar algun registro");
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
+            }
+        }
+
+        private void btn_MostrarDetallesProductos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DataGrid_Productos.SelectedRows.Count == 1)
+                {
+
+                    int IDelemento = Convert.ToInt32(DataGrid_Productos.CurrentRow.Cells["ID_Producto"].Value);
+                    conexion.Open();
+
+                    string query = $"SELECT Marca FROM PRODUCTOS WHERE ID_Producto = {IDelemento}";
+                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
+
+                    int resultadoMarca = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    conexion.Close();
+
+                    conexion.Open();
+
+                    string query2 = $"SELECT Color FROM PRODUCTOS WHERE ID_Producto = {IDelemento}";
+                    SqlCommand cmd2 = new SqlCommand(query2, conexion.getConnection());
+
+                    int resultadoColor = Convert.ToInt32(cmd2.ExecuteScalar());
+
+                    conexion.Close();
+
+                    conexion.Open();
+
+                    string query3 = $"SELECT Categoria FROM PRODUCTOS WHERE ID_Producto = {IDelemento}";
+                    SqlCommand cmd3 = new SqlCommand(query3, conexion.getConnection());
+
+                    int resultadoCategoria = Convert.ToInt32(cmd3.ExecuteScalar());
+
+                    conexion.Close();
+
+                    int id = int.Parse(DataGrid_Productos.CurrentRow.Cells[0].Value.ToString());
+                    string nombre = DataGrid_Productos.CurrentRow.Cells[1].Value.ToString();
+
+                    string descripcion = DataGrid_Productos.CurrentRow.Cells[3].Value.ToString();
+                    int categoria = int.Parse(DataGrid_Productos.CurrentRow.Cells[4].Value.ToString());
+                    float precio = float.Parse(DataGrid_Productos.CurrentRow.Cells[5].Value.ToString());
+                    int cantidad = int.Parse(DataGrid_Productos.CurrentRow.Cells[6].Value.ToString());
+
+                    string talla = DataGrid_Productos.CurrentRow.Cells[8].Value.ToString();
+                    string fecha = DataGrid_Productos.CurrentRow.Cells[9].Value.ToString();
+                    int puntoreorden = int.Parse(DataGrid_Productos.CurrentRow.Cells[10].Value.ToString());
+                    int maximo = int.Parse(DataGrid_Productos.CurrentRow.Cells[11].Value.ToString());
+                    int minimo = int.Parse(DataGrid_Productos.CurrentRow.Cells[12].Value.ToString());
+
+                    MostrarDetallesProductos mostrarDetallesProductos = new MostrarDetallesProductos(id, nombre, resultadoMarca, descripcion, resultadoCategoria, precio, cantidad, resultadoColor, talla, fecha, puntoreorden, maximo, minimo);
+
+                    mostrarDetallesProductos.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Favor de seleccionar algun registro");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
+            }
+        }
+
+        private void btn_MostrarDetallesMovimientos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DataGrid_Movimientos.SelectedRows.Count == 1)
+                {
+
+                    int IDelemento = Convert.ToInt32(DataGrid_Movimientos.CurrentRow.Cells["ID_Movimiento"].Value);
+
+                    conexion.Open();
+
+                    string query = $"SELECT Usuario FROM MOVIMIENTOS WHERE ID_Movimiento = {IDelemento}";
+                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
+
+                    int resultadoUsuario = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    conexion.Close();
+
+                    conexion.Open();
+
+                    string query2 = $"SELECT Producto FROM MOVIMIENTOS WHERE ID_Movimiento = {IDelemento}";
+                    SqlCommand cmd2 = new SqlCommand(query2, conexion.getConnection());
+
+                    int resultadoProducto = Convert.ToInt32(cmd2.ExecuteScalar());
+
+                    conexion.Close();
+
+                    conexion.Open();
+
+                    string query3 = $"SELECT TipoMovimiento FROM MOVIMIENTOS WHERE ID_Movimiento = {IDelemento}";
+                    SqlCommand cmd3 = new SqlCommand(query3, conexion.getConnection());
+
+                    int resultadoTipoMovimiento = Convert.ToInt32(cmd3.ExecuteScalar());
+
+                    conexion.Close();
+
+                    conexion.Open();
+
+                    string query4 = $"SELECT Causa FROM MOVIMIENTOS WHERE ID_Movimiento = {IDelemento}";
+                    SqlCommand cmd4 = new SqlCommand(query4, conexion.getConnection());
+
+                    int resultadoCausa = Convert.ToInt32(cmd4.ExecuteScalar());
+
+                    conexion.Close();
+
+                    int id = int.Parse(DataGrid_Movimientos.CurrentRow.Cells[0].Value.ToString());
+                    int cantidad = int.Parse(DataGrid_Movimientos.CurrentRow.Cells[4].Value.ToString());
+                    string fecha = DataGrid_Movimientos.CurrentRow.Cells[6].Value.ToString();
+
+
+
+                    MostrarDetallesMovimientos mostrarDetallesMovimientos = new MostrarDetallesMovimientos(id, resultadoUsuario, resultadoProducto, resultadoTipoMovimiento, cantidad, resultadoCausa, fecha);
+
+                    mostrarDetallesMovimientos.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Favor de seleccionar algun registro");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
+            }
+        }
+
+        private void VerificarFilasMovimientos()
+        {
+            // Verifica si hay al menos una fila que no sea la fila nueva (si está habilitada)
+            btn_MostrarDetallesMovimientos.Visible = DataGrid_Movimientos.Rows.Count > 0 && !DataGrid_Movimientos.Rows.Cast<DataGridViewRow>().All(r => r.IsNewRow);
+        }
+
+        private void VerificarFilasProductos()
+        {
+            // Verifica si hay al menos una fila que no sea la fila nueva (si está habilitada)
+            btn_MostrarDetallesProductos.Visible = DataGrid_Productos.Rows.Count > 0 && !DataGrid_Productos.Rows.Cast<DataGridViewRow>().All(r => r.IsNewRow);
+        }
+
+        private void VerificarFilasUsuarios()
+        {
+            // Verifica si hay al menos una fila que no sea la fila nueva (si está habilitada)
+            btn_MostrarDetallesUsuarios.Visible = DataGrid_Usuarios.Rows.Count > 0 && !DataGrid_Usuarios.Rows.Cast<DataGridViewRow>().All(r => r.IsNewRow);
+        }
+
+        private void DataGrid_Usuarios_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            VerificarFilasUsuarios();
+        }
+
+        private void DataGrid_Usuarios_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            VerificarFilasUsuarios();
+        }
+
+        private void DataGrid_Productos_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            VerificarFilasProductos();
+        }
+
+        private void DataGrid_Productos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            VerificarFilasProductos();
+        }
+
+        private void DataGrid_Movimientos_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            VerificarFilasMovimientos();
+        }
+
+        private void DataGrid_Movimientos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            VerificarFilasMovimientos();
+        }
+
+        private void Principal_forms_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            /*Al darle la cruceta (X) del formulario, se aplicara un aviso si quiere salirse del programa
+              o dirigirse a inicio de sesion*/
+
+
+            DialogResult result = MessageBox.Show("¿Quieres cerrar sesion?", "Deseas salir ",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button3);
+
+            // Yes -> salir
+            // No -> no hacer nada
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                Inicio_Sesion login = new Inicio_Sesion();
+                login.Show();
+            }
+            else if (result == DialogResult.No)
+            {
+                // Salir completamente del programa (no hace nada especial)
+                e.Cancel = true; // Evita que la ventana principal se cierre
+            }
+
         }
     }
 }

@@ -22,6 +22,17 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
         //Creacion de un objeto SqlDataAdapter para reutilizarlo mas adelante
         SqlDataAdapter adaptador = new SqlDataAdapter();
 
+        //Metodo para impedir que se pueda pegar texto en los campos
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.V))
+            {
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         public CrearMarca()
         {
             InitializeComponent();
@@ -34,51 +45,67 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
 
         public void ObtenerRegistrosMarcas()
         {
-            conexion.Open();
-            //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-            String ConsultaMarcas = "Select * from MARCA";
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultaMarcas = "Select * from MARCA";
 
-            //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaMarcas, conexion.getConnection());
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultaMarcas, conexion.getConnection());
 
-            //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
-            DataTable dtMARCAS = new DataTable();
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtMARCAS = new DataTable();
 
-            //Se pasan los datos del datatable al objeto adaptador
-            adaptador.Fill(dtMARCAS);
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtMARCAS);
 
-            //Se envian los parametros al datagridview de usuarios
-            DataGrid_Marcas.DataSource = dtMARCAS;
-            conexion.Close();
+                //Se envian los parametros al datagridview de usuarios
+                DataGrid_Marcas.DataSource = dtMARCAS;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void btn_EliminarMarca_Click(object sender, EventArgs e)
         {
+            //Se declara una variable tipo "DialogResult para capturar la resultasta a la ventana de dialogo de confirmacion
+            DialogResult dg;
+
             try
             {
                 if (DataGrid_Marcas.SelectedRows.Count == 1)
                 {
-                    conexion.Open();
+                    dg = MessageBox.Show("Desea eiminar el elemento seleccionado?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                    int id = Convert.ToInt32(DataGrid_Marcas.CurrentRow.Cells["ID_Marca"].Value);
-
-                    string query = $"UPDATE MARCA SET Visibilidad = 0 WHERE ID_Marca = {id}";
-                    SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
-
-                    int resultado = cmd.ExecuteNonQuery();
-
-                    if (resultado > 0)
+                    //Se evalua para saber si se quiere proceder con la operacion, de ser el caso que se seleccione "Aceptar" realiza la eliminacion
+                    if (dg == DialogResult.OK)
                     {
-                        MessageBox.Show("Eliminacion exitosa");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al eliminar");
-                    }
+                        conexion.Open();
 
-                    conexion.Close();
+                        int id = Convert.ToInt32(DataGrid_Marcas.CurrentRow.Cells["ID_Marca"].Value);
 
-                    ObtenerRegistrosMarcas();
+                        string query = $"UPDATE MARCA SET Visibilidad = 0 WHERE ID_Marca = {id}";
+                        SqlCommand cmd = new SqlCommand(query, conexion.getConnection());
+
+                        int resultado = cmd.ExecuteNonQuery();
+
+                        if (resultado > 0)
+                        {
+                            MessageBox.Show("Eliminacion exitosa");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar");
+                        }
+
+                        conexion.Close();
+
+                        ObtenerRegistrosMarcas();
+                    }
                 }
                 else
                 {
@@ -170,6 +197,21 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
         {
             txtbox_NombreMarca.Text = "";
             txtbox_IDMarca.Text = "";
+        }
+
+        private void txtbox_IDMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

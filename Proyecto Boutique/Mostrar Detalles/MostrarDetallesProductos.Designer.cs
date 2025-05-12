@@ -1,6 +1,6 @@
-﻿namespace Proyecto_Boutique
+﻿namespace Proyecto_Boutique.Mostrar_Detalles
 {
-    partial class EditarProducto
+    partial class MostrarDetallesProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -42,271 +42,268 @@
             this.lbl_DescripcionProducto = new System.Windows.Forms.Label();
             this.txtbox_DescripcionProducto = new System.Windows.Forms.TextBox();
             this.lbl_Marca = new System.Windows.Forms.Label();
-            this.cmb_Marca = new System.Windows.Forms.ComboBox();
             this.lbl_Color = new System.Windows.Forms.Label();
-            this.cmb_Color = new System.Windows.Forms.ComboBox();
             this.lbl_Talla = new System.Windows.Forms.Label();
             this.lbl_Categoria = new System.Windows.Forms.Label();
-            this.cmb_Categoria = new System.Windows.Forms.ComboBox();
-            this.btn_EditarProducto = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_Precio = new System.Windows.Forms.Label();
             this.txtbox_Precio = new System.Windows.Forms.TextBox();
             this.lbl_NombreProducto = new System.Windows.Forms.Label();
             this.txtbox_NombreProducto = new System.Windows.Forms.TextBox();
-            this.lbl_EditarProducto = new System.Windows.Forms.Label();
-            this.DataGrid_Productos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Productos)).BeginInit();
+            this.lbl_DetallesProducto = new System.Windows.Forms.Label();
+            this.txtbox_Fecha = new System.Windows.Forms.TextBox();
+            this.lbl_Fecha = new System.Windows.Forms.Label();
+            this.txtbox_Marca = new System.Windows.Forms.TextBox();
+            this.txtbox_Categoria = new System.Windows.Forms.TextBox();
+            this.txtbox_Color = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbl_IDProducto
             // 
             this.lbl_IDProducto.AutoSize = true;
-            this.lbl_IDProducto.Location = new System.Drawing.Point(45, 42);
+            this.lbl_IDProducto.Location = new System.Drawing.Point(62, 51);
             this.lbl_IDProducto.Name = "lbl_IDProducto";
             this.lbl_IDProducto.Size = new System.Drawing.Size(98, 16);
-            this.lbl_IDProducto.TabIndex = 128;
+            this.lbl_IDProducto.TabIndex = 153;
             this.lbl_IDProducto.Text = "ID del producto";
             // 
             // txtbox_IDProducto
             // 
-            this.txtbox_IDProducto.Location = new System.Drawing.Point(48, 61);
+            this.txtbox_IDProducto.Location = new System.Drawing.Point(65, 70);
             this.txtbox_IDProducto.Name = "txtbox_IDProducto";
+            this.txtbox_IDProducto.ReadOnly = true;
             this.txtbox_IDProducto.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_IDProducto.TabIndex = 127;
+            this.txtbox_IDProducto.TabIndex = 152;
             // 
             // txtbox_MinimoStock
             // 
-            this.txtbox_MinimoStock.Location = new System.Drawing.Point(508, 118);
+            this.txtbox_MinimoStock.Location = new System.Drawing.Point(523, 440);
             this.txtbox_MinimoStock.Name = "txtbox_MinimoStock";
+            this.txtbox_MinimoStock.ReadOnly = true;
             this.txtbox_MinimoStock.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_MinimoStock.TabIndex = 126;
+            this.txtbox_MinimoStock.TabIndex = 151;
             // 
             // lbl_MinimoStock
             // 
             this.lbl_MinimoStock.AutoSize = true;
-            this.lbl_MinimoStock.Location = new System.Drawing.Point(505, 99);
+            this.lbl_MinimoStock.Location = new System.Drawing.Point(520, 421);
             this.lbl_MinimoStock.Name = "lbl_MinimoStock";
             this.lbl_MinimoStock.Size = new System.Drawing.Size(104, 16);
-            this.lbl_MinimoStock.TabIndex = 125;
+            this.lbl_MinimoStock.TabIndex = 150;
             this.lbl_MinimoStock.Text = "Minimo de stock";
             // 
             // txtbox_MaximoStock
             // 
-            this.txtbox_MaximoStock.Location = new System.Drawing.Point(508, 54);
+            this.txtbox_MaximoStock.Location = new System.Drawing.Point(523, 376);
             this.txtbox_MaximoStock.Name = "txtbox_MaximoStock";
+            this.txtbox_MaximoStock.ReadOnly = true;
             this.txtbox_MaximoStock.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_MaximoStock.TabIndex = 124;
+            this.txtbox_MaximoStock.TabIndex = 149;
             // 
             // lbl_MaximoStock
             // 
             this.lbl_MaximoStock.AutoSize = true;
-            this.lbl_MaximoStock.Location = new System.Drawing.Point(505, 35);
+            this.lbl_MaximoStock.Location = new System.Drawing.Point(520, 357);
             this.lbl_MaximoStock.Name = "lbl_MaximoStock";
             this.lbl_MaximoStock.Size = new System.Drawing.Size(108, 16);
-            this.lbl_MaximoStock.TabIndex = 123;
+            this.lbl_MaximoStock.TabIndex = 148;
             this.lbl_MaximoStock.Text = "Maximo de stock";
             // 
             // txtbox_PuntoReorden
             // 
-            this.txtbox_PuntoReorden.Location = new System.Drawing.Point(52, 671);
+            this.txtbox_PuntoReorden.Location = new System.Drawing.Point(527, 315);
             this.txtbox_PuntoReorden.Name = "txtbox_PuntoReorden";
+            this.txtbox_PuntoReorden.ReadOnly = true;
             this.txtbox_PuntoReorden.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_PuntoReorden.TabIndex = 122;
+            this.txtbox_PuntoReorden.TabIndex = 147;
             // 
             // lbl_PuntoReorden
             // 
             this.lbl_PuntoReorden.AutoSize = true;
-            this.lbl_PuntoReorden.Location = new System.Drawing.Point(49, 652);
+            this.lbl_PuntoReorden.Location = new System.Drawing.Point(524, 296);
             this.lbl_PuntoReorden.Name = "lbl_PuntoReorden";
             this.lbl_PuntoReorden.Size = new System.Drawing.Size(110, 16);
-            this.lbl_PuntoReorden.TabIndex = 121;
+            this.lbl_PuntoReorden.TabIndex = 146;
             this.lbl_PuntoReorden.Text = "Punto de reorden";
             // 
             // txtbox_talla
             // 
-            this.txtbox_talla.Location = new System.Drawing.Point(52, 607);
+            this.txtbox_talla.Location = new System.Drawing.Point(527, 194);
             this.txtbox_talla.MaxLength = 5;
             this.txtbox_talla.Name = "txtbox_talla";
+            this.txtbox_talla.ReadOnly = true;
             this.txtbox_talla.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_talla.TabIndex = 120;
+            this.txtbox_talla.TabIndex = 145;
             // 
             // lbl_CantidadProducto
             // 
             this.lbl_CantidadProducto.AutoSize = true;
-            this.lbl_CantidadProducto.Location = new System.Drawing.Point(45, 462);
+            this.lbl_CantidadProducto.Location = new System.Drawing.Point(520, 49);
             this.lbl_CantidadProducto.Name = "lbl_CantidadProducto";
             this.lbl_CantidadProducto.Size = new System.Drawing.Size(61, 16);
-            this.lbl_CantidadProducto.TabIndex = 119;
+            this.lbl_CantidadProducto.TabIndex = 144;
             this.lbl_CantidadProducto.Text = "Cantidad";
             // 
             // txtbox_Cantidad
             // 
-            this.txtbox_Cantidad.Location = new System.Drawing.Point(48, 481);
+            this.txtbox_Cantidad.Location = new System.Drawing.Point(523, 68);
             this.txtbox_Cantidad.Name = "txtbox_Cantidad";
+            this.txtbox_Cantidad.ReadOnly = true;
             this.txtbox_Cantidad.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_Cantidad.TabIndex = 118;
+            this.txtbox_Cantidad.TabIndex = 143;
             // 
             // lbl_DescripcionProducto
             // 
             this.lbl_DescripcionProducto.AutoSize = true;
-            this.lbl_DescripcionProducto.Location = new System.Drawing.Point(43, 222);
+            this.lbl_DescripcionProducto.Location = new System.Drawing.Point(60, 231);
             this.lbl_DescripcionProducto.Name = "lbl_DescripcionProducto";
             this.lbl_DescripcionProducto.Size = new System.Drawing.Size(79, 16);
-            this.lbl_DescripcionProducto.TabIndex = 117;
+            this.lbl_DescripcionProducto.TabIndex = 142;
             this.lbl_DescripcionProducto.Text = "Descripcion";
             // 
             // txtbox_DescripcionProducto
             // 
-            this.txtbox_DescripcionProducto.Location = new System.Drawing.Point(46, 241);
+            this.txtbox_DescripcionProducto.Location = new System.Drawing.Point(63, 250);
             this.txtbox_DescripcionProducto.MaxLength = 100;
             this.txtbox_DescripcionProducto.Multiline = true;
             this.txtbox_DescripcionProducto.Name = "txtbox_DescripcionProducto";
+            this.txtbox_DescripcionProducto.ReadOnly = true;
             this.txtbox_DescripcionProducto.Size = new System.Drawing.Size(407, 72);
-            this.txtbox_DescripcionProducto.TabIndex = 116;
+            this.txtbox_DescripcionProducto.TabIndex = 141;
             // 
             // lbl_Marca
             // 
             this.lbl_Marca.AutoSize = true;
-            this.lbl_Marca.Location = new System.Drawing.Point(45, 159);
+            this.lbl_Marca.Location = new System.Drawing.Point(62, 168);
             this.lbl_Marca.Name = "lbl_Marca";
             this.lbl_Marca.Size = new System.Drawing.Size(45, 16);
-            this.lbl_Marca.TabIndex = 115;
+            this.lbl_Marca.TabIndex = 140;
             this.lbl_Marca.Text = "Marca";
-            // 
-            // cmb_Marca
-            // 
-            this.cmb_Marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Marca.FormattingEnabled = true;
-            this.cmb_Marca.Location = new System.Drawing.Point(46, 178);
-            this.cmb_Marca.Name = "cmb_Marca";
-            this.cmb_Marca.Size = new System.Drawing.Size(409, 24);
-            this.cmb_Marca.TabIndex = 114;
             // 
             // lbl_Color
             // 
             this.lbl_Color.AutoSize = true;
-            this.lbl_Color.Location = new System.Drawing.Point(47, 526);
+            this.lbl_Color.Location = new System.Drawing.Point(522, 113);
             this.lbl_Color.Name = "lbl_Color";
             this.lbl_Color.Size = new System.Drawing.Size(39, 16);
-            this.lbl_Color.TabIndex = 113;
+            this.lbl_Color.TabIndex = 138;
             this.lbl_Color.Text = "Color";
-            // 
-            // cmb_Color
-            // 
-            this.cmb_Color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Color.FormattingEnabled = true;
-            this.cmb_Color.Location = new System.Drawing.Point(50, 545);
-            this.cmb_Color.Name = "cmb_Color";
-            this.cmb_Color.Size = new System.Drawing.Size(409, 24);
-            this.cmb_Color.TabIndex = 112;
             // 
             // lbl_Talla
             // 
             this.lbl_Talla.AutoSize = true;
-            this.lbl_Talla.Location = new System.Drawing.Point(49, 588);
+            this.lbl_Talla.Location = new System.Drawing.Point(524, 175);
             this.lbl_Talla.Name = "lbl_Talla";
             this.lbl_Talla.Size = new System.Drawing.Size(38, 16);
-            this.lbl_Talla.TabIndex = 111;
+            this.lbl_Talla.TabIndex = 136;
             this.lbl_Talla.Text = "Talla";
             // 
             // lbl_Categoria
             // 
             this.lbl_Categoria.AutoSize = true;
-            this.lbl_Categoria.Location = new System.Drawing.Point(47, 335);
+            this.lbl_Categoria.Location = new System.Drawing.Point(64, 344);
             this.lbl_Categoria.Name = "lbl_Categoria";
             this.lbl_Categoria.Size = new System.Drawing.Size(66, 16);
-            this.lbl_Categoria.TabIndex = 110;
+            this.lbl_Categoria.TabIndex = 135;
             this.lbl_Categoria.Text = "Categoria";
-            // 
-            // cmb_Categoria
-            // 
-            this.cmb_Categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Categoria.FormattingEnabled = true;
-            this.cmb_Categoria.Location = new System.Drawing.Point(48, 354);
-            this.cmb_Categoria.Name = "cmb_Categoria";
-            this.cmb_Categoria.Size = new System.Drawing.Size(409, 24);
-            this.cmb_Categoria.TabIndex = 109;
-            // 
-            // btn_EditarProducto
-            // 
-            this.btn_EditarProducto.Location = new System.Drawing.Point(982, 671);
-            this.btn_EditarProducto.Name = "btn_EditarProducto";
-            this.btn_EditarProducto.Size = new System.Drawing.Size(153, 45);
-            this.btn_EditarProducto.TabIndex = 108;
-            this.btn_EditarProducto.Text = "Modificar Producto";
-            this.btn_EditarProducto.UseVisualStyleBackColor = true;
-            this.btn_EditarProducto.Click += new System.EventHandler(this.btn_EditarProducto_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(796, 671);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 107;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // lbl_Precio
             // 
             this.lbl_Precio.AutoSize = true;
-            this.lbl_Precio.Location = new System.Drawing.Point(45, 400);
+            this.lbl_Precio.Location = new System.Drawing.Point(64, 421);
             this.lbl_Precio.Name = "lbl_Precio";
             this.lbl_Precio.Size = new System.Drawing.Size(46, 16);
-            this.lbl_Precio.TabIndex = 106;
+            this.lbl_Precio.TabIndex = 133;
             this.lbl_Precio.Text = "Precio";
             // 
             // txtbox_Precio
             // 
-            this.txtbox_Precio.Location = new System.Drawing.Point(48, 419);
+            this.txtbox_Precio.Location = new System.Drawing.Point(67, 440);
             this.txtbox_Precio.Name = "txtbox_Precio";
+            this.txtbox_Precio.ReadOnly = true;
             this.txtbox_Precio.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_Precio.TabIndex = 105;
+            this.txtbox_Precio.TabIndex = 132;
             // 
             // lbl_NombreProducto
             // 
             this.lbl_NombreProducto.AutoSize = true;
-            this.lbl_NombreProducto.Location = new System.Drawing.Point(45, 99);
+            this.lbl_NombreProducto.Location = new System.Drawing.Point(62, 108);
             this.lbl_NombreProducto.Name = "lbl_NombreProducto";
             this.lbl_NombreProducto.Size = new System.Drawing.Size(56, 16);
-            this.lbl_NombreProducto.TabIndex = 104;
+            this.lbl_NombreProducto.TabIndex = 131;
             this.lbl_NombreProducto.Text = "Nombre";
             // 
             // txtbox_NombreProducto
             // 
-            this.txtbox_NombreProducto.Location = new System.Drawing.Point(48, 118);
+            this.txtbox_NombreProducto.Location = new System.Drawing.Point(65, 127);
             this.txtbox_NombreProducto.MaxLength = 50;
             this.txtbox_NombreProducto.Name = "txtbox_NombreProducto";
+            this.txtbox_NombreProducto.ReadOnly = true;
             this.txtbox_NombreProducto.Size = new System.Drawing.Size(407, 22);
-            this.txtbox_NombreProducto.TabIndex = 103;
+            this.txtbox_NombreProducto.TabIndex = 130;
             // 
-            // lbl_EditarProducto
+            // lbl_DetallesProducto
             // 
-            this.lbl_EditarProducto.AutoSize = true;
-            this.lbl_EditarProducto.Location = new System.Drawing.Point(177, 9);
-            this.lbl_EditarProducto.Name = "lbl_EditarProducto";
-            this.lbl_EditarProducto.Size = new System.Drawing.Size(99, 16);
-            this.lbl_EditarProducto.TabIndex = 102;
-            this.lbl_EditarProducto.Text = "Editar Producto";
+            this.lbl_DetallesProducto.AutoSize = true;
+            this.lbl_DetallesProducto.Location = new System.Drawing.Point(426, 9);
+            this.lbl_DetallesProducto.Name = "lbl_DetallesProducto";
+            this.lbl_DetallesProducto.Size = new System.Drawing.Size(135, 16);
+            this.lbl_DetallesProducto.TabIndex = 129;
+            this.lbl_DetallesProducto.Text = "Detalles del producto";
             // 
-            // DataGrid_Productos
+            // txtbox_Fecha
             // 
-            this.DataGrid_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Productos.Location = new System.Drawing.Point(564, 192);
-            this.DataGrid_Productos.Name = "DataGrid_Productos";
-            this.DataGrid_Productos.RowHeadersWidth = 51;
-            this.DataGrid_Productos.RowTemplate.Height = 24;
-            this.DataGrid_Productos.Size = new System.Drawing.Size(756, 437);
-            this.DataGrid_Productos.TabIndex = 129;
-            this.DataGrid_Productos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Productos_CellClick);
+            this.txtbox_Fecha.Location = new System.Drawing.Point(523, 250);
+            this.txtbox_Fecha.Name = "txtbox_Fecha";
+            this.txtbox_Fecha.ReadOnly = true;
+            this.txtbox_Fecha.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_Fecha.TabIndex = 155;
             // 
-            // EditarProducto
+            // lbl_Fecha
+            // 
+            this.lbl_Fecha.AutoSize = true;
+            this.lbl_Fecha.Location = new System.Drawing.Point(520, 231);
+            this.lbl_Fecha.Name = "lbl_Fecha";
+            this.lbl_Fecha.Size = new System.Drawing.Size(45, 16);
+            this.lbl_Fecha.TabIndex = 154;
+            this.lbl_Fecha.Text = "Fecha";
+            // 
+            // txtbox_Marca
+            // 
+            this.txtbox_Marca.Location = new System.Drawing.Point(63, 187);
+            this.txtbox_Marca.MaxLength = 50;
+            this.txtbox_Marca.Name = "txtbox_Marca";
+            this.txtbox_Marca.ReadOnly = true;
+            this.txtbox_Marca.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_Marca.TabIndex = 156;
+            // 
+            // txtbox_Categoria
+            // 
+            this.txtbox_Categoria.Location = new System.Drawing.Point(63, 363);
+            this.txtbox_Categoria.MaxLength = 50;
+            this.txtbox_Categoria.Name = "txtbox_Categoria";
+            this.txtbox_Categoria.ReadOnly = true;
+            this.txtbox_Categoria.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_Categoria.TabIndex = 157;
+            // 
+            // txtbox_Color
+            // 
+            this.txtbox_Color.Location = new System.Drawing.Point(523, 127);
+            this.txtbox_Color.MaxLength = 50;
+            this.txtbox_Color.Name = "txtbox_Color";
+            this.txtbox_Color.ReadOnly = true;
+            this.txtbox_Color.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_Color.TabIndex = 158;
+            // 
+            // MostrarDetallesProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1416, 742);
-            this.Controls.Add(this.DataGrid_Productos);
+            this.ClientSize = new System.Drawing.Size(995, 508);
+            this.Controls.Add(this.txtbox_Color);
+            this.Controls.Add(this.txtbox_Categoria);
+            this.Controls.Add(this.txtbox_Marca);
+            this.Controls.Add(this.txtbox_Fecha);
+            this.Controls.Add(this.lbl_Fecha);
             this.Controls.Add(this.lbl_IDProducto);
             this.Controls.Add(this.txtbox_IDProducto);
             this.Controls.Add(this.txtbox_MinimoStock);
@@ -321,23 +318,16 @@
             this.Controls.Add(this.lbl_DescripcionProducto);
             this.Controls.Add(this.txtbox_DescripcionProducto);
             this.Controls.Add(this.lbl_Marca);
-            this.Controls.Add(this.cmb_Marca);
             this.Controls.Add(this.lbl_Color);
-            this.Controls.Add(this.cmb_Color);
             this.Controls.Add(this.lbl_Talla);
             this.Controls.Add(this.lbl_Categoria);
-            this.Controls.Add(this.cmb_Categoria);
-            this.Controls.Add(this.btn_EditarProducto);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_Precio);
             this.Controls.Add(this.txtbox_Precio);
             this.Controls.Add(this.lbl_NombreProducto);
             this.Controls.Add(this.txtbox_NombreProducto);
-            this.Controls.Add(this.lbl_EditarProducto);
-            this.Name = "EditarProducto";
-            this.Text = "EditarProducto";
-            this.Load += new System.EventHandler(this.EditarProducto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Productos)).EndInit();
+            this.Controls.Add(this.lbl_DetallesProducto);
+            this.Name = "MostrarDetallesProductos";
+            this.Text = "MostrarDetallesProductos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,19 +349,18 @@
         private System.Windows.Forms.Label lbl_DescripcionProducto;
         private System.Windows.Forms.TextBox txtbox_DescripcionProducto;
         private System.Windows.Forms.Label lbl_Marca;
-        private System.Windows.Forms.ComboBox cmb_Marca;
         private System.Windows.Forms.Label lbl_Color;
-        private System.Windows.Forms.ComboBox cmb_Color;
         private System.Windows.Forms.Label lbl_Talla;
         private System.Windows.Forms.Label lbl_Categoria;
-        private System.Windows.Forms.ComboBox cmb_Categoria;
-        private System.Windows.Forms.Button btn_EditarProducto;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_Precio;
         private System.Windows.Forms.TextBox txtbox_Precio;
         private System.Windows.Forms.Label lbl_NombreProducto;
         private System.Windows.Forms.TextBox txtbox_NombreProducto;
-        private System.Windows.Forms.Label lbl_EditarProducto;
-        private System.Windows.Forms.DataGridView DataGrid_Productos;
+        private System.Windows.Forms.Label lbl_DetallesProducto;
+        private System.Windows.Forms.TextBox txtbox_Fecha;
+        private System.Windows.Forms.Label lbl_Fecha;
+        private System.Windows.Forms.TextBox txtbox_Marca;
+        private System.Windows.Forms.TextBox txtbox_Categoria;
+        private System.Windows.Forms.TextBox txtbox_Color;
     }
 }

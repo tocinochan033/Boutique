@@ -22,6 +22,16 @@ namespace Proyecto_Boutique
         //Creacion de un objeto SqlDataAdapter para reutilizarlo mas adelante
         SqlDataAdapter adaptador = new SqlDataAdapter();
 
+        //Metodo para impedir que se pueda pegar texto en los campos
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.V))
+            {
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
         public EditarUsuario()
         {
@@ -30,30 +40,44 @@ namespace Proyecto_Boutique
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            //Se hace para que el textbox de la ID no pueda ser modificado y causar problemas
-            txtbox_IdUsuario.ReadOnly = true;
-            ObtenerRegistrosUsuarios();
-            RefrescarCampoRol();
+            try
+            {
+                //Se hace para que el textbox de la ID no pueda ser modificado y causar problemas
+                txtbox_IdUsuario.ReadOnly = true;
+                ObtenerRegistrosUsuarios();
+                RefrescarCampoRol();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void ObtenerRegistrosUsuarios()
         {
-            conexion.Open();
-            //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-            String ConsultaUsuarios = "Select * from USUARIO WHERE Visibilidad = 1";
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultaUsuarios = "Select * from USUARIO WHERE Visibilidad = 1";
 
-            //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
 
-            //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
-            DataTable dtUSUARIO = new DataTable();
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtUSUARIO = new DataTable();
 
-            //Se pasan los datos del datatable al objeto adaptador
-            adaptador.Fill(dtUSUARIO);
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtUSUARIO);
 
-            //Se envian los parametros al datagridview de usuarios
-            DataGrid_Usuarios.DataSource = dtUSUARIO;
-            conexion.Close();
+                //Se envian los parametros al datagridview de usuarios
+                DataGrid_Usuarios.DataSource = dtUSUARIO;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void DataGrid_Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -63,12 +87,19 @@ namespace Proyecto_Boutique
 
         private void DataGrid_Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtbox_IdUsuario.Text = DataGrid_Usuarios.CurrentRow.Cells[0].Value.ToString();
-            txtbox_NombreUsuario.Text = DataGrid_Usuarios.CurrentRow.Cells[1].Value.ToString();
-            txtbox_NuevaContra.Text = DataGrid_Usuarios.CurrentRow.Cells[2].Value.ToString();
-            txtbox_ReingresoNuevaContra.Text = DataGrid_Usuarios.CurrentRow.Cells[2].Value.ToString();
-            cmb_Rol.SelectedIndex = int.Parse(DataGrid_Usuarios.CurrentRow.Cells[3].Value.ToString())-1;
-            txtbox_Correo.Text = DataGrid_Usuarios.CurrentRow.Cells[4].Value.ToString();
+            try
+            {
+                txtbox_IdUsuario.Text = DataGrid_Usuarios.CurrentRow.Cells[0].Value.ToString();
+                txtbox_NombreUsuario.Text = DataGrid_Usuarios.CurrentRow.Cells[1].Value.ToString();
+                txtbox_NuevaContra.Text = DataGrid_Usuarios.CurrentRow.Cells[2].Value.ToString();
+                txtbox_ReingresoNuevaContra.Text = DataGrid_Usuarios.CurrentRow.Cells[2].Value.ToString();
+                cmb_Rol.SelectedIndex = int.Parse(DataGrid_Usuarios.CurrentRow.Cells[3].Value.ToString()) - 1;
+                txtbox_Correo.Text = DataGrid_Usuarios.CurrentRow.Cells[4].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void cmb_Rol_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,26 +109,33 @@ namespace Proyecto_Boutique
 
         public void RefrescarCampoRol()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_Rol.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from ROLES", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_Rol.Items.Add(dr.GetString(1));
-            }
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_Rol.Items.Clear();
 
-            //Se cierra la conexion
-            conexion.Close();
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from ROLES", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_Rol.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void btn_EditarUsuario_Click(object sender, EventArgs e)
