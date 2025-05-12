@@ -647,6 +647,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Principal_forms";
             this.Text = "Principal_forms";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Principal_forms_FormClosing);
             this.Load += new System.EventHandler(this.Principal_forms_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
