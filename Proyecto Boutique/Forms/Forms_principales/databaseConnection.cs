@@ -41,6 +41,7 @@ namespace Proyecto_Boutique
         public void Close()
         {
             connectiondb.Close();
+            Console.WriteLine("Conexion Cerrada.");
         }
 
         public SqlConnection getConnection()

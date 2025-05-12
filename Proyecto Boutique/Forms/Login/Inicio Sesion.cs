@@ -58,7 +58,7 @@ namespace Proyecto_Boutique
                     int idRol = Convert.ToInt32(result); // Aquí obtenemos el ID del rol (1 o 2)
                     SessionData.RolId = idRol;
 
-                    MessageBox.Show("Inicio de sesión exitoso. Rol ID: " + idRol);
+                    Console.WriteLine("Inicio de sesión exitoso. Rol ID: " + idRol);
 
                     this.Hide();
                     Principal_forms principal = new Principal_forms();
