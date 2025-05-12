@@ -57,6 +57,7 @@
             // txtbox_NombreUsuario
             // 
             this.txtbox_NombreUsuario.Location = new System.Drawing.Point(353, 208);
+            this.txtbox_NombreUsuario.MaxLength = 20;
             this.txtbox_NombreUsuario.Name = "txtbox_NombreUsuario";
             this.txtbox_NombreUsuario.Size = new System.Drawing.Size(407, 22);
             this.txtbox_NombreUsuario.TabIndex = 19;
@@ -82,6 +83,7 @@
             // txtbox_Contra
             // 
             this.txtbox_Contra.Location = new System.Drawing.Point(353, 272);
+            this.txtbox_Contra.MaxLength = 15;
             this.txtbox_Contra.Name = "txtbox_Contra";
             this.txtbox_Contra.Size = new System.Drawing.Size(407, 22);
             this.txtbox_Contra.TabIndex = 21;
@@ -155,6 +157,7 @@
             this.txtbox_IdUsuario.Name = "txtbox_IdUsuario";
             this.txtbox_IdUsuario.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IdUsuario.TabIndex = 30;
+            this.txtbox_IdUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IdUsuario_KeyPress);
             // 
             // lbl_Correo
             // 
@@ -168,6 +171,7 @@
             // txtbox_Correo
             // 
             this.txtbox_Correo.Location = new System.Drawing.Point(353, 484);
+            this.txtbox_Correo.MaxLength = 40;
             this.txtbox_Correo.Name = "txtbox_Correo";
             this.txtbox_Correo.Size = new System.Drawing.Size(407, 22);
             this.txtbox_Correo.TabIndex = 32;
@@ -194,6 +198,7 @@
             this.Controls.Add(this.lbl_CrearUsuario);
             this.Name = "CrearUsuario";
             this.Text = "CrearUsuario";
+            this.Load += new System.EventHandler(this.CrearUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

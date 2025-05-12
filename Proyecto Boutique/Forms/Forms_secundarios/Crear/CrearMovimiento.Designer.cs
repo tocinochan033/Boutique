@@ -132,6 +132,7 @@
             this.txtbox_CantidadProducto.Name = "txtbox_CantidadProducto";
             this.txtbox_CantidadProducto.Size = new System.Drawing.Size(407, 22);
             this.txtbox_CantidadProducto.TabIndex = 112;
+            this.txtbox_CantidadProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_CantidadProducto_KeyPress);
             // 
             // lbl_CrearMovimiento
             // 
@@ -157,6 +158,7 @@
             this.txt_IDMovimiento.Name = "txt_IDMovimiento";
             this.txt_IDMovimiento.Size = new System.Drawing.Size(407, 22);
             this.txt_IDMovimiento.TabIndex = 124;
+            this.txt_IDMovimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IDMovimiento_KeyPress);
             // 
             // lbl_UsuarioResponsable
             // 
@@ -367,6 +369,7 @@
             this.Name = "CrearMovimiento";
             this.Text = "CrearMovimiento";
             this.Load += new System.EventHandler(this.CrearMovimiento_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrearMovimiento_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Usuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Productos)).EndInit();
             this.ResumeLayout(false);

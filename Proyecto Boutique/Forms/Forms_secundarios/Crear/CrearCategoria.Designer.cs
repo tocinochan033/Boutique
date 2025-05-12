@@ -54,6 +54,7 @@
             // txtbox_DescripcionCategoria
             // 
             this.txtbox_DescripcionCategoria.Location = new System.Drawing.Point(96, 310);
+            this.txtbox_DescripcionCategoria.MaxLength = 100;
             this.txtbox_DescripcionCategoria.Multiline = true;
             this.txtbox_DescripcionCategoria.Name = "txtbox_DescripcionCategoria";
             this.txtbox_DescripcionCategoria.Size = new System.Drawing.Size(407, 73);
@@ -71,6 +72,7 @@
             // txtbox_NombreCategoria
             // 
             this.txtbox_NombreCategoria.Location = new System.Drawing.Point(96, 246);
+            this.txtbox_NombreCategoria.MaxLength = 15;
             this.txtbox_NombreCategoria.Name = "txtbox_NombreCategoria";
             this.txtbox_NombreCategoria.Size = new System.Drawing.Size(407, 22);
             this.txtbox_NombreCategoria.TabIndex = 48;
@@ -131,6 +133,7 @@
             this.txtbox_IDCategoria.Name = "txtbox_IDCategoria";
             this.txtbox_IDCategoria.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDCategoria.TabIndex = 55;
+            this.txtbox_IDCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDCategoria_KeyPress);
             // 
             // btn_EliminarCategoria
             // 

@@ -65,6 +65,7 @@
             this.txtbox_IDColor.Name = "txtbox_IDColor";
             this.txtbox_IDColor.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDColor.TabIndex = 75;
+            this.txtbox_IDColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDColor_KeyPress);
             // 
             // DataGrid_Colores
             // 
@@ -108,6 +109,7 @@
             // txtbox_NombreColor
             // 
             this.txtbox_NombreColor.Location = new System.Drawing.Point(67, 224);
+            this.txtbox_NombreColor.MaxLength = 15;
             this.txtbox_NombreColor.Name = "txtbox_NombreColor";
             this.txtbox_NombreColor.Size = new System.Drawing.Size(407, 22);
             this.txtbox_NombreColor.TabIndex = 70;

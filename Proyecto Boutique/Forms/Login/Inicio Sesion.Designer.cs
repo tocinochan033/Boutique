@@ -69,6 +69,7 @@
             // txt_Contra
             // 
             this.txt_Contra.Location = new System.Drawing.Point(143, 213);
+            this.txt_Contra.MaxLength = 15;
             this.txt_Contra.Name = "txt_Contra";
             this.txt_Contra.PasswordChar = '*';
             this.txt_Contra.Size = new System.Drawing.Size(485, 22);
@@ -77,6 +78,7 @@
             // txt_usuario
             // 
             this.txt_usuario.Location = new System.Drawing.Point(143, 122);
+            this.txt_usuario.MaxLength = 20;
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(485, 22);
             this.txt_usuario.TabIndex = 5;
