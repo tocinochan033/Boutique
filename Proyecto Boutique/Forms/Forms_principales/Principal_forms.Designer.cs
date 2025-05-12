@@ -78,6 +78,7 @@
             this.btn_RepAuditoria = new System.Windows.Forms.Button();
             this.btn_RepMovimientos = new System.Windows.Forms.Button();
             this.btn_RepStock = new System.Windows.Forms.Button();
+            this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Usuarios)).BeginInit();
@@ -639,11 +640,22 @@
             this.btn_RepStock.UseVisualStyleBackColor = true;
             this.btn_RepStock.Click += new System.EventHandler(this.btn_RepStock_Click);
             // 
+            // btn_cerrarSesion
+            // 
+            this.btn_cerrarSesion.Location = new System.Drawing.Point(1149, 665);
+            this.btn_cerrarSesion.Name = "btn_cerrarSesion";
+            this.btn_cerrarSesion.Size = new System.Drawing.Size(153, 45);
+            this.btn_cerrarSesion.TabIndex = 41;
+            this.btn_cerrarSesion.Text = "Cerrar Sesion";
+            this.btn_cerrarSesion.UseVisualStyleBackColor = true;
+            this.btn_cerrarSesion.Click += new System.EventHandler(this.btn_cerrarSesion_Click);
+            // 
             // Principal_forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1378, 687);
+            this.ClientSize = new System.Drawing.Size(1378, 722);
+            this.Controls.Add(this.btn_cerrarSesion);
             this.Controls.Add(this.tabControl1);
             this.Name = "Principal_forms";
             this.Text = "Principal_forms";
@@ -716,5 +728,6 @@
         private System.Windows.Forms.Button btn_MostrarDetallesUsuarios;
         private System.Windows.Forms.Button btn_MostrarDetallesProductos;
         private System.Windows.Forms.Button btn_MostrarDetallesMovimientos;
+        private System.Windows.Forms.Button btn_cerrarSesion;
     }
 }

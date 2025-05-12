@@ -1034,8 +1034,12 @@ namespace Proyecto_Boutique
 
         private void Principal_forms_FormClosing(object sender, FormClosingEventArgs e)
         {
+        }
+
+        private void btn_cerrarSesion_Click(object sender, EventArgs e)
+        {
             /*Al darle la cruceta (X) del formulario, se aplicara un aviso si quiere salirse del programa
-              o dirigirse a inicio de sesion*/
+o dirigirse a inicio de sesion*/
 
 
             DialogResult result = MessageBox.Show("¿Quieres cerrar sesion?", "Deseas salir ",
@@ -1051,12 +1055,6 @@ namespace Proyecto_Boutique
                 Inicio_Sesion login = new Inicio_Sesion();
                 login.Show();
             }
-            else if (result == DialogResult.No)
-            {
-                // Salir completamente del programa (no hace nada especial)
-                e.Cancel = true; // Evita que la ventana principal se cierre
-            }
-
         }
     }
 }
