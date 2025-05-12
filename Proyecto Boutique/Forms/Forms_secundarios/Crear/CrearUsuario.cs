@@ -17,34 +17,59 @@ namespace Proyecto_Boutique
             //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
         databaseConnection conexion = new databaseConnection();
 
+        //Metodo para impedir que se pueda pegar texto en los campos
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.V))
+            {
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         public CrearUsuario()
         {
             InitializeComponent();
-            RefrescarCampoRol();
+            try
+            {
+                RefrescarCampoRol();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void RefrescarCampoRol()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_Rol.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from ROLES", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_Rol.Items.Add(dr.GetString(1));
-            }
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_Rol.Items.Clear();
 
-            //Se cierra la conexion
-            conexion.Close();
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from ROLES", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_Rol.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void btn_Regresar_Click(object sender, EventArgs e)
@@ -164,6 +189,27 @@ namespace Proyecto_Boutique
             txtbox_ReingresoContra.Clear();
             txtbox_Correo.Clear();
             cmb_Rol.SelectedIndex = -1;
+        }
+
+        private void txtbox_IdUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CrearUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

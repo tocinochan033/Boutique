@@ -92,6 +92,7 @@
             this.txtbox_Precio.Name = "txtbox_Precio";
             this.txtbox_Precio.Size = new System.Drawing.Size(407, 22);
             this.txtbox_Precio.TabIndex = 76;
+            this.txtbox_Precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Precio_KeyPress);
             // 
             // lbl_NombreProducto
             // 
@@ -105,6 +106,7 @@
             // txtbox_NombreProducto
             // 
             this.txtbox_NombreProducto.Location = new System.Drawing.Point(41, 132);
+            this.txtbox_NombreProducto.MaxLength = 50;
             this.txtbox_NombreProducto.Name = "txtbox_NombreProducto";
             this.txtbox_NombreProducto.Size = new System.Drawing.Size(407, 22);
             this.txtbox_NombreProducto.TabIndex = 74;
@@ -193,6 +195,7 @@
             // txtbox_DescripcionProducto
             // 
             this.txtbox_DescripcionProducto.Location = new System.Drawing.Point(39, 255);
+            this.txtbox_DescripcionProducto.MaxLength = 100;
             this.txtbox_DescripcionProducto.Multiline = true;
             this.txtbox_DescripcionProducto.Name = "txtbox_DescripcionProducto";
             this.txtbox_DescripcionProducto.Size = new System.Drawing.Size(407, 72);
@@ -213,10 +216,12 @@
             this.txtbox_Cantidad.Name = "txtbox_Cantidad";
             this.txtbox_Cantidad.Size = new System.Drawing.Size(407, 22);
             this.txtbox_Cantidad.TabIndex = 90;
+            this.txtbox_Cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Cantidad_KeyPress);
             // 
             // txtbox_talla
             // 
             this.txtbox_talla.Location = new System.Drawing.Point(542, 132);
+            this.txtbox_talla.MaxLength = 5;
             this.txtbox_talla.Name = "txtbox_talla";
             this.txtbox_talla.Size = new System.Drawing.Size(407, 22);
             this.txtbox_talla.TabIndex = 92;
@@ -227,6 +232,7 @@
             this.txtbox_PuntoReorden.Name = "txtbox_PuntoReorden";
             this.txtbox_PuntoReorden.Size = new System.Drawing.Size(407, 22);
             this.txtbox_PuntoReorden.TabIndex = 95;
+            this.txtbox_PuntoReorden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PuntoReorden_KeyPress);
             // 
             // lbl_PuntoReorden
             // 
@@ -243,6 +249,7 @@
             this.txtbox_MinimoStock.Name = "txtbox_MinimoStock";
             this.txtbox_MinimoStock.Size = new System.Drawing.Size(407, 22);
             this.txtbox_MinimoStock.TabIndex = 99;
+            this.txtbox_MinimoStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_MinimoStock_KeyPress);
             // 
             // lbl_MinimoStock
             // 
@@ -259,6 +266,7 @@
             this.txtbox_MaximoStock.Name = "txtbox_MaximoStock";
             this.txtbox_MaximoStock.Size = new System.Drawing.Size(407, 22);
             this.txtbox_MaximoStock.TabIndex = 97;
+            this.txtbox_MaximoStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_MaximoStock_KeyPress);
             // 
             // lbl_MaximoStock
             // 
@@ -284,6 +292,7 @@
             this.txtbox_IDProducto.Name = "txtbox_IDProducto";
             this.txtbox_IDProducto.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDProducto.TabIndex = 100;
+            this.txtbox_IDProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDProducto_KeyPress);
             // 
             // CrearProducto
             // 

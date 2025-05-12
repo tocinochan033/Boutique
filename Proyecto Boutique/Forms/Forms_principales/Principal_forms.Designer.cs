@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_MostrarDetallesUsuarios = new System.Windows.Forms.Button();
             this.btn_ModificarUsuario = new System.Windows.Forms.Button();
             this.rdbtn_EstadoVisibilidad = new System.Windows.Forms.RadioButton();
             this.lbl_OpcionesBusqueda = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.btn_CrearUsuario = new System.Windows.Forms.Button();
             this.DataGrid_Usuarios = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btn_MostrarDetallesProductos = new System.Windows.Forms.Button();
             this.btn_ModificarProducto = new System.Windows.Forms.Button();
             this.btn_EliminarProducto = new System.Windows.Forms.Button();
             this.Btn_RegistrarColor = new System.Windows.Forms.Button();
@@ -59,6 +61,7 @@
             this.btn_CrearProducto = new System.Windows.Forms.Button();
             this.DataGrid_Productos = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_MostrarDetallesMovimientos = new System.Windows.Forms.Button();
             this.rdbtn_UsuarioMovimiento = new System.Windows.Forms.RadioButton();
             this.lbl_OpcionesMovimiento = new System.Windows.Forms.Label();
             this.lbl_BusquedaMovimiento = new System.Windows.Forms.Label();
@@ -99,6 +102,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_MostrarDetallesUsuarios);
             this.tabPage1.Controls.Add(this.btn_ModificarUsuario);
             this.tabPage1.Controls.Add(this.rdbtn_EstadoVisibilidad);
             this.tabPage1.Controls.Add(this.lbl_OpcionesBusqueda);
@@ -118,6 +122,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Usuarios";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_MostrarDetallesUsuarios
+            // 
+            this.btn_MostrarDetallesUsuarios.Location = new System.Drawing.Point(68, 569);
+            this.btn_MostrarDetallesUsuarios.Name = "btn_MostrarDetallesUsuarios";
+            this.btn_MostrarDetallesUsuarios.Size = new System.Drawing.Size(153, 45);
+            this.btn_MostrarDetallesUsuarios.TabIndex = 39;
+            this.btn_MostrarDetallesUsuarios.Text = "Mostrar Detalles";
+            this.btn_MostrarDetallesUsuarios.UseVisualStyleBackColor = true;
+            this.btn_MostrarDetallesUsuarios.Click += new System.EventHandler(this.btn_MostrarDetalles_Click);
             // 
             // btn_ModificarUsuario
             // 
@@ -238,9 +252,12 @@
             this.DataGrid_Usuarios.RowTemplate.Height = 24;
             this.DataGrid_Usuarios.Size = new System.Drawing.Size(1218, 468);
             this.DataGrid_Usuarios.TabIndex = 15;
+            this.DataGrid_Usuarios.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_Usuarios_RowsAdded);
+            this.DataGrid_Usuarios.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGrid_Usuarios_RowsRemoved);
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btn_MostrarDetallesProductos);
             this.tabPage5.Controls.Add(this.btn_ModificarProducto);
             this.tabPage5.Controls.Add(this.btn_EliminarProducto);
             this.tabPage5.Controls.Add(this.Btn_RegistrarColor);
@@ -263,6 +280,16 @@
             this.tabPage5.Text = "Productos";
             this.tabPage5.UseVisualStyleBackColor = true;
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
+            // btn_MostrarDetallesProductos
+            // 
+            this.btn_MostrarDetallesProductos.Location = new System.Drawing.Point(52, 565);
+            this.btn_MostrarDetallesProductos.Name = "btn_MostrarDetallesProductos";
+            this.btn_MostrarDetallesProductos.Size = new System.Drawing.Size(153, 45);
+            this.btn_MostrarDetallesProductos.TabIndex = 48;
+            this.btn_MostrarDetallesProductos.Text = "Mostrar Detalles";
+            this.btn_MostrarDetallesProductos.UseVisualStyleBackColor = true;
+            this.btn_MostrarDetallesProductos.Click += new System.EventHandler(this.btn_MostrarDetallesProductos_Click);
             // 
             // btn_ModificarProducto
             // 
@@ -412,9 +439,12 @@
             this.DataGrid_Productos.RowTemplate.Height = 24;
             this.DataGrid_Productos.Size = new System.Drawing.Size(1224, 437);
             this.DataGrid_Productos.TabIndex = 33;
+            this.DataGrid_Productos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_Productos_RowsAdded);
+            this.DataGrid_Productos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGrid_Productos_RowsRemoved);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btn_MostrarDetallesMovimientos);
             this.tabPage3.Controls.Add(this.rdbtn_UsuarioMovimiento);
             this.tabPage3.Controls.Add(this.lbl_OpcionesMovimiento);
             this.tabPage3.Controls.Add(this.lbl_BusquedaMovimiento);
@@ -434,6 +464,16 @@
             this.tabPage3.Text = "Movimientos";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
+            // 
+            // btn_MostrarDetallesMovimientos
+            // 
+            this.btn_MostrarDetallesMovimientos.Location = new System.Drawing.Point(139, 563);
+            this.btn_MostrarDetallesMovimientos.Name = "btn_MostrarDetallesMovimientos";
+            this.btn_MostrarDetallesMovimientos.Size = new System.Drawing.Size(153, 45);
+            this.btn_MostrarDetallesMovimientos.TabIndex = 56;
+            this.btn_MostrarDetallesMovimientos.Text = "Mostrar Detalles";
+            this.btn_MostrarDetallesMovimientos.UseVisualStyleBackColor = true;
+            this.btn_MostrarDetallesMovimientos.Click += new System.EventHandler(this.btn_MostrarDetallesMovimientos_Click);
             // 
             // rdbtn_UsuarioMovimiento
             // 
@@ -554,6 +594,8 @@
             this.DataGrid_Movimientos.Size = new System.Drawing.Size(1043, 437);
             this.DataGrid_Movimientos.TabIndex = 42;
             this.DataGrid_Movimientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Movimientos_CellContentClick);
+            this.DataGrid_Movimientos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_Movimientos_RowsAdded);
+            this.DataGrid_Movimientos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGrid_Movimientos_RowsRemoved);
             // 
             // tabPage4
             // 
@@ -670,5 +712,8 @@
         private System.Windows.Forms.RadioButton rdbtn_ProductoMovimiento;
         private System.Windows.Forms.RadioButton rdbtn_IDMovimiento;
         private System.Windows.Forms.TextBox txtbox_BusquedaMovimiento;
+        private System.Windows.Forms.Button btn_MostrarDetallesUsuarios;
+        private System.Windows.Forms.Button btn_MostrarDetallesProductos;
+        private System.Windows.Forms.Button btn_MostrarDetallesMovimientos;
     }
 }

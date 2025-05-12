@@ -23,6 +23,17 @@ namespace Proyecto_Boutique
         //Creacion de un objeto SqlDataAdapter para reutilizarlo mas adelante
         SqlDataAdapter adaptador = new SqlDataAdapter();
 
+        //Metodo para impedir que se pueda pegar texto en los campos
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.V))
+            {
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         public CrearMovimiento()
         {
             InitializeComponent();
@@ -30,149 +41,197 @@ namespace Proyecto_Boutique
 
         private void CrearMovimiento_Load(object sender, EventArgs e)
         {
-            RefrescarCampoCausa();
-            RefrescarCampoTipoMovimiento();
-            RefrescarCampoProductos();
-            RefrescarCampoUsuario();
-            ObtenerRegistrosUsuarios();
-            ObtenerRegistrosProductos();
-
+            try
+            {
+                RefrescarCampoCausa();
+                RefrescarCampoTipoMovimiento();
+                RefrescarCampoProductos();
+                RefrescarCampoUsuario();
+                ObtenerRegistrosUsuarios();
+                ObtenerRegistrosProductos();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void RefrescarCampoCausa()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_Causa.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from CAUSA WHERE Visibilidad = 1", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_Causa.Items.Add(dr.GetString(1));
-            }
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_Causa.Items.Clear();
 
-            //Se cierra la conexion
-            conexion.Close();
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from CAUSA WHERE Visibilidad = 1", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_Causa.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void RefrescarCampoTipoMovimiento()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_TipoMovimiento.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from TIPOMOVIMIENTO", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_TipoMovimiento.Items.Add(dr.GetString(1));
-            }
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_TipoMovimiento.Items.Clear();
 
-            //Se cierra la conexion
-            conexion.Close();
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from TIPOMOVIMIENTO", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_TipoMovimiento.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void RefrescarCampoProductos()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_Producto.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from PRODUCTOS WHERE Visibilidad = 1", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_Producto.Items.Add(dr.GetString(1));
-            }
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_Producto.Items.Clear();
 
-            //Se cierra la conexion
-            conexion.Close();
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from PRODUCTOS WHERE Visibilidad = 1", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_Producto.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void RefrescarCampoUsuario()
         {
-            //Se limpian los elementos actuales del combobox "Rol"
-            cmb_UsuarioResponsable.Items.Clear();
-
-            //se abre conexion
-            conexion.Open();
-
-            //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-            SqlCommand cm = new SqlCommand("select*from USUARIO WHERE Visibilidad = 1", conexion.getConnection());
-
-            //Se crea un objeto sqldatareader para leer los Roles
-            SqlDataReader dr = cm.ExecuteReader();
-
-            //se crea un ciclo while para rellenar el combobox de Roles
-            while (dr.Read())
+            try
             {
-                cmb_UsuarioResponsable.Items.Add(dr.GetString(1));
-            }
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_UsuarioResponsable.Items.Clear();
 
-            //Se cierra la conexion
-            conexion.Close();
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from USUARIO WHERE Visibilidad = 1", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_UsuarioResponsable.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void ObtenerRegistrosUsuarios()
         {
-            conexion.Open();
-            //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-            String ConsultaUsuarios = "Select * from USUARIO WHERE Visibilidad = 1";
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultaUsuarios = "Select * from USUARIO WHERE Visibilidad = 1";
 
-            //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultaUsuarios, conexion.getConnection());
 
-            //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
-            DataTable dtUSUARIO = new DataTable();
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtUSUARIO = new DataTable();
 
-            //Se pasan los datos del datatable al objeto adaptador
-            adaptador.Fill(dtUSUARIO);
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtUSUARIO);
 
-            //Se envian los parametros al datagridview de usuarios
-            DataGrid_Usuarios.DataSource = dtUSUARIO;
-            conexion.Close();
+                //Se envian los parametros al datagridview de usuarios
+                DataGrid_Usuarios.DataSource = dtUSUARIO;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         public void ObtenerRegistrosProductos()
         {
-            conexion.Open();
-            //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-            String ConsultaProductos = "Select * from PRODUCTOS WHERE Visibilidad = 1";
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultaProductos = "Select * from PRODUCTOS WHERE Visibilidad = 1";
 
-            //Se utiliza el objeto sqldataadapter creado anteriormente
-            adaptador = new SqlDataAdapter(ConsultaProductos, conexion.getConnection());
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultaProductos, conexion.getConnection());
 
-            //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
-            DataTable dtPRODUCTOS = new DataTable();
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtPRODUCTOS = new DataTable();
 
-            //Se pasan los datos del datatable al objeto adaptador
-            adaptador.Fill(dtPRODUCTOS);
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtPRODUCTOS);
 
-            //Se envian los parametros al datagridview de usuarios
-            datagrid_Productos.DataSource = dtPRODUCTOS;
-            conexion.Close();
+                //Se envian los parametros al datagridview de usuarios
+                datagrid_Productos.DataSource = dtPRODUCTOS;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
         }
 
         private void DataGrid_Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -531,6 +590,41 @@ namespace Proyecto_Boutique
             cmb_Producto.SelectedIndex = -1;
             cmb_TipoMovimiento.SelectedIndex = -1;
             cmb_UsuarioResponsable.SelectedIndex = -1;
+        }
+
+        private void CrearMovimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_IDMovimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_CantidadProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Permitir Control de teclas como retroceso
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            //Permitir solo digitos y punto
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
