@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Proyecto_Boutique
 {
@@ -86,11 +87,10 @@ namespace Proyecto_Boutique
                         $"\n\nSaludos,\nSistema de Boutique",
                         destinariocorreo: new List<string> { correo }
                         );
-                    return "hola " + nombreUsuario + ",\n\nUsted ha aceptado una solicitud de recuperacion de contraseña\n" +
-                        "Porfavor revide su correo:"+correo+"\n" +
-                        "Le pedimos que cambie su contraseña inmediatamente una vez que ingrese al sistema" +
-                        " \nSistema de Boutique";
-                }else
+                    return "Tu usuario ha sido verificado correctamente. " +
+                        "\nPor favor, revisa tu correo electrónico para más instrucciones o notificaciones.";
+                }
+                else
                 {
                     return "No se encontró el usuario o el correo no coincide.";
                 }
