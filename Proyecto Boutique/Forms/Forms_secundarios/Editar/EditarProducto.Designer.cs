@@ -49,7 +49,6 @@
             this.lbl_Categoria = new System.Windows.Forms.Label();
             this.cmb_Categoria = new System.Windows.Forms.ComboBox();
             this.btn_EditarProducto = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_Precio = new System.Windows.Forms.Label();
             this.txtbox_Precio = new System.Windows.Forms.TextBox();
             this.lbl_NombreProducto = new System.Windows.Forms.Label();
@@ -230,23 +229,13 @@
             // 
             // btn_EditarProducto
             // 
-            this.btn_EditarProducto.Location = new System.Drawing.Point(982, 671);
+            this.btn_EditarProducto.Location = new System.Drawing.Point(885, 652);
             this.btn_EditarProducto.Name = "btn_EditarProducto";
             this.btn_EditarProducto.Size = new System.Drawing.Size(153, 45);
             this.btn_EditarProducto.TabIndex = 108;
             this.btn_EditarProducto.Text = "Modificar Producto";
             this.btn_EditarProducto.UseVisualStyleBackColor = true;
             this.btn_EditarProducto.Click += new System.EventHandler(this.btn_EditarProducto_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(796, 671);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 107;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // lbl_Precio
             // 
@@ -328,7 +317,6 @@
             this.Controls.Add(this.lbl_Categoria);
             this.Controls.Add(this.cmb_Categoria);
             this.Controls.Add(this.btn_EditarProducto);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_Precio);
             this.Controls.Add(this.txtbox_Precio);
             this.Controls.Add(this.lbl_NombreProducto);
@@ -336,6 +324,7 @@
             this.Controls.Add(this.lbl_EditarProducto);
             this.Name = "EditarProducto";
             this.Text = "EditarProducto";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarProducto_FormClosed);
             this.Load += new System.EventHandler(this.EditarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Productos)).EndInit();
             this.ResumeLayout(false);
@@ -366,7 +355,6 @@
         private System.Windows.Forms.Label lbl_Categoria;
         private System.Windows.Forms.ComboBox cmb_Categoria;
         private System.Windows.Forms.Button btn_EditarProducto;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_Precio;
         private System.Windows.Forms.TextBox txtbox_Precio;
         private System.Windows.Forms.Label lbl_NombreProducto;

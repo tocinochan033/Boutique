@@ -33,7 +33,6 @@
             this.txtbox_IDMarca = new System.Windows.Forms.TextBox();
             this.DataGrid_Marcas = new System.Windows.Forms.DataGridView();
             this.btn_CrearMarca = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_NombreMarca = new System.Windows.Forms.Label();
             this.txtbox_NombreMarca = new System.Windows.Forms.TextBox();
             this.lbl_CrearMarca = new System.Windows.Forms.Label();
@@ -79,23 +78,13 @@
             // 
             // btn_CrearMarca
             // 
-            this.btn_CrearMarca.Location = new System.Drawing.Point(276, 375);
+            this.btn_CrearMarca.Location = new System.Drawing.Point(173, 376);
             this.btn_CrearMarca.Name = "btn_CrearMarca";
             this.btn_CrearMarca.Size = new System.Drawing.Size(153, 45);
             this.btn_CrearMarca.TabIndex = 64;
             this.btn_CrearMarca.Text = "Registrar Marca";
             this.btn_CrearMarca.UseVisualStyleBackColor = true;
             this.btn_CrearMarca.Click += new System.EventHandler(this.btn_CrearMarca_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(90, 375);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 63;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // lbl_NombreMarca
             // 
@@ -133,12 +122,12 @@
             this.Controls.Add(this.txtbox_IDMarca);
             this.Controls.Add(this.DataGrid_Marcas);
             this.Controls.Add(this.btn_CrearMarca);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_NombreMarca);
             this.Controls.Add(this.txtbox_NombreMarca);
             this.Controls.Add(this.lbl_CrearMarca);
             this.Name = "CrearMarca";
             this.Text = "CrearMarca";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearMarca_FormClosed);
             this.Load += new System.EventHandler(this.CrearMarca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Marcas)).EndInit();
             this.ResumeLayout(false);
@@ -153,7 +142,6 @@
         private System.Windows.Forms.TextBox txtbox_IDMarca;
         private System.Windows.Forms.DataGridView DataGrid_Marcas;
         private System.Windows.Forms.Button btn_CrearMarca;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_NombreMarca;
         private System.Windows.Forms.TextBox txtbox_NombreMarca;
         private System.Windows.Forms.Label lbl_CrearMarca;

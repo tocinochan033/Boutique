@@ -49,8 +49,10 @@ namespace Proyecto_Boutique
         {
             InitializeComponent();
             credenciales();
+
+            this.FormBorderStyle = FormBorderStyle.None; //Oculta la barra de titulo
         }
-        
+
         //Declaracion de la cadena de conexion
         //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
         databaseConnection conexion = new databaseConnection();
@@ -184,7 +186,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearUsuario.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -215,7 +217,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearProducto.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -244,7 +246,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearMovimiento.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -273,7 +275,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearCategoria.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -302,7 +304,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearMarca.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -336,7 +338,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearColor.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -365,7 +367,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaEditarProducto.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -395,7 +397,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearCausa.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             
@@ -426,7 +428,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaEditarUsuario.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -858,6 +860,7 @@ namespace Proyecto_Boutique
         {
             try
             {
+                this.Hide();
                 if (DataGrid_Productos.SelectedRows.Count == 1)
                 {
 
@@ -922,6 +925,7 @@ namespace Proyecto_Boutique
         {
             try
             {
+                this.Hide();
                 if (DataGrid_Movimientos.SelectedRows.Count == 1)
                 {
 
@@ -1034,8 +1038,13 @@ namespace Proyecto_Boutique
 
         private void Principal_forms_FormClosing(object sender, FormClosingEventArgs e)
         {
+
+        }
+
+        private void btn_cerrarSesion_Click(object sender, EventArgs e)
+        {
             /*Al darle la cruceta (X) del formulario, se aplicara un aviso si quiere salirse del programa
-              o dirigirse a inicio de sesion*/
+o dirigirse a inicio de sesion*/
 
 
             DialogResult result = MessageBox.Show("¿Quieres cerrar sesion?", "Deseas salir ",
@@ -1051,12 +1060,6 @@ namespace Proyecto_Boutique
                 Inicio_Sesion login = new Inicio_Sesion();
                 login.Show();
             }
-            else if (result == DialogResult.No)
-            {
-                // Salir completamente del programa (no hace nada especial)
-                e.Cancel = true; // Evita que la ventana principal se cierre
-            }
-
         }
     }
 }

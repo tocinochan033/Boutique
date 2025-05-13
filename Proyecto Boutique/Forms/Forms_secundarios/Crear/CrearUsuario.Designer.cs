@@ -38,7 +38,6 @@
             this.lbl_Rol = new System.Windows.Forms.Label();
             this.cmb_Rol = new System.Windows.Forms.ComboBox();
             this.btn_CrearUsuario = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_UsuarioID = new System.Windows.Forms.Label();
             this.txtbox_IdUsuario = new System.Windows.Forms.TextBox();
             this.lbl_Correo = new System.Windows.Forms.Label();
@@ -124,23 +123,13 @@
             // 
             // btn_CrearUsuario
             // 
-            this.btn_CrearUsuario.Location = new System.Drawing.Point(574, 534);
+            this.btn_CrearUsuario.Location = new System.Drawing.Point(469, 532);
             this.btn_CrearUsuario.Name = "btn_CrearUsuario";
             this.btn_CrearUsuario.Size = new System.Drawing.Size(153, 45);
             this.btn_CrearUsuario.TabIndex = 29;
             this.btn_CrearUsuario.Text = "Crear Usuario";
             this.btn_CrearUsuario.UseVisualStyleBackColor = true;
             this.btn_CrearUsuario.Click += new System.EventHandler(this.btn_CrearUsuario_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(388, 534);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 28;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // lbl_UsuarioID
             // 
@@ -186,7 +175,6 @@
             this.Controls.Add(this.lbl_UsuarioID);
             this.Controls.Add(this.txtbox_IdUsuario);
             this.Controls.Add(this.btn_CrearUsuario);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.cmb_Rol);
             this.Controls.Add(this.lbl_Rol);
             this.Controls.Add(this.lbl_ReingresoContra);
@@ -198,6 +186,7 @@
             this.Controls.Add(this.lbl_CrearUsuario);
             this.Name = "CrearUsuario";
             this.Text = "CrearUsuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearUsuario_FormClosed);
             this.Load += new System.EventHandler(this.CrearUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,7 +204,6 @@
         private System.Windows.Forms.Label lbl_Rol;
         private System.Windows.Forms.ComboBox cmb_Rol;
         private System.Windows.Forms.Button btn_CrearUsuario;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_UsuarioID;
         private System.Windows.Forms.TextBox txtbox_IdUsuario;
         private System.Windows.Forms.Label lbl_Correo;

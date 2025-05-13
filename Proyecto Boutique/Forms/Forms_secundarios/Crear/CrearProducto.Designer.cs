@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btn_CrearProducto = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_Precio = new System.Windows.Forms.Label();
             this.txtbox_Precio = new System.Windows.Forms.TextBox();
             this.lbl_NombreProducto = new System.Windows.Forms.Label();
@@ -59,23 +58,13 @@
             // 
             // btn_CrearProducto
             // 
-            this.btn_CrearProducto.Location = new System.Drawing.Point(523, 622);
+            this.btn_CrearProducto.Location = new System.Drawing.Point(446, 621);
             this.btn_CrearProducto.Name = "btn_CrearProducto";
             this.btn_CrearProducto.Size = new System.Drawing.Size(153, 45);
             this.btn_CrearProducto.TabIndex = 79;
             this.btn_CrearProducto.Text = "Crear Producto";
             this.btn_CrearProducto.UseVisualStyleBackColor = true;
             this.btn_CrearProducto.Click += new System.EventHandler(this.btn_CrearProducto_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(337, 622);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 78;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // lbl_Precio
             // 
@@ -320,7 +309,6 @@
             this.Controls.Add(this.lbl_Categoria);
             this.Controls.Add(this.cmb_Categoria);
             this.Controls.Add(this.btn_CrearProducto);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_Precio);
             this.Controls.Add(this.txtbox_Precio);
             this.Controls.Add(this.lbl_NombreProducto);
@@ -328,6 +316,7 @@
             this.Controls.Add(this.lbl_CrearProducto);
             this.Name = "CrearProducto";
             this.Text = "CrearProducto";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearProducto_FormClosed);
             this.Load += new System.EventHandler(this.CrearProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -337,7 +326,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_CrearProducto;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_Precio;
         private System.Windows.Forms.TextBox txtbox_Precio;
         private System.Windows.Forms.Label lbl_NombreProducto;

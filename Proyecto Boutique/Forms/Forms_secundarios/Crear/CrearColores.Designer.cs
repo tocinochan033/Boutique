@@ -33,7 +33,6 @@
             this.txtbox_IDColor = new System.Windows.Forms.TextBox();
             this.DataGrid_Colores = new System.Windows.Forms.DataGridView();
             this.btn_CrearColor = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_NombreColor = new System.Windows.Forms.Label();
             this.txtbox_NombreColor = new System.Windows.Forms.TextBox();
             this.lbl_CrearColores = new System.Windows.Forms.Label();
@@ -79,23 +78,13 @@
             // 
             // btn_CrearColor
             // 
-            this.btn_CrearColor.Location = new System.Drawing.Point(291, 381);
+            this.btn_CrearColor.Location = new System.Drawing.Point(183, 387);
             this.btn_CrearColor.Name = "btn_CrearColor";
             this.btn_CrearColor.Size = new System.Drawing.Size(153, 45);
             this.btn_CrearColor.TabIndex = 73;
             this.btn_CrearColor.Text = "Registrar Color";
             this.btn_CrearColor.UseVisualStyleBackColor = true;
             this.btn_CrearColor.Click += new System.EventHandler(this.btn_CrearColor_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(105, 381);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 72;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // lbl_NombreColor
             // 
@@ -133,12 +122,12 @@
             this.Controls.Add(this.txtbox_IDColor);
             this.Controls.Add(this.DataGrid_Colores);
             this.Controls.Add(this.btn_CrearColor);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_NombreColor);
             this.Controls.Add(this.txtbox_NombreColor);
             this.Controls.Add(this.lbl_CrearColores);
             this.Name = "CrearColores";
             this.Text = "CrearColores";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearColores_FormClosed);
             this.Load += new System.EventHandler(this.CrearColores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Colores)).EndInit();
             this.ResumeLayout(false);
@@ -153,7 +142,6 @@
         private System.Windows.Forms.TextBox txtbox_IDColor;
         private System.Windows.Forms.DataGridView DataGrid_Colores;
         private System.Windows.Forms.Button btn_CrearColor;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_NombreColor;
         private System.Windows.Forms.TextBox txtbox_NombreColor;
         private System.Windows.Forms.Label lbl_CrearColores;

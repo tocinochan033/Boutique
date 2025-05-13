@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btn_EditarCategoria = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_Descripcion = new System.Windows.Forms.Label();
             this.txtbox_DescripcionCategoria = new System.Windows.Forms.TextBox();
             this.lbl_NombreCategoria = new System.Windows.Forms.Label();
@@ -39,21 +38,12 @@
             // 
             // btn_EditarCategoria
             // 
-            this.btn_EditarCategoria.Location = new System.Drawing.Point(297, 275);
+            this.btn_EditarCategoria.Location = new System.Drawing.Point(209, 274);
             this.btn_EditarCategoria.Name = "btn_EditarCategoria";
             this.btn_EditarCategoria.Size = new System.Drawing.Size(153, 45);
             this.btn_EditarCategoria.TabIndex = 66;
             this.btn_EditarCategoria.Text = "Editar Categoria";
             this.btn_EditarCategoria.UseVisualStyleBackColor = true;
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(111, 275);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 65;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
             // 
             // lbl_Descripcion
             // 
@@ -103,7 +93,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 400);
             this.Controls.Add(this.btn_EditarCategoria);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_Descripcion);
             this.Controls.Add(this.txtbox_DescripcionCategoria);
             this.Controls.Add(this.lbl_NombreCategoria);
@@ -111,6 +100,7 @@
             this.Controls.Add(this.lbl_EditarCategoria);
             this.Name = "EditarCategoria";
             this.Text = "EditarCategoria";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarCategoria_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,7 +109,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_EditarCategoria;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_Descripcion;
         private System.Windows.Forms.TextBox txtbox_DescripcionCategoria;
         private System.Windows.Forms.Label lbl_NombreCategoria;

@@ -320,5 +320,11 @@ namespace Proyecto_Boutique
                 limpiarcampos();
             }
         }
+
+        private void EditarProducto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal_forms forms = new Principal_forms();
+            forms.Show();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -209,6 +210,12 @@ namespace Proyecto_Boutique
             {
                 e.Handled = true;
             }
+        }
+
+        private void CrearColores_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal_forms forms = new Principal_forms();
+            forms.Show();
         }
     }
 }
