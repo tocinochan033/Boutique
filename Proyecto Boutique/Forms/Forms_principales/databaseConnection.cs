@@ -14,7 +14,7 @@ namespace Proyecto_Boutique
     */
     internal class databaseConnection
     {
-        string connection = "Data Source=MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
+        string connection = "Data Source=EDUARDO\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
         //Equipos:
         //Chuy: DESKTOP-BF3NJMJ
 
