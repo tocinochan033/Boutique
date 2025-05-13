@@ -220,5 +220,11 @@ namespace Proyecto_Boutique
             txtbox_Correo.Clear();
             cmb_Rol.SelectedIndex = -1;
         }
+
+        private void EditarUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal_forms forms = new Principal_forms();
+            forms.Show();
+        }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btn_EditarUsuario = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.cmb_Rol = new System.Windows.Forms.ComboBox();
             this.lbl_Rol = new System.Windows.Forms.Label();
             this.lbl_ReingresoNuevaContra = new System.Windows.Forms.Label();
@@ -49,23 +48,13 @@
             // 
             // btn_EditarUsuario
             // 
-            this.btn_EditarUsuario.Location = new System.Drawing.Point(268, 601);
+            this.btn_EditarUsuario.Location = new System.Drawing.Point(177, 602);
             this.btn_EditarUsuario.Name = "btn_EditarUsuario";
             this.btn_EditarUsuario.Size = new System.Drawing.Size(153, 45);
             this.btn_EditarUsuario.TabIndex = 46;
             this.btn_EditarUsuario.Text = "Editar Usuario";
             this.btn_EditarUsuario.UseVisualStyleBackColor = true;
             this.btn_EditarUsuario.Click += new System.EventHandler(this.btn_EditarUsuario_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(82, 601);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 45;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // cmb_Rol
             // 
@@ -198,7 +187,6 @@
             this.Controls.Add(this.lbl_UsuarioID);
             this.Controls.Add(this.txtbox_IdUsuario);
             this.Controls.Add(this.btn_EditarUsuario);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.cmb_Rol);
             this.Controls.Add(this.lbl_Rol);
             this.Controls.Add(this.lbl_ReingresoNuevaContra);
@@ -210,6 +198,7 @@
             this.Controls.Add(this.lbl_EditarUsuario);
             this.Name = "EditarUsuario";
             this.Text = "EditarUsuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarUsuario_FormClosed);
             this.Load += new System.EventHandler(this.EditarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Usuarios)).EndInit();
             this.ResumeLayout(false);
@@ -220,7 +209,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_EditarUsuario;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_Rol;
         private System.Windows.Forms.Label lbl_ReingresoNuevaContra;
         private System.Windows.Forms.Label lbl_NuevaContra;

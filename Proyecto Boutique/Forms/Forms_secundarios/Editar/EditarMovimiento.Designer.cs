@@ -33,7 +33,6 @@
             this.lbl_TipoMovimiento = new System.Windows.Forms.Label();
             this.cmb_TipoMovimiento = new System.Windows.Forms.ComboBox();
             this.btn_EditarMovimiento = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_PrecioUnitario = new System.Windows.Forms.Label();
             this.txtbox_PrecioUnitario = new System.Windows.Forms.TextBox();
             this.lbl_Cantidad = new System.Windows.Forms.Label();
@@ -79,21 +78,12 @@
             // 
             // btn_EditarMovimiento
             // 
-            this.btn_EditarMovimiento.Location = new System.Drawing.Point(305, 476);
+            this.btn_EditarMovimiento.Location = new System.Drawing.Point(225, 464);
             this.btn_EditarMovimiento.Name = "btn_EditarMovimiento";
             this.btn_EditarMovimiento.Size = new System.Drawing.Size(153, 45);
             this.btn_EditarMovimiento.TabIndex = 134;
             this.btn_EditarMovimiento.Text = "Editar Movimiento";
             this.btn_EditarMovimiento.UseVisualStyleBackColor = true;
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(119, 476);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 133;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
             // 
             // lbl_PrecioUnitario
             // 
@@ -146,7 +136,6 @@
             this.Controls.Add(this.lbl_TipoMovimiento);
             this.Controls.Add(this.cmb_TipoMovimiento);
             this.Controls.Add(this.btn_EditarMovimiento);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_PrecioUnitario);
             this.Controls.Add(this.txtbox_PrecioUnitario);
             this.Controls.Add(this.lbl_Cantidad);
@@ -154,6 +143,7 @@
             this.Controls.Add(this.lbl_EditarMovimiento);
             this.Name = "EditarMovimiento";
             this.Text = "EditarMovimiento";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditarMovimiento_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,7 +156,6 @@
         private System.Windows.Forms.Label lbl_TipoMovimiento;
         private System.Windows.Forms.ComboBox cmb_TipoMovimiento;
         private System.Windows.Forms.Button btn_EditarMovimiento;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_PrecioUnitario;
         private System.Windows.Forms.TextBox txtbox_PrecioUnitario;
         private System.Windows.Forms.Label lbl_Cantidad;

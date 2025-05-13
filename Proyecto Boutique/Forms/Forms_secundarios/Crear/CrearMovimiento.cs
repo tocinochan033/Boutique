@@ -626,5 +626,11 @@ namespace Proyecto_Boutique
                 e.Handled = true;
             }
         }
+
+        private void CrearMovimiento_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal_forms forms = new Principal_forms();
+            forms.Show();
+        }
     }
 }

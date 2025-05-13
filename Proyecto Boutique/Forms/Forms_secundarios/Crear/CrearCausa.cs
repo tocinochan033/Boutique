@@ -214,5 +214,11 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
                 e.Handled = true;
             }
         }
+
+        private void CrearCausa_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal_forms forms = new Principal_forms();
+            forms.Show();
+        }
     }
 }

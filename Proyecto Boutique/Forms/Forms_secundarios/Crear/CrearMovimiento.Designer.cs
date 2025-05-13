@@ -33,7 +33,6 @@
             this.lbl_TipoMovimiento = new System.Windows.Forms.Label();
             this.cmb_TipoMovimiento = new System.Windows.Forms.ComboBox();
             this.btn_CrearMovimiento = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_Cantidad = new System.Windows.Forms.Label();
             this.txtbox_CantidadProducto = new System.Windows.Forms.TextBox();
             this.lbl_CrearMovimiento = new System.Windows.Forms.Label();
@@ -99,23 +98,13 @@
             // 
             // btn_CrearMovimiento
             // 
-            this.btn_CrearMovimiento.Location = new System.Drawing.Point(260, 602);
+            this.btn_CrearMovimiento.Location = new System.Drawing.Point(183, 597);
             this.btn_CrearMovimiento.Name = "btn_CrearMovimiento";
             this.btn_CrearMovimiento.Size = new System.Drawing.Size(153, 45);
             this.btn_CrearMovimiento.TabIndex = 117;
             this.btn_CrearMovimiento.Text = "Crear Movimiento";
             this.btn_CrearMovimiento.UseVisualStyleBackColor = true;
             this.btn_CrearMovimiento.Click += new System.EventHandler(this.btn_CrearMovimiento_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(74, 602);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 116;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // lbl_Cantidad
             // 
@@ -362,12 +351,12 @@
             this.Controls.Add(this.lbl_TipoMovimiento);
             this.Controls.Add(this.cmb_TipoMovimiento);
             this.Controls.Add(this.btn_CrearMovimiento);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_Cantidad);
             this.Controls.Add(this.txtbox_CantidadProducto);
             this.Controls.Add(this.lbl_CrearMovimiento);
             this.Name = "CrearMovimiento";
             this.Text = "CrearMovimiento";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearMovimiento_FormClosed);
             this.Load += new System.EventHandler(this.CrearMovimiento_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CrearMovimiento_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Usuarios)).EndInit();
@@ -384,7 +373,6 @@
         private System.Windows.Forms.Label lbl_TipoMovimiento;
         private System.Windows.Forms.ComboBox cmb_TipoMovimiento;
         private System.Windows.Forms.Button btn_CrearMovimiento;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_Cantidad;
         private System.Windows.Forms.TextBox txtbox_CantidadProducto;
         private System.Windows.Forms.Label lbl_CrearMovimiento;

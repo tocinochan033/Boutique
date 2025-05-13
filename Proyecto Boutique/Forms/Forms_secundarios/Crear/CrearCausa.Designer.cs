@@ -33,7 +33,6 @@
             this.txtbox_IDCausa = new System.Windows.Forms.TextBox();
             this.DataGrid_Causas = new System.Windows.Forms.DataGridView();
             this.btn_CrearCausa = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.lbl_NombreCausa = new System.Windows.Forms.Label();
             this.txtbox_NombreCausa = new System.Windows.Forms.TextBox();
             this.lbl_CrearCausa = new System.Windows.Forms.Label();
@@ -79,23 +78,13 @@
             // 
             // btn_CrearCausa
             // 
-            this.btn_CrearCausa.Location = new System.Drawing.Point(273, 399);
+            this.btn_CrearCausa.Location = new System.Drawing.Point(165, 393);
             this.btn_CrearCausa.Name = "btn_CrearCausa";
             this.btn_CrearCausa.Size = new System.Drawing.Size(153, 45);
             this.btn_CrearCausa.TabIndex = 82;
             this.btn_CrearCausa.Text = "Registrar Causa";
             this.btn_CrearCausa.UseVisualStyleBackColor = true;
             this.btn_CrearCausa.Click += new System.EventHandler(this.btn_CrearCausa_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(87, 399);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 81;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // lbl_NombreCausa
             // 
@@ -133,12 +122,12 @@
             this.Controls.Add(this.txtbox_IDCausa);
             this.Controls.Add(this.DataGrid_Causas);
             this.Controls.Add(this.btn_CrearCausa);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_NombreCausa);
             this.Controls.Add(this.txtbox_NombreCausa);
             this.Controls.Add(this.lbl_CrearCausa);
             this.Name = "CrearCausa";
             this.Text = "CrearCausa";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearCausa_FormClosed);
             this.Load += new System.EventHandler(this.CrearCausa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Causas)).EndInit();
             this.ResumeLayout(false);
@@ -153,7 +142,6 @@
         private System.Windows.Forms.TextBox txtbox_IDCausa;
         private System.Windows.Forms.DataGridView DataGrid_Causas;
         private System.Windows.Forms.Button btn_CrearCausa;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Label lbl_NombreCausa;
         private System.Windows.Forms.TextBox txtbox_NombreCausa;
         private System.Windows.Forms.Label lbl_CrearCausa;

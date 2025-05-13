@@ -34,7 +34,6 @@
             this.txtbox_NombreCategoria = new System.Windows.Forms.TextBox();
             this.lbl_CrearCategoria = new System.Windows.Forms.Label();
             this.btn_CrearCategoria = new System.Windows.Forms.Button();
-            this.btn_Regresar = new System.Windows.Forms.Button();
             this.DataGrid_Categorias = new System.Windows.Forms.DataGridView();
             this.lbl_IDCategoria = new System.Windows.Forms.Label();
             this.txtbox_IDCategoria = new System.Windows.Forms.TextBox();
@@ -89,23 +88,13 @@
             // 
             // btn_CrearCategoria
             // 
-            this.btn_CrearCategoria.Location = new System.Drawing.Point(320, 403);
+            this.btn_CrearCategoria.Location = new System.Drawing.Point(222, 389);
             this.btn_CrearCategoria.Name = "btn_CrearCategoria";
             this.btn_CrearCategoria.Size = new System.Drawing.Size(153, 45);
             this.btn_CrearCategoria.TabIndex = 53;
             this.btn_CrearCategoria.Text = "Crear Categoria";
             this.btn_CrearCategoria.UseVisualStyleBackColor = true;
             this.btn_CrearCategoria.Click += new System.EventHandler(this.btn_CrearCategoria_Click);
-            // 
-            // btn_Regresar
-            // 
-            this.btn_Regresar.Location = new System.Drawing.Point(134, 403);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(153, 45);
-            this.btn_Regresar.TabIndex = 52;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
             // 
             // DataGrid_Categorias
             // 
@@ -155,7 +144,6 @@
             this.Controls.Add(this.txtbox_IDCategoria);
             this.Controls.Add(this.DataGrid_Categorias);
             this.Controls.Add(this.btn_CrearCategoria);
-            this.Controls.Add(this.btn_Regresar);
             this.Controls.Add(this.lbl_Descripcion);
             this.Controls.Add(this.txtbox_DescripcionCategoria);
             this.Controls.Add(this.lbl_NombreCategoria);
@@ -164,6 +152,7 @@
             this.Name = "CrearCategoria";
             this.Text = "CrearCategoria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CrearCategoria_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearCategoria_FormClosed);
             this.Load += new System.EventHandler(this.CrearCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Categorias)).EndInit();
             this.ResumeLayout(false);
@@ -179,7 +168,6 @@
         private System.Windows.Forms.TextBox txtbox_NombreCategoria;
         private System.Windows.Forms.Label lbl_CrearCategoria;
         private System.Windows.Forms.Button btn_CrearCategoria;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.DataGridView DataGrid_Categorias;
         private System.Windows.Forms.Label lbl_IDCategoria;
         private System.Windows.Forms.TextBox txtbox_IDCategoria;

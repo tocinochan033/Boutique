@@ -1036,23 +1036,7 @@ namespace Proyecto_Boutique
 
         private void Principal_forms_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*Al darle la cruceta (X) del formulario, se aplicara un aviso si quiere salirse del programa
-            o dirigirse a inicio de sesion*/
 
-
-            DialogResult result = MessageBox.Show("¿Quieres cerrar sesion?", "Deseas salir ",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button3);
-
-            // Yes -> salir
-            // No -> no hacer nada
-
-            if (result == DialogResult.Yes)
-            {
-                this.Hide();
-                Inicio_Sesion login = new Inicio_Sesion();
-                login.Show();
-            }
         }
 
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
