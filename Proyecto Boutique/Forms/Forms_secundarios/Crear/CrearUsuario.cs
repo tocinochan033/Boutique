@@ -158,6 +158,10 @@ namespace Proyecto_Boutique
 
                             conexion.Close();
 
+                            Principal_forms principal_Forms = new Principal_forms();
+                            principal_Forms.ObtenerRegistrosUsuarios();
+                            
+
                             limpiarcampos();
                         }
 
@@ -214,8 +218,7 @@ namespace Proyecto_Boutique
 
         private void CrearUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Principal_forms forms = new Principal_forms();
-            forms.Show();
+
         }
     }
 }

@@ -253,6 +253,7 @@
             this.DataGrid_Usuarios.RowTemplate.Height = 24;
             this.DataGrid_Usuarios.Size = new System.Drawing.Size(1218, 468);
             this.DataGrid_Usuarios.TabIndex = 15;
+            this.DataGrid_Usuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Usuarios_CellContentClick);
             this.DataGrid_Usuarios.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_Usuarios_RowsAdded);
             this.DataGrid_Usuarios.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGrid_Usuarios_RowsRemoved);
             // 

@@ -186,7 +186,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearUsuario.Show();
 
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             catch
@@ -1060,6 +1060,11 @@ o dirigirse a inicio de sesion*/
                 Inicio_Sesion login = new Inicio_Sesion();
                 login.Show();
             }
+        }
+
+        private void DataGrid_Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
