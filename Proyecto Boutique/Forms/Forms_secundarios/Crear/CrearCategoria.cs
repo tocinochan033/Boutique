@@ -225,7 +225,11 @@ namespace Proyecto_Boutique
             }
         }
 
-        
+        private void CrearCategoria_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Principal_forms forms = new Principal_forms();
+            forms.Show();
+        }
     }
 
 }

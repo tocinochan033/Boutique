@@ -163,6 +163,7 @@
             this.Controls.Add(this.lbl_CrearCategoria);
             this.Name = "CrearCategoria";
             this.Text = "CrearCategoria";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CrearCategoria_FormClosing);
             this.Load += new System.EventHandler(this.CrearCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Categorias)).EndInit();
             this.ResumeLayout(false);

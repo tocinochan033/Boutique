@@ -184,7 +184,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearUsuario.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -215,7 +215,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearProducto.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -244,7 +244,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearMovimiento.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -273,7 +273,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearCategoria.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -302,7 +302,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearMarca.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -336,7 +336,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearColor.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -365,7 +365,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaEditarProducto.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -395,7 +395,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearCausa.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             
@@ -426,7 +426,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaEditarUsuario.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
             }
             catch
@@ -858,6 +858,7 @@ namespace Proyecto_Boutique
         {
             try
             {
+                this.Hide();
                 if (DataGrid_Productos.SelectedRows.Count == 1)
                 {
 
@@ -922,6 +923,7 @@ namespace Proyecto_Boutique
         {
             try
             {
+                this.Hide();
                 if (DataGrid_Movimientos.SelectedRows.Count == 1)
                 {
 
@@ -1034,6 +1036,23 @@ namespace Proyecto_Boutique
 
         private void Principal_forms_FormClosing(object sender, FormClosingEventArgs e)
         {
+            /*Al darle la cruceta (X) del formulario, se aplicara un aviso si quiere salirse del programa
+            o dirigirse a inicio de sesion*/
+
+
+            DialogResult result = MessageBox.Show("¿Quieres cerrar sesion?", "Deseas salir ",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button3);
+
+            // Yes -> salir
+            // No -> no hacer nada
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                Inicio_Sesion login = new Inicio_Sesion();
+                login.Show();
+            }
         }
 
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
