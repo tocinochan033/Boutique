@@ -49,8 +49,10 @@ namespace Proyecto_Boutique
         {
             InitializeComponent();
             credenciales();
+
+            this.FormBorderStyle = FormBorderStyle.None; //Oculta la barra de titulo
         }
-        
+
         //Declaracion de la cadena de conexion
         //SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-BF3NJMJ;Initial Catalog=BOUTIQUE; Integrated Security=True");
         databaseConnection conexion = new databaseConnection();
