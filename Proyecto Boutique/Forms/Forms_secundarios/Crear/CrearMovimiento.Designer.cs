@@ -145,6 +145,7 @@
             // 
             this.txt_IDMovimiento.Location = new System.Drawing.Point(54, 155);
             this.txt_IDMovimiento.Name = "txt_IDMovimiento";
+            this.txt_IDMovimiento.ReadOnly = true;
             this.txt_IDMovimiento.Size = new System.Drawing.Size(407, 22);
             this.txt_IDMovimiento.TabIndex = 124;
             this.txt_IDMovimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IDMovimiento_KeyPress);
