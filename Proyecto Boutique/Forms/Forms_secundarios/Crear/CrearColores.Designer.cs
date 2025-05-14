@@ -62,6 +62,7 @@
             // 
             this.txtbox_IDColor.Location = new System.Drawing.Point(67, 154);
             this.txtbox_IDColor.Name = "txtbox_IDColor";
+            this.txtbox_IDColor.ReadOnly = true;
             this.txtbox_IDColor.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDColor.TabIndex = 75;
             this.txtbox_IDColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDColor_KeyPress);

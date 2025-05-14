@@ -41,6 +41,38 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
         private void CrearMarca_Load(object sender, EventArgs e)
         {
             ObtenerRegistrosMarcas();
+            actualizarID();
+        }
+
+        public void actualizarID()
+        {
+            try
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("SELECT MAX(ID_Marca) FROM MARCA", conexion.getConnection());
+                object result = cmd.ExecuteScalar();
+                int ultimaId;
+                int sumultimaID;
+
+                ultimaId = result != DBNull.Value ? Convert.ToInt32(result) : 0;
+
+                if (ultimaId == 0)
+                {
+                    txtbox_IDMarca.Text = 1.ToString();
+                }
+                else
+                {
+                    sumultimaID = ultimaId + 1;
+
+                    txtbox_IDMarca.Text = sumultimaID.ToString();
+                }
+                conexion.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
+            }
         }
 
         public void ObtenerRegistrosMarcas()
@@ -163,7 +195,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
                         conexion.Open();
 
                         //Se crea un string que contenga todo el comando de insercion a la base de datos
-                        string insercion = $"INSERT INTO MARCA (ID_Marca,Nombre,Visibilidad) VALUES({txtbox_IDMarca.Text},'{txtbox_NombreMarca.Text}',1)";
+                        string insercion = $"INSERT INTO MARCA (Nombre,Visibilidad) VALUES('{txtbox_NombreMarca.Text}',1)";
 
                         //se crea un sql command para insertar los datos
                         SqlCommand comandoInsercion = new SqlCommand(insercion, conexion.getConnection());
@@ -178,6 +210,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
 
                         limpiarcampos();
                         ObtenerRegistrosMarcas();
+                        actualizarID();
                     }
                     else
                     {

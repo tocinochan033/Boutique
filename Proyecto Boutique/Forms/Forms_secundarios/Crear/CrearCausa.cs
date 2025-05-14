@@ -40,6 +40,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
         private void CrearCausa_Load(object sender, EventArgs e)
         {
             ObtenerRegistrosCausas();
+
         }
 
         public void ObtenerRegistrosCausas()
