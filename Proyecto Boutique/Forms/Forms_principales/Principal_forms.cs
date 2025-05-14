@@ -816,7 +816,7 @@ namespace Proyecto_Boutique
         {
             if(SessionData.RolId == 2) // EN CASO DE SER GENERAL ES 2
             {
-                                // Se ocultan los botones de crear y eliminar
+                // Se ocultan los botones de crear y eliminar
                 btn_CrearUsuario.Visible = false;
                 btn_CrearProducto.Visible = false;
                 btn_CrearMovimiento.Visible = false;
@@ -825,6 +825,8 @@ namespace Proyecto_Boutique
                 btn_Eliminar.Visible = false;
                 btn_EliminarProducto.Visible = false;
                 btn_EliminarMovimientos.Visible = false;
+
+                tabControl1.TabPages.Remove(tabPage1); // Se oculta la pestaña de usuarios
             }
             
         }
