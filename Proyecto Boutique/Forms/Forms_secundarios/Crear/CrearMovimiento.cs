@@ -49,10 +49,42 @@ namespace Proyecto_Boutique
                 RefrescarCampoUsuario();
                 ObtenerRegistrosUsuarios();
                 ObtenerRegistrosProductos();
+                actualizarID();
             }
             catch
             {
                 MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
+        }
+
+        public void actualizarID()
+        {
+            try
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("SELECT MAX(ID_Movimiento) FROM MOVIMIENTOS", conexion.getConnection());
+                object result = cmd.ExecuteScalar();
+                int ultimaId;
+                int sumultimaID;
+
+                ultimaId = result != DBNull.Value ? Convert.ToInt32(result) : 0;
+
+                if (ultimaId == 0)
+                {
+                    txt_IDMovimiento.Text = 1.ToString();
+                }
+                else
+                {
+                    sumultimaID = ultimaId + 1;
+
+                    txt_IDMovimiento.Text = sumultimaID.ToString();
+                }
+                conexion.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
             }
         }
 
@@ -458,8 +490,8 @@ namespace Proyecto_Boutique
                             conexion.Open();
 
                             //Se crea un string que contenga todo el comando de insercion a la base de datos
-                            string insercion = "INSERT INTO MOVIMIENTOS (ID_Movimiento, Usuario, Producto, TipoMovimiento, Cantidad, Causa, Fecha) " +
-                            $"VALUES ({txt_IDMovimiento.Text},{usuarioSeleccionado},{productoSeleccionado},{tipoMovimientoSeleccionado},{txtbox_CantidadProducto.Text}" +
+                            string insercion = "INSERT INTO MOVIMIENTOS (Usuario, Producto, TipoMovimiento, Cantidad, Causa, Fecha) " +
+                            $"VALUES ({usuarioSeleccionado},{productoSeleccionado},{tipoMovimientoSeleccionado},{txtbox_CantidadProducto.Text}" +
                             $",{causaSeleccionada},GETDATE())";
 
                             //se crea un sql command para insertar los datos
@@ -559,6 +591,7 @@ namespace Proyecto_Boutique
                             limpiarcampos();
                             ObtenerRegistrosProductos();
                             ObtenerRegistrosUsuarios();
+                            actualizarID();
                         }
                         else
                         {

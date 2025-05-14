@@ -143,8 +143,8 @@ namespace Proyecto_Boutique
                             conexion.Open();
 
                             //Se crea un string que contenga todo el comando de insercion a la base de datos
-                            string insercion = "INSERT INTO USUARIO (ID_Usuario,Nombre,Contrasena,Rol,Correo,Visibilidad)\r\nVALUES ( " +
-                                txtbox_IdUsuario.Text + ",'" + txtbox_NombreUsuario.Text + "','" + txtbox_Contra.Text + "'," + rolSeleccionado + ",'" +
+                            string insercion = "INSERT INTO USUARIO (Nombre,Contrasena,Rol,Correo,Visibilidad)\r\nVALUES ( " +
+                                txtbox_NombreUsuario.Text + "','" + txtbox_Contra.Text + "'," + rolSeleccionado + ",'" +
                                 txtbox_Correo.Text + "', 1)";
 
                             //se crea un sql command para insertar los datos
@@ -159,6 +159,7 @@ namespace Proyecto_Boutique
                             conexion.Close();
 
                             limpiarcampos();
+                            actualizarID();
                         }
 
                         else
@@ -209,8 +210,40 @@ namespace Proyecto_Boutique
 
         private void CrearUsuario_Load(object sender, EventArgs e)
         {
-
+            actualizarID();
         }
+
+        public void actualizarID()
+        {
+            try
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("SELECT MAX(ID_Usuario) FROM USUARIO", conexion.getConnection());
+                object result = cmd.ExecuteScalar();
+                int ultimaId;
+                int sumultimaID;
+
+                ultimaId = result != DBNull.Value ? Convert.ToInt32(result) : 0;
+
+                if (ultimaId == 0)
+                {
+                    txtbox_IdUsuario.Text = 1.ToString();
+                }
+                else
+                {
+                    sumultimaID = ultimaId + 1;
+
+                    txtbox_IdUsuario.Text = sumultimaID.ToString();
+                }
+                conexion.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
+            }
+        }
+
 
         private void CrearUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {

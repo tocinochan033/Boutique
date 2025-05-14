@@ -120,6 +120,7 @@
             // 
             this.txtbox_IDCategoria.Location = new System.Drawing.Point(96, 176);
             this.txtbox_IDCategoria.Name = "txtbox_IDCategoria";
+            this.txtbox_IDCategoria.ReadOnly = true;
             this.txtbox_IDCategoria.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDCategoria.TabIndex = 55;
             this.txtbox_IDCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDCategoria_KeyPress);

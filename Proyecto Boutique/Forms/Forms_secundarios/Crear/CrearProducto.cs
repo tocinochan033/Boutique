@@ -41,10 +41,42 @@ namespace Proyecto_Boutique
                 RefrescarCampoCategoria();
                 RefrescarCampoColor();
                 RefrescarCampoMarca();
+                actualizarID();
             }
             catch
             {
                 MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
+        }
+
+        public void actualizarID()
+        {
+            try
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("SELECT MAX(ID_Producto) FROM PRODUCTOS", conexion.getConnection());
+                object result = cmd.ExecuteScalar();
+                int ultimaId;
+                int sumultimaID;
+
+                ultimaId = result != DBNull.Value ? Convert.ToInt32(result) : 0;
+
+                if (ultimaId == 0)
+                {
+                    txtbox_IDProducto.Text = 1.ToString();
+                }
+                else
+                {
+                    sumultimaID = ultimaId + 1;
+
+                    txtbox_IDProducto.Text = sumultimaID.ToString();
+                }
+                conexion.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
             }
         }
 
@@ -151,8 +183,8 @@ namespace Proyecto_Boutique
                             conexion.Open();
 
                             //Se crea un string que contenga todo el comando de insercion a la base de datos
-                            string insercion = "INSERT INTO PRODUCTOS (ID_Producto, Nombre, Marca, Descripcion, Categoria, Precio, Cantidad, Color, Talla, FechaEntrada, " +
-                            $"PuntoReorden, Maximo, Minimo, Visibilidad) VALUES ({txtbox_IDProducto.Text},'{txtbox_NombreProducto.Text}',{marcaSeleccionada},'{txtbox_DescripcionProducto.Text}'," +
+                            string insercion = "INSERT INTO PRODUCTOS (Nombre, Marca, Descripcion, Categoria, Precio, Cantidad, Color, Talla, FechaEntrada, " +
+                            $"PuntoReorden, Maximo, Minimo, Visibilidad) VALUES ('{txtbox_NombreProducto.Text}',{marcaSeleccionada},'{txtbox_DescripcionProducto.Text}'," +
                             $"{categoriaSeleccionada}, {txtbox_Precio.Text}, {txtbox_Cantidad.Text}, {colorSeleccionado}, '{txtbox_talla.Text}', GETDATE(), {txtbox_PuntoReorden.Text}, " +
                             $"{txtbox_MaximoStock.Text}, {txtbox_MinimoStock.Text}, 1)";
 
@@ -168,6 +200,7 @@ namespace Proyecto_Boutique
                             conexion.Close();
 
                             limpiarcampos();
+                            actualizarID();
                         }
 
                         else

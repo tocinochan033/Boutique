@@ -71,6 +71,7 @@
             // 
             this.txtbox_IDProducto.Location = new System.Drawing.Point(48, 61);
             this.txtbox_IDProducto.Name = "txtbox_IDProducto";
+            this.txtbox_IDProducto.ReadOnly = true;
             this.txtbox_IDProducto.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDProducto.TabIndex = 127;
             // 

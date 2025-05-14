@@ -48,8 +48,40 @@ namespace Proyecto_Boutique
         private void CrearColores_Load(object sender, EventArgs e)
         {
             ObtenerRegistrosColores();
+            actualizarID();
         }
 
+
+        public void actualizarID()
+        {
+            try
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("SELECT MAX(ID_Color) FROM COLOR", conexion.getConnection());
+                object result = cmd.ExecuteScalar();
+                int ultimaId;
+                int sumultimaID;
+
+                ultimaId = result != DBNull.Value ? Convert.ToInt32(result) : 0;
+
+                if (ultimaId == 0)
+                {
+                    txtbox_IDColor.Text = 1.ToString();
+                }
+                else
+                {
+                    sumultimaID = ultimaId + 1;
+
+                    txtbox_IDColor.Text = sumultimaID.ToString();
+                }
+                conexion.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error inesperado");
+            }
+        }
         public void ObtenerRegistrosColores()
         {
             try
@@ -162,7 +194,7 @@ namespace Proyecto_Boutique
                         conexion.Open();
 
                         //Se crea un string que contenga todo el comando de insercion a la base de datos
-                        string insercion = $"INSERT INTO COLOR (ID_Color,Nombre,Visibilidad) VALUES({txtbox_IDColor.Text},'{txtbox_NombreColor.Text}',1)";
+                        string insercion = $"INSERT INTO COLOR (Nombre,Visibilidad) VALUES('{txtbox_NombreColor.Text}',1)";
 
                         //se crea un sql command para insertar los datos
                         SqlCommand comandoInsercion = new SqlCommand(insercion, conexion.getConnection());
@@ -177,6 +209,7 @@ namespace Proyecto_Boutique
 
                         limpiarcampos();
                         ObtenerRegistrosColores();
+                        actualizarID();
                     }
                     else
                     {

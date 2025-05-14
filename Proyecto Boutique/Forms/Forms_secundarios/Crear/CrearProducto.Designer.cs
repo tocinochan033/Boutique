@@ -279,6 +279,7 @@
             // 
             this.txtbox_IDProducto.Location = new System.Drawing.Point(41, 75);
             this.txtbox_IDProducto.Name = "txtbox_IDProducto";
+            this.txtbox_IDProducto.ReadOnly = true;
             this.txtbox_IDProducto.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDProducto.TabIndex = 100;
             this.txtbox_IDProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDProducto_KeyPress);

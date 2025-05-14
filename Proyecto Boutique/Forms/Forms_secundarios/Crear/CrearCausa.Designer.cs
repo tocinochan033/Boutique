@@ -62,6 +62,7 @@
             // 
             this.txtbox_IDCausa.Location = new System.Drawing.Point(49, 172);
             this.txtbox_IDCausa.Name = "txtbox_IDCausa";
+            this.txtbox_IDCausa.ReadOnly = true;
             this.txtbox_IDCausa.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDCausa.TabIndex = 84;
             this.txtbox_IDCausa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDCausa_KeyPress);

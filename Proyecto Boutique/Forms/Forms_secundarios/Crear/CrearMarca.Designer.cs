@@ -62,6 +62,7 @@
             // 
             this.txtbox_IDMarca.Location = new System.Drawing.Point(52, 148);
             this.txtbox_IDMarca.Name = "txtbox_IDMarca";
+            this.txtbox_IDMarca.ReadOnly = true;
             this.txtbox_IDMarca.Size = new System.Drawing.Size(407, 22);
             this.txtbox_IDMarca.TabIndex = 66;
             this.txtbox_IDMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDMarca_KeyPress);
