@@ -8,6 +8,6 @@ namespace Proyecto_Boutique
 {
     public static class SessionData
     {
-        public static int RolId { get; set; }
+        public static int RolId { get; set; }    
     }
 }

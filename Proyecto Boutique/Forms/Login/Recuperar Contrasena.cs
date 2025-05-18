@@ -30,5 +30,11 @@ namespace Proyecto_Boutique
             inicio.Show();
             this.Hide();
         }
+
+        private void Recuperar_Contrasena_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Inicio_Sesion inicio = new Inicio_Sesion();
+            inicio.Show();
+        }
     }
 }

@@ -247,8 +247,6 @@ namespace Proyecto_Boutique
 
         private void CrearColores_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Principal_forms forms = new Principal_forms();
-            forms.Show();
         }
 
         private void lbl_CrearCategoria_Click(object sender, EventArgs e)

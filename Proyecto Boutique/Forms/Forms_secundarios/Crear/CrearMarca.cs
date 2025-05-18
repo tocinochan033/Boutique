@@ -249,8 +249,6 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
 
         private void CrearMarca_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Principal_forms forms = new Principal_forms();
-            forms.Show();
         }
     }
 }
