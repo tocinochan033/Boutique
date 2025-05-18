@@ -425,6 +425,7 @@
     <None Include="images\icons\agregar.png" />
     <None Include="images\icons\circulo-de-basura.png" />
     <None Include="images\icons\archivo-hoja.png" />
+    <None Include="images\icons\deshacer.png" />
     <Content Include="images\icons\hide.png" />
     <None Include="images\icons\modificar-usuario.png" />
     <None Include="images\icons\modificar.png" />

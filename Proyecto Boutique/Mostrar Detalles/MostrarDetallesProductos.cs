@@ -71,8 +71,15 @@ namespace Proyecto_Boutique.Mostrar_Detalles
                 MessageBox.Show("Ha ocurrido un error inesperado");
             }
         }
-        
 
-        
+        private void txtbox_talla_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MostrarDetallesProductos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

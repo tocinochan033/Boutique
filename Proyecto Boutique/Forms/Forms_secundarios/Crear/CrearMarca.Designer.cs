@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearMarca));
             this.btn_EliminarMarca = new System.Windows.Forms.Button();
             this.lbl_IDMarca = new System.Windows.Forms.Label();
             this.txtbox_IDMarca = new System.Windows.Forms.TextBox();
@@ -49,7 +50,7 @@
             this.btn_EliminarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EliminarMarca.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EliminarMarca.Location = new System.Drawing.Point(426, 236);
-            this.btn_EliminarMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_EliminarMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btn_EliminarMarca.Name = "btn_EliminarMarca";
             this.btn_EliminarMarca.Size = new System.Drawing.Size(156, 43);
             this.btn_EliminarMarca.TabIndex = 68;
@@ -72,7 +73,7 @@
             // 
             this.txtbox_IDMarca.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_IDMarca.Location = new System.Drawing.Point(376, 76);
-            this.txtbox_IDMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_IDMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_IDMarca.Name = "txtbox_IDMarca";
             this.txtbox_IDMarca.ReadOnly = true;
             this.txtbox_IDMarca.Size = new System.Drawing.Size(163, 29);
@@ -85,7 +86,7 @@
             this.DataGrid_Marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid_Marcas.GridColor = System.Drawing.SystemColors.Control;
             this.DataGrid_Marcas.Location = new System.Drawing.Point(11, 56);
-            this.DataGrid_Marcas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DataGrid_Marcas.Margin = new System.Windows.Forms.Padding(2);
             this.DataGrid_Marcas.Name = "DataGrid_Marcas";
             this.DataGrid_Marcas.RowHeadersWidth = 51;
             this.DataGrid_Marcas.RowTemplate.Height = 24;
@@ -98,7 +99,7 @@
             this.btn_CrearMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearMarca.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearMarca.Location = new System.Drawing.Point(426, 184);
-            this.btn_CrearMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_CrearMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CrearMarca.Name = "btn_CrearMarca";
             this.btn_CrearMarca.Size = new System.Drawing.Size(156, 43);
             this.btn_CrearMarca.TabIndex = 64;
@@ -121,7 +122,7 @@
             // 
             this.txtbox_NombreMarca.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_NombreMarca.Location = new System.Drawing.Point(376, 141);
-            this.txtbox_NombreMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_NombreMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_NombreMarca.MaxLength = 15;
             this.txtbox_NombreMarca.Name = "txtbox_NombreMarca";
             this.txtbox_NombreMarca.Size = new System.Drawing.Size(206, 29);
@@ -173,7 +174,8 @@
             this.Controls.Add(this.btn_CrearMarca);
             this.Controls.Add(this.lbl_NombreMarca);
             this.Controls.Add(this.txtbox_NombreMarca);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(608, 330);
             this.MinimumSize = new System.Drawing.Size(608, 330);
             this.Name = "CrearMarca";

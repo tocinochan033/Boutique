@@ -143,7 +143,7 @@ namespace Proyecto_Boutique
                             conexion.Open();
 
                             //Se crea un string que contenga todo el comando de insercion a la base de datos
-                            string insercion = "INSERT INTO USUARIO (Nombre,Contrasena,Rol,Correo,Visibilidad)\r\nVALUES ( " +
+                            string insercion = "INSERT INTO USUARIO (Nombre,Contrasena,Rol,Correo,Visibilidad)\r\nVALUES ( '" +
                                 txtbox_NombreUsuario.Text + "','" + txtbox_Contra.Text + "'," + rolSeleccionado + ",'" +
                                 txtbox_Correo.Text + "', 1)";
 

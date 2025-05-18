@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearCategoria));
             this.lbl_Descripcion = new System.Windows.Forms.Label();
             this.txtbox_DescripcionCategoria = new System.Windows.Forms.TextBox();
             this.lbl_NombreCategoria = new System.Windows.Forms.Label();
@@ -201,6 +202,7 @@
             this.Controls.Add(this.lbl_NombreCategoria);
             this.Controls.Add(this.txtbox_NombreCategoria);
             this.Controls.Add(this.lbl_CrearCategoria);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(798, 408);
             this.MinimumSize = new System.Drawing.Size(798, 408);

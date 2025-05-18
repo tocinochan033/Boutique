@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearUsuario));
             this.txtbox_NombreUsuario = new System.Windows.Forms.TextBox();
             this.lbl_NombreDeUsuario = new System.Windows.Forms.Label();
             this.lbl_Contra = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             // 
             this.txtbox_NombreUsuario.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_NombreUsuario.Location = new System.Drawing.Point(19, 155);
-            this.txtbox_NombreUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_NombreUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_NombreUsuario.MaxLength = 20;
             this.txtbox_NombreUsuario.Name = "txtbox_NombreUsuario";
             this.txtbox_NombreUsuario.Size = new System.Drawing.Size(308, 29);
@@ -82,7 +83,7 @@
             // 
             this.txtbox_Contra.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Contra.Location = new System.Drawing.Point(21, 209);
-            this.txtbox_Contra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_Contra.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_Contra.MaxLength = 15;
             this.txtbox_Contra.Name = "txtbox_Contra";
             this.txtbox_Contra.Size = new System.Drawing.Size(306, 29);
@@ -103,7 +104,7 @@
             // 
             this.txtbox_ReingresoContra.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_ReingresoContra.Location = new System.Drawing.Point(19, 274);
-            this.txtbox_ReingresoContra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_ReingresoContra.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_ReingresoContra.Name = "txtbox_ReingresoContra";
             this.txtbox_ReingresoContra.Size = new System.Drawing.Size(306, 29);
             this.txtbox_ReingresoContra.TabIndex = 23;
@@ -125,7 +126,7 @@
             this.cmb_Rol.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Rol.FormattingEnabled = true;
             this.cmb_Rol.Location = new System.Drawing.Point(183, 92);
-            this.cmb_Rol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Rol.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Rol.Name = "cmb_Rol";
             this.cmb_Rol.Size = new System.Drawing.Size(144, 29);
             this.cmb_Rol.TabIndex = 27;
@@ -136,7 +137,7 @@
             this.btn_CrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearUsuario.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearUsuario.Location = new System.Drawing.Point(170, 385);
-            this.btn_CrearUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_CrearUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CrearUsuario.Name = "btn_CrearUsuario";
             this.btn_CrearUsuario.Size = new System.Drawing.Size(155, 43);
             this.btn_CrearUsuario.TabIndex = 29;
@@ -159,7 +160,7 @@
             // 
             this.txtbox_IdUsuario.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_IdUsuario.Location = new System.Drawing.Point(19, 92);
-            this.txtbox_IdUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_IdUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_IdUsuario.Name = "txtbox_IdUsuario";
             this.txtbox_IdUsuario.ReadOnly = true;
             this.txtbox_IdUsuario.Size = new System.Drawing.Size(139, 29);
@@ -181,7 +182,7 @@
             // 
             this.txtbox_Correo.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Correo.Location = new System.Drawing.Point(19, 337);
-            this.txtbox_Correo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_Correo.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_Correo.MaxLength = 40;
             this.txtbox_Correo.Name = "txtbox_Correo";
             this.txtbox_Correo.Size = new System.Drawing.Size(306, 29);
@@ -228,7 +229,8 @@
             this.Controls.Add(this.txtbox_Contra);
             this.Controls.Add(this.lbl_NombreDeUsuario);
             this.Controls.Add(this.txtbox_NombreUsuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(363, 481);
             this.MinimumSize = new System.Drawing.Size(363, 481);
             this.Name = "CrearUsuario";

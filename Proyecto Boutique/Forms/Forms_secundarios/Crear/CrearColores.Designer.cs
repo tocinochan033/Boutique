@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearColores));
             this.btn_EliminarColor = new System.Windows.Forms.Button();
             this.lbl_IDColor = new System.Windows.Forms.Label();
             this.txtbox_IDColor = new System.Windows.Forms.TextBox();
@@ -175,6 +176,7 @@
             this.Controls.Add(this.btn_CrearColor);
             this.Controls.Add(this.lbl_NombreColor);
             this.Controls.Add(this.txtbox_NombreColor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(641, 335);
             this.MinimumSize = new System.Drawing.Size(641, 335);

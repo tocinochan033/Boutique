@@ -24,7 +24,7 @@ namespace Proyecto_Boutique
             lblResult.Text = result;
         }
 
-        private void regresar_btn_Click(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             Inicio_Sesion inicio = new Inicio_Sesion();
             inicio.Show();

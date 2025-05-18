@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarCategoria));
             this.btn_EditarCategoria = new System.Windows.Forms.Button();
             this.lbl_Descripcion = new System.Windows.Forms.Label();
             this.txtbox_DescripcionCategoria = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
             this.btn_EditarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EditarCategoria.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditarCategoria.Location = new System.Drawing.Point(183, 220);
-            this.btn_EditarCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_EditarCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.btn_EditarCategoria.Name = "btn_EditarCategoria";
             this.btn_EditarCategoria.Size = new System.Drawing.Size(134, 43);
             this.btn_EditarCategoria.TabIndex = 66;
@@ -66,7 +67,7 @@
             // 
             this.txtbox_DescripcionCategoria.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DescripcionCategoria.Location = new System.Drawing.Point(11, 141);
-            this.txtbox_DescripcionCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_DescripcionCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_DescripcionCategoria.Multiline = true;
             this.txtbox_DescripcionCategoria.Name = "txtbox_DescripcionCategoria";
             this.txtbox_DescripcionCategoria.Size = new System.Drawing.Size(306, 60);
@@ -87,7 +88,7 @@
             // 
             this.txtbox_NombreCategoria.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_NombreCategoria.Location = new System.Drawing.Point(11, 87);
-            this.txtbox_NombreCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_NombreCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_NombreCategoria.Name = "txtbox_NombreCategoria";
             this.txtbox_NombreCategoria.Size = new System.Drawing.Size(306, 29);
             this.txtbox_NombreCategoria.TabIndex = 61;
@@ -125,7 +126,8 @@
             this.Controls.Add(this.txtbox_DescripcionCategoria);
             this.Controls.Add(this.lbl_NombreCategoria);
             this.Controls.Add(this.txtbox_NombreCategoria);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(345, 313);
             this.MinimumSize = new System.Drawing.Size(345, 313);
             this.Name = "EditarCategoria";

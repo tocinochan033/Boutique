@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarMovimiento));
             this.lbl_Producto = new System.Windows.Forms.Label();
             this.cmb_Talla = new System.Windows.Forms.ComboBox();
             this.lbl_TipoMovimiento = new System.Windows.Forms.Label();
@@ -59,7 +60,7 @@
             this.cmb_Talla.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Talla.FormattingEnabled = true;
             this.cmb_Talla.Location = new System.Drawing.Point(19, 77);
-            this.cmb_Talla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Talla.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Talla.Name = "cmb_Talla";
             this.cmb_Talla.Size = new System.Drawing.Size(308, 29);
             this.cmb_Talla.TabIndex = 137;
@@ -81,7 +82,7 @@
             this.cmb_TipoMovimiento.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_TipoMovimiento.FormattingEnabled = true;
             this.cmb_TipoMovimiento.Location = new System.Drawing.Point(17, 239);
-            this.cmb_TipoMovimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_TipoMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_TipoMovimiento.Name = "cmb_TipoMovimiento";
             this.cmb_TipoMovimiento.Size = new System.Drawing.Size(308, 29);
             this.cmb_TipoMovimiento.TabIndex = 135;
@@ -92,7 +93,7 @@
             this.btn_EditarMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EditarMovimiento.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditarMovimiento.Location = new System.Drawing.Point(201, 289);
-            this.btn_EditarMovimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_EditarMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.btn_EditarMovimiento.Name = "btn_EditarMovimiento";
             this.btn_EditarMovimiento.Size = new System.Drawing.Size(124, 43);
             this.btn_EditarMovimiento.TabIndex = 134;
@@ -114,7 +115,7 @@
             // 
             this.txtbox_PrecioUnitario.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PrecioUnitario.Location = new System.Drawing.Point(19, 185);
-            this.txtbox_PrecioUnitario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_PrecioUnitario.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_PrecioUnitario.Name = "txtbox_PrecioUnitario";
             this.txtbox_PrecioUnitario.Size = new System.Drawing.Size(306, 29);
             this.txtbox_PrecioUnitario.TabIndex = 131;
@@ -134,7 +135,7 @@
             // 
             this.txtbox_CantidadProducto.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_CantidadProducto.Location = new System.Drawing.Point(19, 131);
-            this.txtbox_CantidadProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_CantidadProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_CantidadProducto.Name = "txtbox_CantidadProducto";
             this.txtbox_CantidadProducto.Size = new System.Drawing.Size(306, 29);
             this.txtbox_CantidadProducto.TabIndex = 129;
@@ -176,7 +177,8 @@
             this.Controls.Add(this.txtbox_PrecioUnitario);
             this.Controls.Add(this.lbl_Cantidad);
             this.Controls.Add(this.txtbox_CantidadProducto);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(353, 382);
             this.MinimumSize = new System.Drawing.Size(353, 382);
             this.Name = "EditarMovimiento";

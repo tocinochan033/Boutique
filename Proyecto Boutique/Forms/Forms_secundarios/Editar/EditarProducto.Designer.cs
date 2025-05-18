@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarProducto));
             this.lbl_IDProducto = new System.Windows.Forms.Label();
             this.txtbox_IDProducto = new System.Windows.Forms.TextBox();
             this.txtbox_MinimoStock = new System.Windows.Forms.TextBox();
@@ -79,7 +80,7 @@
             // 
             this.txtbox_IDProducto.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_IDProducto.Location = new System.Drawing.Point(21, 472);
-            this.txtbox_IDProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_IDProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_IDProducto.Name = "txtbox_IDProducto";
             this.txtbox_IDProducto.ReadOnly = true;
             this.txtbox_IDProducto.Size = new System.Drawing.Size(147, 29);
@@ -89,7 +90,7 @@
             // 
             this.txtbox_MinimoStock.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_MinimoStock.Location = new System.Drawing.Point(81, 207);
-            this.txtbox_MinimoStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_MinimoStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_MinimoStock.Name = "txtbox_MinimoStock";
             this.txtbox_MinimoStock.Size = new System.Drawing.Size(138, 29);
             this.txtbox_MinimoStock.TabIndex = 126;
@@ -109,7 +110,7 @@
             // 
             this.txtbox_MaximoStock.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_MaximoStock.Location = new System.Drawing.Point(508, 207);
-            this.txtbox_MaximoStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_MaximoStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_MaximoStock.Name = "txtbox_MaximoStock";
             this.txtbox_MaximoStock.Size = new System.Drawing.Size(141, 29);
             this.txtbox_MaximoStock.TabIndex = 124;
@@ -129,7 +130,7 @@
             // 
             this.txtbox_PuntoReorden.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PuntoReorden.Location = new System.Drawing.Point(268, 207);
-            this.txtbox_PuntoReorden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_PuntoReorden.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_PuntoReorden.Name = "txtbox_PuntoReorden";
             this.txtbox_PuntoReorden.Size = new System.Drawing.Size(195, 29);
             this.txtbox_PuntoReorden.TabIndex = 122;
@@ -149,7 +150,7 @@
             // 
             this.txtbox_talla.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_talla.Location = new System.Drawing.Point(411, 319);
-            this.txtbox_talla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_talla.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_talla.MaxLength = 5;
             this.txtbox_talla.Name = "txtbox_talla";
             this.txtbox_talla.Size = new System.Drawing.Size(118, 29);
@@ -170,7 +171,7 @@
             // 
             this.txtbox_Cantidad.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Cantidad.Location = new System.Drawing.Point(34, 319);
-            this.txtbox_Cantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_Cantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_Cantidad.Name = "txtbox_Cantidad";
             this.txtbox_Cantidad.Size = new System.Drawing.Size(185, 29);
             this.txtbox_Cantidad.TabIndex = 118;
@@ -190,7 +191,7 @@
             // 
             this.txtbox_DescripcionProducto.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DescripcionProducto.Location = new System.Drawing.Point(19, 384);
-            this.txtbox_DescripcionProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_DescripcionProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_DescripcionProducto.MaxLength = 100;
             this.txtbox_DescripcionProducto.Multiline = true;
             this.txtbox_DescripcionProducto.Name = "txtbox_DescripcionProducto";
@@ -214,7 +215,7 @@
             this.cmb_Marca.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Marca.FormattingEnabled = true;
             this.cmb_Marca.Location = new System.Drawing.Point(361, 261);
-            this.cmb_Marca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Marca.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Marca.Name = "cmb_Marca";
             this.cmb_Marca.Size = new System.Drawing.Size(186, 29);
             this.cmb_Marca.TabIndex = 114;
@@ -236,7 +237,7 @@
             this.cmb_Color.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Color.FormattingEnabled = true;
             this.cmb_Color.Location = new System.Drawing.Point(234, 319);
-            this.cmb_Color.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Color.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Color.Name = "cmb_Color";
             this.cmb_Color.Size = new System.Drawing.Size(163, 29);
             this.cmb_Color.TabIndex = 112;
@@ -269,7 +270,7 @@
             this.cmb_Categoria.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Categoria.FormattingEnabled = true;
             this.cmb_Categoria.Location = new System.Drawing.Point(551, 261);
-            this.cmb_Categoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Categoria.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Categoria.Name = "cmb_Categoria";
             this.cmb_Categoria.Size = new System.Drawing.Size(195, 29);
             this.cmb_Categoria.TabIndex = 109;
@@ -280,7 +281,7 @@
             this.btn_EditarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_EditarProducto.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditarProducto.Location = new System.Drawing.Point(611, 458);
-            this.btn_EditarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_EditarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btn_EditarProducto.Name = "btn_EditarProducto";
             this.btn_EditarProducto.Size = new System.Drawing.Size(139, 43);
             this.btn_EditarProducto.TabIndex = 108;
@@ -303,7 +304,7 @@
             // 
             this.txtbox_Precio.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Precio.Location = new System.Drawing.Point(546, 319);
-            this.txtbox_Precio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_Precio.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_Precio.Name = "txtbox_Precio";
             this.txtbox_Precio.Size = new System.Drawing.Size(169, 29);
             this.txtbox_Precio.TabIndex = 105;
@@ -323,7 +324,7 @@
             // 
             this.txtbox_NombreProducto.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_NombreProducto.Location = new System.Drawing.Point(15, 261);
-            this.txtbox_NombreProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbox_NombreProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_NombreProducto.MaxLength = 50;
             this.txtbox_NombreProducto.Name = "txtbox_NombreProducto";
             this.txtbox_NombreProducto.Size = new System.Drawing.Size(334, 29);
@@ -335,7 +336,7 @@
             this.DataGrid_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid_Productos.GridColor = System.Drawing.SystemColors.Control;
             this.DataGrid_Productos.Location = new System.Drawing.Point(11, 56);
-            this.DataGrid_Productos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DataGrid_Productos.Margin = new System.Windows.Forms.Padding(2);
             this.DataGrid_Productos.Name = "DataGrid_Productos";
             this.DataGrid_Productos.RowHeadersWidth = 51;
             this.DataGrid_Productos.RowTemplate.Height = 24;
@@ -419,7 +420,8 @@
             this.Controls.Add(this.txtbox_Precio);
             this.Controls.Add(this.lbl_NombreProducto);
             this.Controls.Add(this.txtbox_NombreProducto);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(776, 551);
             this.MinimumSize = new System.Drawing.Size(776, 551);
             this.Name = "EditarProducto";
