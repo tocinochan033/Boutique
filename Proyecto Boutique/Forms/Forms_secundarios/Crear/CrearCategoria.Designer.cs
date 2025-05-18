@@ -44,53 +44,59 @@
             // lbl_Descripcion
             // 
             this.lbl_Descripcion.AutoSize = true;
-            this.lbl_Descripcion.Location = new System.Drawing.Point(93, 291);
+            this.lbl_Descripcion.Location = new System.Drawing.Point(70, 236);
+            this.lbl_Descripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Descripcion.Name = "lbl_Descripcion";
-            this.lbl_Descripcion.Size = new System.Drawing.Size(79, 16);
+            this.lbl_Descripcion.Size = new System.Drawing.Size(63, 13);
             this.lbl_Descripcion.TabIndex = 51;
             this.lbl_Descripcion.Text = "Descripcion";
             // 
             // txtbox_DescripcionCategoria
             // 
-            this.txtbox_DescripcionCategoria.Location = new System.Drawing.Point(96, 310);
+            this.txtbox_DescripcionCategoria.Location = new System.Drawing.Point(72, 252);
+            this.txtbox_DescripcionCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbox_DescripcionCategoria.MaxLength = 100;
             this.txtbox_DescripcionCategoria.Multiline = true;
             this.txtbox_DescripcionCategoria.Name = "txtbox_DescripcionCategoria";
-            this.txtbox_DescripcionCategoria.Size = new System.Drawing.Size(407, 73);
+            this.txtbox_DescripcionCategoria.Size = new System.Drawing.Size(306, 60);
             this.txtbox_DescripcionCategoria.TabIndex = 50;
             // 
             // lbl_NombreCategoria
             // 
             this.lbl_NombreCategoria.AutoSize = true;
-            this.lbl_NombreCategoria.Location = new System.Drawing.Point(93, 227);
+            this.lbl_NombreCategoria.Location = new System.Drawing.Point(70, 184);
+            this.lbl_NombreCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_NombreCategoria.Name = "lbl_NombreCategoria";
-            this.lbl_NombreCategoria.Size = new System.Drawing.Size(149, 16);
+            this.lbl_NombreCategoria.Size = new System.Drawing.Size(117, 13);
             this.lbl_NombreCategoria.TabIndex = 49;
             this.lbl_NombreCategoria.Text = "Nombre de la categoria";
             // 
             // txtbox_NombreCategoria
             // 
-            this.txtbox_NombreCategoria.Location = new System.Drawing.Point(96, 246);
+            this.txtbox_NombreCategoria.Location = new System.Drawing.Point(72, 200);
+            this.txtbox_NombreCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbox_NombreCategoria.MaxLength = 15;
             this.txtbox_NombreCategoria.Name = "txtbox_NombreCategoria";
-            this.txtbox_NombreCategoria.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_NombreCategoria.Size = new System.Drawing.Size(306, 20);
             this.txtbox_NombreCategoria.TabIndex = 48;
             // 
             // lbl_CrearCategoria
             // 
             this.lbl_CrearCategoria.AutoSize = true;
-            this.lbl_CrearCategoria.Location = new System.Drawing.Point(242, 100);
+            this.lbl_CrearCategoria.Location = new System.Drawing.Point(373, 55);
+            this.lbl_CrearCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_CrearCategoria.Name = "lbl_CrearCategoria";
-            this.lbl_CrearCategoria.Size = new System.Drawing.Size(102, 16);
+            this.lbl_CrearCategoria.Size = new System.Drawing.Size(117, 13);
             this.lbl_CrearCategoria.TabIndex = 47;
-            this.lbl_CrearCategoria.Text = "Crear Categoria";
+            this.lbl_CrearCategoria.Text = "Creación de Categorias";
             this.lbl_CrearCategoria.Click += new System.EventHandler(this.lbl_CrearCategoria_Click);
             // 
             // btn_CrearCategoria
             // 
-            this.btn_CrearCategoria.Location = new System.Drawing.Point(222, 389);
+            this.btn_CrearCategoria.Location = new System.Drawing.Point(166, 358);
+            this.btn_CrearCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_CrearCategoria.Name = "btn_CrearCategoria";
-            this.btn_CrearCategoria.Size = new System.Drawing.Size(153, 45);
+            this.btn_CrearCategoria.Size = new System.Drawing.Size(115, 37);
             this.btn_CrearCategoria.TabIndex = 53;
             this.btn_CrearCategoria.Text = "Crear Categoria";
             this.btn_CrearCategoria.UseVisualStyleBackColor = true;
@@ -99,37 +105,41 @@
             // DataGrid_Categorias
             // 
             this.DataGrid_Categorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Categorias.Location = new System.Drawing.Point(615, 142);
+            this.DataGrid_Categorias.Location = new System.Drawing.Point(412, 115);
+            this.DataGrid_Categorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DataGrid_Categorias.Name = "DataGrid_Categorias";
             this.DataGrid_Categorias.RowHeadersWidth = 51;
             this.DataGrid_Categorias.RowTemplate.Height = 24;
-            this.DataGrid_Categorias.Size = new System.Drawing.Size(431, 437);
+            this.DataGrid_Categorias.Size = new System.Drawing.Size(372, 355);
             this.DataGrid_Categorias.TabIndex = 54;
             this.DataGrid_Categorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Productos_CellContentClick);
             // 
             // lbl_IDCategoria
             // 
             this.lbl_IDCategoria.AutoSize = true;
-            this.lbl_IDCategoria.Location = new System.Drawing.Point(93, 157);
+            this.lbl_IDCategoria.Location = new System.Drawing.Point(70, 128);
+            this.lbl_IDCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IDCategoria.Name = "lbl_IDCategoria";
-            this.lbl_IDCategoria.Size = new System.Drawing.Size(113, 16);
+            this.lbl_IDCategoria.Size = new System.Drawing.Size(91, 13);
             this.lbl_IDCategoria.TabIndex = 56;
             this.lbl_IDCategoria.Text = "ID de la categoria";
             // 
             // txtbox_IDCategoria
             // 
-            this.txtbox_IDCategoria.Location = new System.Drawing.Point(96, 176);
+            this.txtbox_IDCategoria.Location = new System.Drawing.Point(72, 143);
+            this.txtbox_IDCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbox_IDCategoria.Name = "txtbox_IDCategoria";
             this.txtbox_IDCategoria.ReadOnly = true;
-            this.txtbox_IDCategoria.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_IDCategoria.Size = new System.Drawing.Size(306, 20);
             this.txtbox_IDCategoria.TabIndex = 55;
             this.txtbox_IDCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_IDCategoria_KeyPress);
             // 
             // btn_EliminarCategoria
             // 
-            this.btn_EliminarCategoria.Location = new System.Drawing.Point(761, 595);
+            this.btn_EliminarCategoria.Location = new System.Drawing.Point(166, 423);
+            this.btn_EliminarCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_EliminarCategoria.Name = "btn_EliminarCategoria";
-            this.btn_EliminarCategoria.Size = new System.Drawing.Size(153, 45);
+            this.btn_EliminarCategoria.Size = new System.Drawing.Size(115, 37);
             this.btn_EliminarCategoria.TabIndex = 57;
             this.btn_EliminarCategoria.Text = "Eliminar Categoria";
             this.btn_EliminarCategoria.UseVisualStyleBackColor = true;
@@ -137,9 +147,9 @@
             // 
             // CrearCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 677);
+            this.ClientSize = new System.Drawing.Size(862, 550);
             this.Controls.Add(this.btn_EliminarCategoria);
             this.Controls.Add(this.lbl_IDCategoria);
             this.Controls.Add(this.txtbox_IDCategoria);
@@ -150,8 +160,10 @@
             this.Controls.Add(this.lbl_NombreCategoria);
             this.Controls.Add(this.txtbox_NombreCategoria);
             this.Controls.Add(this.lbl_CrearCategoria);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CrearCategoria";
-            this.Text = "CrearCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Software Gestór de Inventarios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CrearCategoria_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearCategoria_FormClosed);
             this.Load += new System.EventHandler(this.CrearCategoria_Load);

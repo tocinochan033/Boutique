@@ -208,12 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\Login\DCorreoSoporte.cs" />
-    <Compile Include="Forms\Forms_secundarios\Crear\CrearCausa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Forms_secundarios\Crear\CrearCausa.Designer.cs">
-      <DependentUpon>CrearCausa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Forms_secundarios\Crear\CrearColores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,12 +215,6 @@
       <DependentUpon>CrearColores.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Forms_principales\databaseConnection.cs" />
-    <Compile Include="Forms\Forms_secundarios\Categorias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Forms_secundarios\Categorias.Designer.cs">
-      <DependentUpon>Categorias.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Forms_secundarios\Crear\CrearCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,14 +329,8 @@
       <DependentUpon>ReporteStockForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SessionData.cs" />
-    <EmbeddedResource Include="Forms\Forms_secundarios\Categorias.resx">
-      <DependentUpon>Categorias.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forms_secundarios\Crear\CrearCategoria.resx">
       <DependentUpon>CrearCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Forms_secundarios\Crear\CrearCausa.resx">
-      <DependentUpon>CrearCausa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Forms_secundarios\Crear\CrearColores.resx">
       <DependentUpon>CrearColores.cs</DependentUpon>
@@ -432,8 +414,23 @@
     <Folder Include="fonts\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\icons\venta.png" />
+    <None Include="images\icons\tarjeta-de-direccion.png" />
+    <None Include="images\icons\Busqueda.png" />
+    <None Include="images\icons\Filtro.png" />
+    <None Include="images\icons\archivo-hoja-de-calculo.png" />
+    <None Include="images\icons\agregar-usuario.png" />
+    <None Include="images\icons\eliminar-usuario.png" />
+    <None Include="images\icons\cajas.png" />
+    <None Include="images\icons\agregar.png" />
+    <None Include="images\icons\circulo-de-basura.png" />
+    <None Include="images\icons\archivo-hoja.png" />
     <Content Include="images\icons\hide.png" />
+    <None Include="images\icons\modificar-usuario.png" />
+    <None Include="images\icons\modificar.png" />
     <Content Include="images\icons\ojo.png" />
+    <None Include="images\icons\Usuario.png" />
+    <None Include="images\Logos\LOGO 1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
