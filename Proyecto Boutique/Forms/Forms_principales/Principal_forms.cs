@@ -25,7 +25,6 @@ namespace Proyecto_Boutique
         CrearCategoria ventanaCrearCategoria;
         CrearMarca ventanaCrearMarca;
         CrearColores ventanaCrearColor;
-        CrearCausa ventanaCrearCausa;
 
         //Declaracion de objetos para las ventanas de modificacion de elementos
         EditarUsuario ventanaEditarUsuario;
@@ -379,37 +378,6 @@ namespace Proyecto_Boutique
         void CierreVentanaModificarProducto(object sender, EventArgs e)
         {
             ventanaEditarProducto = null;
-        }
-
-        private void btn_Causas_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (ventanaCrearCausa == null)
-                {
-                    //Se crea un objeto de la ventana CrearUsuario
-                    ventanaCrearCausa = new CrearCausa();
-
-                    //Comando auxiliar para el proceso
-                    ventanaCrearCausa.FormClosed += new FormClosedEventHandler(CierreVentanaCrearCausa);
-
-                    //Se muestra la ventana correspondiente
-                    ventanaCrearCausa.Show();
-
-                    this.Hide();
-                }
-            }
-            
-            catch
-            {
-                MessageBox.Show("Ha ocurrido un problema inesperado");
-            }
-        }
-
-        void CierreVentanaCrearCausa(object sender, EventArgs e)
-        {
-            ventanaCrearCausa = null;
         }
 
         private void btn_ModificarUsuario_Click(object sender, EventArgs e)

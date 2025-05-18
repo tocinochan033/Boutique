@@ -250,5 +250,15 @@ namespace Proyecto_Boutique
             Principal_forms forms = new Principal_forms();
             forms.Show();
         }
+
+        private void lbl_CrearCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbox_NombreColor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

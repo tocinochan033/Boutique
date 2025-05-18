@@ -63,9 +63,10 @@
             // lbl_Producto
             // 
             this.lbl_Producto.AutoSize = true;
-            this.lbl_Producto.Location = new System.Drawing.Point(53, 264);
+            this.lbl_Producto.Location = new System.Drawing.Point(40, 214);
+            this.lbl_Producto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Producto.Name = "lbl_Producto";
-            this.lbl_Producto.Size = new System.Drawing.Size(61, 16);
+            this.lbl_Producto.Size = new System.Drawing.Size(50, 13);
             this.lbl_Producto.TabIndex = 121;
             this.lbl_Producto.Text = "Producto";
             // 
@@ -73,17 +74,19 @@
             // 
             this.cmb_Producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Producto.FormattingEnabled = true;
-            this.cmb_Producto.Location = new System.Drawing.Point(54, 283);
+            this.cmb_Producto.Location = new System.Drawing.Point(40, 230);
+            this.cmb_Producto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_Producto.Name = "cmb_Producto";
-            this.cmb_Producto.Size = new System.Drawing.Size(409, 24);
+            this.cmb_Producto.Size = new System.Drawing.Size(308, 21);
             this.cmb_Producto.TabIndex = 120;
             // 
             // lbl_TipoMovimiento
             // 
             this.lbl_TipoMovimiento.AutoSize = true;
-            this.lbl_TipoMovimiento.Location = new System.Drawing.Point(53, 326);
+            this.lbl_TipoMovimiento.Location = new System.Drawing.Point(40, 265);
+            this.lbl_TipoMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_TipoMovimiento.Name = "lbl_TipoMovimiento";
-            this.lbl_TipoMovimiento.Size = new System.Drawing.Size(126, 16);
+            this.lbl_TipoMovimiento.Size = new System.Drawing.Size(99, 13);
             this.lbl_TipoMovimiento.TabIndex = 119;
             this.lbl_TipoMovimiento.Text = "Tipo de movimiento";
             // 
@@ -91,16 +94,18 @@
             // 
             this.cmb_TipoMovimiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoMovimiento.FormattingEnabled = true;
-            this.cmb_TipoMovimiento.Location = new System.Drawing.Point(54, 345);
+            this.cmb_TipoMovimiento.Location = new System.Drawing.Point(40, 280);
+            this.cmb_TipoMovimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_TipoMovimiento.Name = "cmb_TipoMovimiento";
-            this.cmb_TipoMovimiento.Size = new System.Drawing.Size(409, 24);
+            this.cmb_TipoMovimiento.Size = new System.Drawing.Size(308, 21);
             this.cmb_TipoMovimiento.TabIndex = 118;
             // 
             // btn_CrearMovimiento
             // 
-            this.btn_CrearMovimiento.Location = new System.Drawing.Point(183, 597);
+            this.btn_CrearMovimiento.Location = new System.Drawing.Point(137, 485);
+            this.btn_CrearMovimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_CrearMovimiento.Name = "btn_CrearMovimiento";
-            this.btn_CrearMovimiento.Size = new System.Drawing.Size(153, 45);
+            this.btn_CrearMovimiento.Size = new System.Drawing.Size(115, 37);
             this.btn_CrearMovimiento.TabIndex = 117;
             this.btn_CrearMovimiento.Text = "Crear Movimiento";
             this.btn_CrearMovimiento.UseVisualStyleBackColor = true;
@@ -109,53 +114,59 @@
             // lbl_Cantidad
             // 
             this.lbl_Cantidad.AutoSize = true;
-            this.lbl_Cantidad.Location = new System.Drawing.Point(53, 391);
+            this.lbl_Cantidad.Location = new System.Drawing.Point(40, 318);
+            this.lbl_Cantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Cantidad.Name = "lbl_Cantidad";
-            this.lbl_Cantidad.Size = new System.Drawing.Size(61, 16);
+            this.lbl_Cantidad.Size = new System.Drawing.Size(49, 13);
             this.lbl_Cantidad.TabIndex = 113;
             this.lbl_Cantidad.Text = "Cantidad";
             // 
             // txtbox_CantidadProducto
             // 
-            this.txtbox_CantidadProducto.Location = new System.Drawing.Point(56, 410);
+            this.txtbox_CantidadProducto.Location = new System.Drawing.Point(42, 333);
+            this.txtbox_CantidadProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbox_CantidadProducto.Name = "txtbox_CantidadProducto";
-            this.txtbox_CantidadProducto.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_CantidadProducto.Size = new System.Drawing.Size(306, 20);
             this.txtbox_CantidadProducto.TabIndex = 112;
             this.txtbox_CantidadProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_CantidadProducto_KeyPress);
             // 
             // lbl_CrearMovimiento
             // 
             this.lbl_CrearMovimiento.AutoSize = true;
-            this.lbl_CrearMovimiento.Location = new System.Drawing.Point(212, 90);
+            this.lbl_CrearMovimiento.Location = new System.Drawing.Point(159, 73);
+            this.lbl_CrearMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_CrearMovimiento.Name = "lbl_CrearMovimiento";
-            this.lbl_CrearMovimiento.Size = new System.Drawing.Size(112, 16);
+            this.lbl_CrearMovimiento.Size = new System.Drawing.Size(89, 13);
             this.lbl_CrearMovimiento.TabIndex = 111;
             this.lbl_CrearMovimiento.Text = "Crear Movimiento";
             // 
             // lbl_IDMovimiento
             // 
             this.lbl_IDMovimiento.AutoSize = true;
-            this.lbl_IDMovimiento.Location = new System.Drawing.Point(51, 136);
+            this.lbl_IDMovimiento.Location = new System.Drawing.Point(38, 110);
+            this.lbl_IDMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_IDMovimiento.Name = "lbl_IDMovimiento";
-            this.lbl_IDMovimiento.Size = new System.Drawing.Size(114, 16);
+            this.lbl_IDMovimiento.Size = new System.Drawing.Size(92, 13);
             this.lbl_IDMovimiento.TabIndex = 123;
             this.lbl_IDMovimiento.Text = "ID del Movimiento";
             // 
             // txt_IDMovimiento
             // 
-            this.txt_IDMovimiento.Location = new System.Drawing.Point(54, 155);
+            this.txt_IDMovimiento.Location = new System.Drawing.Point(40, 126);
+            this.txt_IDMovimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_IDMovimiento.Name = "txt_IDMovimiento";
             this.txt_IDMovimiento.ReadOnly = true;
-            this.txt_IDMovimiento.Size = new System.Drawing.Size(407, 22);
+            this.txt_IDMovimiento.Size = new System.Drawing.Size(306, 20);
             this.txt_IDMovimiento.TabIndex = 124;
             this.txt_IDMovimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_IDMovimiento_KeyPress);
             // 
             // lbl_UsuarioResponsable
             // 
             this.lbl_UsuarioResponsable.AutoSize = true;
-            this.lbl_UsuarioResponsable.Location = new System.Drawing.Point(53, 196);
+            this.lbl_UsuarioResponsable.Location = new System.Drawing.Point(40, 159);
+            this.lbl_UsuarioResponsable.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_UsuarioResponsable.Name = "lbl_UsuarioResponsable";
-            this.lbl_UsuarioResponsable.Size = new System.Drawing.Size(139, 16);
+            this.lbl_UsuarioResponsable.Size = new System.Drawing.Size(108, 13);
             this.lbl_UsuarioResponsable.TabIndex = 126;
             this.lbl_UsuarioResponsable.Text = "Usuario Responsable";
             // 
@@ -163,17 +174,19 @@
             // 
             this.cmb_UsuarioResponsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_UsuarioResponsable.FormattingEnabled = true;
-            this.cmb_UsuarioResponsable.Location = new System.Drawing.Point(54, 215);
+            this.cmb_UsuarioResponsable.Location = new System.Drawing.Point(40, 175);
+            this.cmb_UsuarioResponsable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_UsuarioResponsable.Name = "cmb_UsuarioResponsable";
-            this.cmb_UsuarioResponsable.Size = new System.Drawing.Size(409, 24);
+            this.cmb_UsuarioResponsable.Size = new System.Drawing.Size(308, 21);
             this.cmb_UsuarioResponsable.TabIndex = 125;
             // 
             // lbl_Causa
             // 
             this.lbl_Causa.AutoSize = true;
-            this.lbl_Causa.Location = new System.Drawing.Point(55, 455);
+            this.lbl_Causa.Location = new System.Drawing.Point(41, 370);
+            this.lbl_Causa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Causa.Name = "lbl_Causa";
-            this.lbl_Causa.Size = new System.Drawing.Size(46, 16);
+            this.lbl_Causa.Size = new System.Drawing.Size(37, 13);
             this.lbl_Causa.TabIndex = 128;
             this.lbl_Causa.Text = "Causa";
             // 
@@ -181,57 +194,63 @@
             // 
             this.cmb_Causa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Causa.FormattingEnabled = true;
-            this.cmb_Causa.Location = new System.Drawing.Point(56, 474);
+            this.cmb_Causa.Location = new System.Drawing.Point(42, 385);
+            this.cmb_Causa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmb_Causa.Name = "cmb_Causa";
-            this.cmb_Causa.Size = new System.Drawing.Size(409, 24);
+            this.cmb_Causa.Size = new System.Drawing.Size(308, 21);
             this.cmb_Causa.TabIndex = 127;
             // 
             // DataGrid_Usuarios
             // 
             this.DataGrid_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGrid_Usuarios.Location = new System.Drawing.Point(560, 120);
+            this.DataGrid_Usuarios.Location = new System.Drawing.Point(420, 98);
+            this.DataGrid_Usuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DataGrid_Usuarios.Name = "DataGrid_Usuarios";
             this.DataGrid_Usuarios.RowHeadersWidth = 51;
             this.DataGrid_Usuarios.RowTemplate.Height = 24;
-            this.DataGrid_Usuarios.Size = new System.Drawing.Size(537, 187);
+            this.DataGrid_Usuarios.Size = new System.Drawing.Size(403, 152);
             this.DataGrid_Usuarios.TabIndex = 129;
             this.DataGrid_Usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Usuarios_CellClick);
             // 
             // datagrid_Productos
             // 
             this.datagrid_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Productos.Location = new System.Drawing.Point(560, 455);
+            this.datagrid_Productos.Location = new System.Drawing.Point(420, 370);
+            this.datagrid_Productos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.datagrid_Productos.Name = "datagrid_Productos";
             this.datagrid_Productos.RowHeadersWidth = 51;
             this.datagrid_Productos.RowTemplate.Height = 24;
-            this.datagrid_Productos.Size = new System.Drawing.Size(537, 187);
+            this.datagrid_Productos.Size = new System.Drawing.Size(403, 152);
             this.datagrid_Productos.TabIndex = 130;
             this.datagrid_Productos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_Productos_CellClick);
             // 
             // lbl_OpcionesBusquedaUSUARIOS
             // 
             this.lbl_OpcionesBusquedaUSUARIOS.AutoSize = true;
-            this.lbl_OpcionesBusquedaUSUARIOS.Location = new System.Drawing.Point(588, 60);
+            this.lbl_OpcionesBusquedaUSUARIOS.Location = new System.Drawing.Point(441, 49);
+            this.lbl_OpcionesBusquedaUSUARIOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_OpcionesBusquedaUSUARIOS.Name = "lbl_OpcionesBusquedaUSUARIOS";
-            this.lbl_OpcionesBusquedaUSUARIOS.Size = new System.Drawing.Size(65, 16);
+            this.lbl_OpcionesBusquedaUSUARIOS.Size = new System.Drawing.Size(52, 13);
             this.lbl_OpcionesBusquedaUSUARIOS.TabIndex = 135;
             this.lbl_OpcionesBusquedaUSUARIOS.Text = "Opciones";
             // 
             // lbl_BusquedaUSUARIOS
             // 
             this.lbl_BusquedaUSUARIOS.AutoSize = true;
-            this.lbl_BusquedaUSUARIOS.Location = new System.Drawing.Point(584, 87);
+            this.lbl_BusquedaUSUARIOS.Location = new System.Drawing.Point(438, 71);
+            this.lbl_BusquedaUSUARIOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_BusquedaUSUARIOS.Name = "lbl_BusquedaUSUARIOS";
-            this.lbl_BusquedaUSUARIOS.Size = new System.Drawing.Size(69, 16);
+            this.lbl_BusquedaUSUARIOS.Size = new System.Drawing.Size(55, 13);
             this.lbl_BusquedaUSUARIOS.TabIndex = 134;
             this.lbl_BusquedaUSUARIOS.Text = "Busqueda";
             // 
             // rdbtn_NombreUSUARIOS
             // 
             this.rdbtn_NombreUSUARIOS.AutoSize = true;
-            this.rdbtn_NombreUSUARIOS.Location = new System.Drawing.Point(768, 58);
+            this.rdbtn_NombreUSUARIOS.Location = new System.Drawing.Point(576, 47);
+            this.rdbtn_NombreUSUARIOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbtn_NombreUSUARIOS.Name = "rdbtn_NombreUSUARIOS";
-            this.rdbtn_NombreUSUARIOS.Size = new System.Drawing.Size(77, 20);
+            this.rdbtn_NombreUSUARIOS.Size = new System.Drawing.Size(62, 17);
             this.rdbtn_NombreUSUARIOS.TabIndex = 133;
             this.rdbtn_NombreUSUARIOS.TabStop = true;
             this.rdbtn_NombreUSUARIOS.Text = "Nombre";
@@ -240,9 +259,10 @@
             // rdbtn_IDUSUARIOS
             // 
             this.rdbtn_IDUSUARIOS.AutoSize = true;
-            this.rdbtn_IDUSUARIOS.Location = new System.Drawing.Point(659, 58);
+            this.rdbtn_IDUSUARIOS.Location = new System.Drawing.Point(494, 47);
+            this.rdbtn_IDUSUARIOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbtn_IDUSUARIOS.Name = "rdbtn_IDUSUARIOS";
-            this.rdbtn_IDUSUARIOS.Size = new System.Drawing.Size(41, 20);
+            this.rdbtn_IDUSUARIOS.Size = new System.Drawing.Size(36, 17);
             this.rdbtn_IDUSUARIOS.TabIndex = 132;
             this.rdbtn_IDUSUARIOS.TabStop = true;
             this.rdbtn_IDUSUARIOS.Text = "ID";
@@ -250,36 +270,40 @@
             // 
             // txtbox_BuscarUSUARIO
             // 
-            this.txtbox_BuscarUSUARIO.Location = new System.Drawing.Point(659, 84);
+            this.txtbox_BuscarUSUARIO.Location = new System.Drawing.Point(494, 68);
+            this.txtbox_BuscarUSUARIO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbox_BuscarUSUARIO.Name = "txtbox_BuscarUSUARIO";
-            this.txtbox_BuscarUSUARIO.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_BuscarUSUARIO.Size = new System.Drawing.Size(306, 20);
             this.txtbox_BuscarUSUARIO.TabIndex = 131;
             this.txtbox_BuscarUSUARIO.TextChanged += new System.EventHandler(this.txtbox_BuscarUSUARIO_TextChanged);
             // 
             // lbl_OpcionesBusquedaPRODUCTOS
             // 
             this.lbl_OpcionesBusquedaPRODUCTOS.AutoSize = true;
-            this.lbl_OpcionesBusquedaPRODUCTOS.Location = new System.Drawing.Point(600, 403);
+            this.lbl_OpcionesBusquedaPRODUCTOS.Location = new System.Drawing.Point(450, 327);
+            this.lbl_OpcionesBusquedaPRODUCTOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_OpcionesBusquedaPRODUCTOS.Name = "lbl_OpcionesBusquedaPRODUCTOS";
-            this.lbl_OpcionesBusquedaPRODUCTOS.Size = new System.Drawing.Size(65, 16);
+            this.lbl_OpcionesBusquedaPRODUCTOS.Size = new System.Drawing.Size(52, 13);
             this.lbl_OpcionesBusquedaPRODUCTOS.TabIndex = 140;
             this.lbl_OpcionesBusquedaPRODUCTOS.Text = "Opciones";
             // 
             // lbl_BusquedaPRODUCTOS
             // 
             this.lbl_BusquedaPRODUCTOS.AutoSize = true;
-            this.lbl_BusquedaPRODUCTOS.Location = new System.Drawing.Point(596, 430);
+            this.lbl_BusquedaPRODUCTOS.Location = new System.Drawing.Point(447, 349);
+            this.lbl_BusquedaPRODUCTOS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_BusquedaPRODUCTOS.Name = "lbl_BusquedaPRODUCTOS";
-            this.lbl_BusquedaPRODUCTOS.Size = new System.Drawing.Size(69, 16);
+            this.lbl_BusquedaPRODUCTOS.Size = new System.Drawing.Size(55, 13);
             this.lbl_BusquedaPRODUCTOS.TabIndex = 139;
             this.lbl_BusquedaPRODUCTOS.Text = "Busqueda";
             // 
             // rdbtn_NombrePRODUCTOS
             // 
             this.rdbtn_NombrePRODUCTOS.AutoSize = true;
-            this.rdbtn_NombrePRODUCTOS.Location = new System.Drawing.Point(780, 401);
+            this.rdbtn_NombrePRODUCTOS.Location = new System.Drawing.Point(585, 326);
+            this.rdbtn_NombrePRODUCTOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbtn_NombrePRODUCTOS.Name = "rdbtn_NombrePRODUCTOS";
-            this.rdbtn_NombrePRODUCTOS.Size = new System.Drawing.Size(77, 20);
+            this.rdbtn_NombrePRODUCTOS.Size = new System.Drawing.Size(62, 17);
             this.rdbtn_NombrePRODUCTOS.TabIndex = 138;
             this.rdbtn_NombrePRODUCTOS.TabStop = true;
             this.rdbtn_NombrePRODUCTOS.Text = "Nombre";
@@ -288,9 +312,10 @@
             // rdbtn_IDPRODUCTOS
             // 
             this.rdbtn_IDPRODUCTOS.AutoSize = true;
-            this.rdbtn_IDPRODUCTOS.Location = new System.Drawing.Point(671, 401);
+            this.rdbtn_IDPRODUCTOS.Location = new System.Drawing.Point(503, 326);
+            this.rdbtn_IDPRODUCTOS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbtn_IDPRODUCTOS.Name = "rdbtn_IDPRODUCTOS";
-            this.rdbtn_IDPRODUCTOS.Size = new System.Drawing.Size(41, 20);
+            this.rdbtn_IDPRODUCTOS.Size = new System.Drawing.Size(36, 17);
             this.rdbtn_IDPRODUCTOS.TabIndex = 137;
             this.rdbtn_IDPRODUCTOS.TabStop = true;
             this.rdbtn_IDPRODUCTOS.Text = "ID";
@@ -298,35 +323,38 @@
             // 
             // txtbox_BuscarPRODUCTO
             // 
-            this.txtbox_BuscarPRODUCTO.Location = new System.Drawing.Point(671, 427);
+            this.txtbox_BuscarPRODUCTO.Location = new System.Drawing.Point(503, 347);
+            this.txtbox_BuscarPRODUCTO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtbox_BuscarPRODUCTO.Name = "txtbox_BuscarPRODUCTO";
-            this.txtbox_BuscarPRODUCTO.Size = new System.Drawing.Size(407, 22);
+            this.txtbox_BuscarPRODUCTO.Size = new System.Drawing.Size(306, 20);
             this.txtbox_BuscarPRODUCTO.TabIndex = 136;
             this.txtbox_BuscarPRODUCTO.TextChanged += new System.EventHandler(this.txtbox_BuscarPRODUCTO_TextChanged);
             // 
             // lbl_TEXTOproductos
             // 
             this.lbl_TEXTOproductos.AutoSize = true;
-            this.lbl_TEXTOproductos.Location = new System.Drawing.Point(777, 382);
+            this.lbl_TEXTOproductos.Location = new System.Drawing.Point(582, 311);
+            this.lbl_TEXTOproductos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_TEXTOproductos.Name = "lbl_TEXTOproductos";
-            this.lbl_TEXTOproductos.Size = new System.Drawing.Size(93, 16);
+            this.lbl_TEXTOproductos.Size = new System.Drawing.Size(75, 13);
             this.lbl_TEXTOproductos.TabIndex = 141;
             this.lbl_TEXTOproductos.Text = "PRODUCTOS";
             // 
             // lbl_TEXTOusuarios
             // 
             this.lbl_TEXTOusuarios.AutoSize = true;
-            this.lbl_TEXTOusuarios.Location = new System.Drawing.Point(791, 29);
+            this.lbl_TEXTOusuarios.Location = new System.Drawing.Point(593, 24);
+            this.lbl_TEXTOusuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_TEXTOusuarios.Name = "lbl_TEXTOusuarios";
-            this.lbl_TEXTOusuarios.Size = new System.Drawing.Size(77, 16);
+            this.lbl_TEXTOusuarios.Size = new System.Drawing.Size(63, 13);
             this.lbl_TEXTOusuarios.TabIndex = 142;
             this.lbl_TEXTOusuarios.Text = "USUARIOS";
             // 
             // CrearMovimiento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 694);
+            this.ClientSize = new System.Drawing.Size(863, 564);
             this.Controls.Add(this.lbl_TEXTOusuarios);
             this.Controls.Add(this.lbl_TEXTOproductos);
             this.Controls.Add(this.lbl_OpcionesBusquedaPRODUCTOS);
@@ -355,6 +383,7 @@
             this.Controls.Add(this.lbl_Cantidad);
             this.Controls.Add(this.txtbox_CantidadProducto);
             this.Controls.Add(this.lbl_CrearMovimiento);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CrearMovimiento";
             this.Text = "CrearMovimiento";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrearMovimiento_FormClosed);

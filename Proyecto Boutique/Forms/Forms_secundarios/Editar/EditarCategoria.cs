@@ -22,5 +22,10 @@ namespace Proyecto_Boutique
             Principal_forms forms = new Principal_forms();
             forms.Show();
         }
+
+        private void EditarCategoria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

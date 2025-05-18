@@ -428,6 +428,8 @@
     <Content Include="images\icons\hide.png" />
     <None Include="images\icons\modificar-usuario.png" />
     <None Include="images\icons\modificar.png" />
+    <None Include="images\icons\Mas - menos.png" />
+    <None Include="images\icons\menos.png" />
     <Content Include="images\icons\ojo.png" />
     <None Include="images\icons\Usuario.png" />
     <None Include="images\Logos\LOGO 1.png" />
