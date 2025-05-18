@@ -11,10 +11,11 @@ namespace Proyecto_Boutique
     /*
         Martin: MARTIN\\SQLEXPRESS
         chuy; DESKTOP-BF3NJMJ
+        Sandra: LAPTOP-FVNNPBGP
     */
     internal class databaseConnection
     {
-        string connection = "Data Source=MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
+        string connection = "Data Source=LAPTOP-FVNNPBGP; Initial Catalog= BOUTIQUE; Integrated Security=True";
         //Equipos:
         //Chuy: DESKTOP-BF3NJMJ
 
