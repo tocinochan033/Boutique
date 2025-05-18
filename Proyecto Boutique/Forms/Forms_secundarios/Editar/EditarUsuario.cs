@@ -205,8 +205,6 @@ namespace Proyecto_Boutique
 
         private void btn_Regresar_Click(object sender, EventArgs e)
         {
-            Principal_forms forms = new Principal_forms();
-            forms.Show();
             //Se cierra la ventana/formulario actual
             this.Close();
         }
@@ -223,8 +221,6 @@ namespace Proyecto_Boutique
 
         private void EditarUsuario_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Principal_forms forms = new Principal_forms();
-            forms.Show();
         }
     }
 }

@@ -66,6 +66,7 @@ namespace Proyecto_Boutique
 
         private void Principal_forms_Load(object sender, EventArgs e)
         {
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea; //Maximiza el formulario al abrirlo
             try
             {
 
@@ -216,7 +217,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearProducto.Show();
 
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             catch
@@ -245,7 +246,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearMovimiento.Show();
 
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             catch
@@ -274,7 +275,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearCategoria.Show();
 
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             catch
@@ -303,7 +304,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearMarca.Show();
 
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             catch
@@ -337,7 +338,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaCrearColor.Show();
 
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             catch
@@ -366,7 +367,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaEditarProducto.Show();
 
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             catch
@@ -396,7 +397,7 @@ namespace Proyecto_Boutique
                     //Se muestra la ventana correspondiente
                     ventanaEditarUsuario.Show();
 
-                    this.Hide();
+                    //this.Hide();
                 }
             }
             catch
@@ -830,7 +831,7 @@ namespace Proyecto_Boutique
         {
             try
             {
-                this.Hide();
+                //this.Hide();
                 if (DataGrid_Productos.SelectedRows.Count == 1)
                 {
 

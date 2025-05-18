@@ -271,8 +271,6 @@ namespace Proyecto_Boutique
 
         private void CrearCategoria_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Principal_forms forms = new Principal_forms();
-            forms.Show();
         }
     }
 

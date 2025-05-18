@@ -100,5 +100,10 @@ namespace Proyecto_Boutique
                 visiblePassword.Image = Properties.Resources.hide; // Cambia la imagen a ojo cerrado
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
