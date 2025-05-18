@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,15 +14,13 @@ namespace Proyecto_Boutique
 {
     public partial class ReporteMovimientosForm : Form
     {
-        private string connection = "Data Source=EDUARDO\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
-        private string connectionString;
+       
         databaseConnection db = new databaseConnection();
-
         public ReporteMovimientosForm()
         {
+            
             InitializeComponent();
-            InitializeConnectionString();
-
+           
             // Configuración inicial
             dtpFechaDesde.Value = DateTime.Now.AddMonths(-1);
             dtpFechaHasta.Value = DateTime.Now;
@@ -30,12 +29,6 @@ namespace Proyecto_Boutique
             CargarFiltrosAdicionales();
 
         }
-
-        private void InitializeConnectionString()
-        {
-            connectionString = "Server=EDUARDO.;Database=BOUTIQUE;Integrated Security=True;";
-        }
-
         private void CargarFiltrosAdicionales()
         {
             using (db.getConnection())
@@ -62,8 +55,9 @@ namespace Proyecto_Boutique
 
         private void Generar_Click_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(connectionString))
+            if (string.IsNullOrEmpty("Data Source=EDUARDO\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True"))
             {
+               
                 MessageBox.Show("Error: No se ha configurado la conexión a la base de datos.",
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -81,7 +75,7 @@ namespace Proyecto_Boutique
         }
 
         private string GenerateMovimientosReportHtml()
-        {   
+        {
             //HTML
             var html = new StringBuilder();
             // Estilos CSS
@@ -113,7 +107,7 @@ namespace Proyecto_Boutique
             int salidasTemporada = 0;
             int salidasDescontinuada = 0;
 
-            using (var connection = new SqlConnection())
+            using (var connection = new SqlConnection("Data Source=EDUARDO\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True"))
             {
                 connection.Open();
                 // Obtener total de stock actual
@@ -133,7 +127,7 @@ namespace Proyecto_Boutique
             JOIN CAUSA c ON m.Causa = c.ID_Causa
             WHERE m.Fecha BETWEEN @FechaDesde AND @FechaHasta
             GROUP BY tm.Nombre, c.Causa";
-
+                
                 using (var command = new SqlCommand(queryMovimientos, connection))
                 {
                     command.Parameters.AddWithValue("@FechaDesde", dtpFechaDesde.Value);
@@ -145,30 +139,32 @@ namespace Proyecto_Boutique
                         {
                             var tipo = reader["TipoMovimiento"].ToString();
                             var causa = reader["Causa"].ToString();
-                            var cantidad = Convert.ToInt32(reader["Cantidad"]);
+                            int cantidad = 0;
+                            if (reader["Cantidad"] != DBNull.Value && int.TryParse(reader["Cantidad"].ToString(), out cantidad))
+                            {
 
-                            if (tipo == "Entrada")
-                            {
-                                if (causa == "Compra a proveedor") entradasProveedor = cantidad;
-                                else if (causa == "Transferencia entre sucursales") entradasSucursal = cantidad;
-                                else if (causa == "Devolución de cliente") entradasDevolucion = cantidad;
-                            }
-                            else if (tipo == "Salida")
-                            {
-                                if (causa == "Venta") salidasVenta = cantidad;
-                                else if (causa == "Transferencia entre sucursales") salidasSucursal = cantidad;
-                                else if (causa == "Robo") salidasRobo = cantidad;
-                                else if (causa == "Dañado") salidasDaniada = cantidad;
-                                else if (causa == "Sobre stock") salidasSobreStock = cantidad;
-                                else if (causa == "Temporada finalizada") salidasTemporada = cantidad;
-                                else if (causa == "Producto descontinuado") salidasDescontinuada = cantidad;
+                                if (tipo == "Entrada")
+                                {
+                                    if (causa == "Compra a proveedor") entradasProveedor = cantidad;
+                                    else if (causa == "Transferencia entre sucursales") entradasSucursal = cantidad;
+                                    else if (causa == "Devolución de cliente") entradasDevolucion = cantidad;
+                                }
+                                else if (tipo == "Salida")
+                                {
+                                    if (causa == "Venta") salidasVenta = cantidad;
+                                    else if (causa == "Transferencia entre sucursales") salidasSucursal = cantidad;
+                                    else if (causa == "Robo") salidasRobo = cantidad;
+                                    else if (causa == "Dañado") salidasDaniada = cantidad;
+                                    else if (causa == "Sobre stock") salidasSobreStock = cantidad;
+                                    else if (causa == "Temporada finalizada") salidasTemporada = cantidad;
+                                    else if (causa == "Producto descontinuado") salidasDescontinuada = cantidad;
+                                }
+
                             }
                         }
                     }
-                }
-            }
-            // Encabezado principal
-            html.Append(@"<center>
+                    // Encabezado principal
+                    html.Append(@"<center>
                 <h1>AUDITORÍA DE INVENTARIO</h1>
                 
                 <table>
@@ -182,8 +178,8 @@ namespace Proyecto_Boutique
                         <td colspan='2'>Fecha de Expedición: " + DateTime.Now.ToString("dd / MM / yyyy") + @"</td>
                     </tr>
                 </table>");
-            // Datos generales
-            html.Append(@"<h3>Datos Generales</h3>
+                    // Datos generales
+                    html.Append(@"<h3>Datos Generales</h3>
                 <table>
                     <tr>
                         <td>Usuario:</td>
@@ -191,13 +187,13 @@ namespace Proyecto_Boutique
                     </tr>
                     <tr>
                         <td colspan='2'>Periodo de Evaluación: " +
-                                dtpFechaDesde.Value.ToString("dd / MM / yyyy") + " a " +
-                                dtpFechaHasta.Value.ToString("dd / MM / yyyy") + @"</td>
+                                        dtpFechaDesde.Value.ToString("dd / MM / yyyy") + " a " +
+                                        dtpFechaHasta.Value.ToString("dd / MM / yyyy") + @"</td>
                         <td>Hora de Generación: " + DateTime.Now.ToString("hh:mm:ss tt") + @"</td>
                     </tr>
                 </table>");
-            // Datos del inventario
-            html.Append(@"<h3>Datos del Inventario</h3>
+                    // Datos del inventario
+                    html.Append(@"<h3>Datos del Inventario</h3>
                 <table>
                     <tr>
                         <th width='50px'>Folio.</th>
@@ -264,8 +260,8 @@ namespace Proyecto_Boutique
                         <td class='right-align'>" + salidasDescontinuada + @"</td>
                     </tr>
                 </table>");
-            // Resultados (simplificado sin gráfica)
-            html.Append(@"<h3>Resultados</h3>
+                    // Resultados (simplificado sin gráfica)
+                    html.Append(@"<h3>Resultados</h3>
                 <table>
                     <tr>
                         <th colspan='2'>Resumen de movimientos</th>
@@ -277,17 +273,17 @@ namespace Proyecto_Boutique
                     <tr>
                         <td>Total Salidas</td>
                         <td class='right-align'>" + (salidasVenta + salidasSucursal + salidasRobo + salidasDaniada +
-                                salidasSobreStock + salidasTemporada + salidasDescontinuada) + @"</td>
+                                        salidasSobreStock + salidasTemporada + salidasDescontinuada) + @"</td>
                     </tr>
                     <tr>
                         <td>Diferencia</td>
                         <td class='right-align'>" + ((entradasProveedor + entradasSucursal + entradasDevolucion) -
-                                (salidasVenta + salidasSucursal + salidasRobo + salidasDaniada +
-                                salidasSobreStock + salidasTemporada + salidasDescontinuada)) + @"</td>
+                                        (salidasVenta + salidasSucursal + salidasRobo + salidasDaniada +
+                                        salidasSobreStock + salidasTemporada + salidasDescontinuada)) + @"</td>
                     </tr>
                 </table>");
-            // Firmas
-            html.Append(@"<br>
+                    // Firmas
+                    html.Append(@"<br>
                 <table style='border-color: white;'>
                     <tr class='signature-space'>
                         <td class='no-border'></td>
@@ -304,9 +300,11 @@ namespace Proyecto_Boutique
                 </table>
                 </center>");
 
-            html.Append("</body></html>");
+                    html.Append("</body></html>");
 
-            return html.ToString();
+                    return html.ToString();
+                }              
+            }      
         }
         // Método auxiliar para obtener el nombre del usuario actual
         private string GetCurrentUserName()
