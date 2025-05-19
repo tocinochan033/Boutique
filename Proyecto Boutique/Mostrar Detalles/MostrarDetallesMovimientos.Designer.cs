@@ -196,11 +196,11 @@
             // lbl_Usuarios
             // 
             this.lbl_Usuarios.AutoSize = true;
-            this.lbl_Usuarios.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Usuarios.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold);
             this.lbl_Usuarios.Location = new System.Drawing.Point(11, 9);
             this.lbl_Usuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Usuarios.Name = "lbl_Usuarios";
-            this.lbl_Usuarios.Size = new System.Drawing.Size(286, 45);
+            this.lbl_Usuarios.Size = new System.Drawing.Size(303, 39);
             this.lbl_Usuarios.TabIndex = 148;
             this.lbl_Usuarios.Text = "Detalle del movimiento";
             // 

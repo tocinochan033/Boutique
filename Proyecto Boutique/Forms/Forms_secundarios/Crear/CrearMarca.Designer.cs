@@ -131,11 +131,11 @@
             // lbl_CrearCategoria
             // 
             this.lbl_CrearCategoria.AutoSize = true;
-            this.lbl_CrearCategoria.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CrearCategoria.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold);
             this.lbl_CrearCategoria.Location = new System.Drawing.Point(11, 9);
             this.lbl_CrearCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_CrearCategoria.Name = "lbl_CrearCategoria";
-            this.lbl_CrearCategoria.Size = new System.Drawing.Size(227, 45);
+            this.lbl_CrearCategoria.Size = new System.Drawing.Size(244, 39);
             this.lbl_CrearCategoria.TabIndex = 79;
             this.lbl_CrearCategoria.Text = "Registró de Marca";
             // 

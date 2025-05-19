@@ -1,4 +1,6 @@
-﻿using iTextSharp.text.pdf;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
 using Proyecto_Boutique.Forms.Forms_secundarios.Crear;
 using Proyecto_Boutique.Mostrar_Detalles;
 using System;
@@ -7,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -765,14 +768,12 @@ namespace Proyecto_Boutique
 
         private void btn_RepStock_Click(object sender, EventArgs e)
         {
-            ReporteStockForm frm = new ReporteStockForm();
-            frm.Show();
+            
         }
 
         private void btn_RepMovimientos_Click(object sender, EventArgs e)
         {
-            ReporteMovimientosForm frm = new ReporteMovimientosForm();
-            frm.Show();
+            
         }
 
         private void btn_RepAuditoria_Click(object sender, EventArgs e)
@@ -1034,6 +1035,157 @@ o dirigirse a inicio de sesion*/
         }
 
         private void DataGrid_Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BotonReportesMovimiento_Click(object sender, EventArgs e)
+        {
+            // REPORTE DE MOVIMIENTOS
+            try
+            {
+                //Proceso para guardar los pdf
+                SaveFileDialog guardar = new SaveFileDialog();
+                guardar.FileName = "" + DateTime.Now.ToString("ddmmyyyy") + ".pdf"; // Nombre por defecto con el que se guarda
+
+
+                //llamado al archivo hmtl para convertirlo a una cadena de texto
+                string Pagina_HTML_texto2 = Properties.Resources.Reporte_de__Movimientos.ToString();
+
+                //Remplazo de valores
+                Pagina_HTML_texto2 = Pagina_HTML_texto2.Replace("@FECHADEGENERACION", DateTime.Now.ToString("dd / mm / yyyy"));
+
+                //Extraccion del dataview
+                string filas2 = string.Empty;
+         
+                foreach (DataGridViewRow row in DataGrid_Movimientos.Rows)
+                {
+                    filas2 += "<tr>";
+                    filas2 += "<td style=\"text-align:center\">" + row.Cells["ID_Movimiento"].Value.ToString() + "</td>";
+                    filas2 += "<td>" + row.Cells["Producto"].Value.ToString() + "</td>";
+                    filas2 += "<td>" + row.Cells["TipoMovimiento"].Value.ToString() + "</td>";
+                    filas2 += "<td>" + row.Cells["Causa"].Value.ToString() + "</td>";
+                    filas2 += "<td style=\"text-align: right;\">" + row.Cells["Cantidad"].Value.ToString() + "</td>";
+                    filas2 += "</tr>";
+                }
+
+                Pagina_HTML_texto2 = Pagina_HTML_texto2.Replace("@FILAS", filas2);
+
+                //Condicional para el guardado
+                if (guardar.ShowDialog() == DialogResult.OK)
+                {
+                    //Guardado en memoria
+                    using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                    {
+                        //Caracteristicas del formato del pdf
+                        Document pdfDoc = new Document(PageSize.A4);
+                        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+
+                        pdfDoc.Open();
+                        pdfDoc.Add(new Phrase(""));
+
+                        //Agregar la imagen al pdf
+                        iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(Properties.Resources.LOGO_1, System.Drawing.Imaging.ImageFormat.Png);
+                        imagen.ScaleToFit(110, 95); //Tamaño de la imagen
+                        imagen.Alignment = iTextSharp.text.Image.UNDERLYING; //Propiedad de Superioridad
+                        imagen.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 95); //Margen izquierdo
+                        imagen.SetAbsolutePosition(pdfDoc.RightMargin, pdfDoc.Top - 105); //Margen derecho
+                        pdfDoc.Add(imagen);
+
+                        using (StringReader sr = new StringReader(Pagina_HTML_texto2))
+                        {
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                        }
+
+                        pdfDoc.Close();
+                        stream.Close();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BotonReportesProductos_Click(object sender, EventArgs e)
+        {
+            // REPORTE DE ARTICULOS,PRODUCTOS,MERCANCIA
+            try
+            {
+                //Proceso para guardar los pdf
+                SaveFileDialog guardar = new SaveFileDialog();
+                guardar.FileName = "Conteo de Productos" + DateTime.Now.ToString("ddmmyyyy") + ".pdf"; // Nombre por defecto con el que se guarda
+
+
+                //llamado al archivo hmtl para convertirlo a una cadena de texto
+                string Pagina_HTML_texto = Properties.Resources.Reporte_de_Conteo.ToString();
+
+                //Remplazo de valores
+                Pagina_HTML_texto = Pagina_HTML_texto.Replace("@FECHADEGENERACION", DateTime.Now.ToString("dd / mm / yyyy"));
+
+                //Extraccion del dataview
+                string filas = string.Empty;
+   
+                foreach (DataGridViewRow row in DataGrid_Productos.Rows)
+                {
+                    filas += "<tr>";
+                    filas += "<td style=\"text-align:center\">" + row.Cells["ID_Producto"].Value.ToString() + "</td>";
+                    filas += "<td>" + row.Cells["Nombre"].Value.ToString() + "</td>";
+                    filas += "<td>" + row.Cells["Categoria"].Value.ToString() + "</td>";
+                    filas += "<td style=\"text-align: right;\">" + row.Cells["Cantidad"].Value.ToString() + "</td>";
+                    filas += "<td></td>";
+                    filas += "<td></td>";
+                    filas += "</tr>";
+                }
+
+                Pagina_HTML_texto = Pagina_HTML_texto.Replace("@FILAS", filas);
+
+                //Condicional para el guardado
+                if (guardar.ShowDialog() == DialogResult.OK)
+                {
+                    //Guardado en memoria
+                    using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                    {
+                        //Caracteristicas del formato del pdf
+                        Document pdfDoc = new Document(PageSize.A4);
+                        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+
+                        pdfDoc.Open();
+                        pdfDoc.Add(new Phrase(""));
+
+                        //Agregar la imagen al pdf
+                        iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(Properties.Resources.LOGO_1,System.Drawing.Imaging.ImageFormat.Png);
+                        imagen.ScaleToFit(110,95); //Tamaño de la imagen
+                        imagen.Alignment = iTextSharp.text.Image.UNDERLYING; //Propiedad de Superioridad
+                        imagen.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 95); //Margen izquierdo
+                        imagen.SetAbsolutePosition(pdfDoc.RightMargin, pdfDoc.Top - 105); //Margen derecho
+                        pdfDoc.Add(imagen);
+
+                        using (StringReader sr = new StringReader(Pagina_HTML_texto))
+                        {
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                        }
+
+                        pdfDoc.Close();
+                        stream.Close();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DataGrid_Productos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
