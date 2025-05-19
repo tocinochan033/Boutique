@@ -1,9 +1,13 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using iTextSharp.tool.xml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,24 +61,7 @@ namespace Proyecto_Boutique
 
         private void btnGenerar_Click_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var html = GenerarHtmlReporte();
-                PDFGenerador.ShowSaveDialogAndGenerate(html, $"Reporte_Stock_{DateTime.Now:yyyyMMdd}.pdf");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private string GenerarHtmlReporte()
-        {
-            var html = new StringBuilder();
-
-            //REPORTE
-            //DATOS DEL REPORTE
-
-            return html.ToString();
+            
         }
     }
 }

@@ -113,6 +113,16 @@ namespace Proyecto_Boutique.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap archivo_pdf {
+            get {
+                object obj = ResourceManager.GetObject("archivo-pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Busqueda {
             get {
                 object obj = ResourceManager.GetObject("Busqueda", resourceCulture);
@@ -176,6 +186,16 @@ namespace Proyecto_Boutique.Properties {
         internal static System.Drawing.Bitmap hide {
             get {
                 object obj = ResourceManager.GetObject("hide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imprimir {
+            get {
+                object obj = ResourceManager.GetObject("imprimir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -247,6 +267,43 @@ namespace Proyecto_Boutique.Properties {
             get {
                 object obj = ResourceManager.GetObject("ojo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///  &lt;title&gt;Reporte de Conteo&lt;/title&gt;
+        ///  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+        ///  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+        ///
+        ///  &lt;!-- Sintaxis directa para el diseño --&gt;
+        ///  &lt;style&gt;
+        ///    
+        ///    table {
+        ///      width: 50%;
+        ///      border: 4px solid black;
+        ///      border-collapse: collapse;
+        ///      table-layout: fixed;
+        ///
+        ///    }
+        ///
+        ///    td , th{
+        ///      border : 2px solid black;
+        ///      height: 30px;
+        ///      padding-left: 8px;
+        ///      padding-right: 8px;
+        ///    }
+        ///
+        ///  &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;!-- Cuer [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Reporte_de_Conteo {
+            get {
+                return ResourceManager.GetString("Reporte_de_Conteo", resourceCulture);
             }
         }
         

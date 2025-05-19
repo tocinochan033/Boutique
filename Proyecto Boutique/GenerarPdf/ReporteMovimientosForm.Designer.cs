@@ -78,7 +78,7 @@
             this.Generar_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Generar_Click.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Generar_Click.Location = new System.Drawing.Point(462, 106);
-            this.Generar_Click.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Generar_Click.Margin = new System.Windows.Forms.Padding(2);
             this.Generar_Click.Name = "Generar_Click";
             this.Generar_Click.Size = new System.Drawing.Size(111, 60);
             this.Generar_Click.TabIndex = 11;
@@ -91,7 +91,7 @@
             this.cmbTipoMovimiento.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoMovimiento.FormattingEnabled = true;
             this.cmbTipoMovimiento.Location = new System.Drawing.Point(188, 117);
-            this.cmbTipoMovimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipoMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoMovimiento.Name = "cmbTipoMovimiento";
             this.cmbTipoMovimiento.Size = new System.Drawing.Size(263, 29);
             this.cmbTipoMovimiento.TabIndex = 10;
@@ -100,7 +100,7 @@
             // 
             this.dtpFechaHasta.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaHasta.Location = new System.Drawing.Point(361, 63);
-            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(212, 29);
             this.dtpFechaHasta.TabIndex = 9;
@@ -109,7 +109,7 @@
             // 
             this.dtpFechaDesde.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaDesde.Location = new System.Drawing.Point(83, 63);
-            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(213, 29);
             this.dtpFechaDesde.TabIndex = 8;
@@ -117,11 +117,11 @@
             // lbl_Usuarios
             // 
             this.lbl_Usuarios.AutoSize = true;
-            this.lbl_Usuarios.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Usuarios.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold);
             this.lbl_Usuarios.Location = new System.Drawing.Point(11, 9);
             this.lbl_Usuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Usuarios.Name = "lbl_Usuarios";
-            this.lbl_Usuarios.Size = new System.Drawing.Size(294, 45);
+            this.lbl_Usuarios.Size = new System.Drawing.Size(317, 39);
             this.lbl_Usuarios.TabIndex = 21;
             this.lbl_Usuarios.Text = "Reportes de Movimiento";
             // 
@@ -139,7 +139,7 @@
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.dtpFechaDesde);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(607, 225);
             this.MinimumSize = new System.Drawing.Size(607, 225);
             this.Name = "ReporteMovimientosForm";

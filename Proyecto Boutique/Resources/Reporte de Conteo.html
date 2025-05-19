@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Reporte de Conteo</title>
+      <!-- Sintaxis directa para el diseño -->
+      <style>
+    
+        table {
+          border: 3px solid black;
+          border-collapse: collapse;
+          table-layout: fixed;
+
+        }
+
+        td , th{
+          border : 1px;
+          height: 30px;
+          padding-left: 4px;
+          padding-right: 4px;
+          font-size: 10px;
+        }
+
+      </style>
+    </head>
+    <!-- Cuerpo del pdf-->
+    <body >
+
+            <!--Primer encabezado-->
+            <h1 style="text-align:center">REPORTE DE CONTEO</h1>
+
+            <!--Tabla -->
+            <table style="width:100%">
+                <tr style="text-align: center;">
+                    <th rowspan="2" style="width:400px"></th>
+                    <td rowspan="2" style="width:600px"><h2>Conteo Físico de Mercancia</h2></td>
+                    <td style="width: 300px;">Páginas :</td>
+                    <td style="width: 50px;">0</td>
+                    <td style="width: 300px">Auditoría No.</td>
+                    <td style="width: 50px">0</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td colspan="2">Fecha de Expedición:</td>
+                    <td colspan="2"> @FECHADEGENERACION </td>
+                </tr>
+            </table>
+
+            <!--Tercer encabezado-->
+            <h4 style="text-align:center">Datos del Inventario</h4>
+
+            <!--Tabla -->
+            <table style="width:100%">
+                <tr style=" text-align:center;">
+                    <th style="width=50px">ID</th>
+                    <th style="width=400px">Producto:</th>
+                    <th>Cantidad en sistema:</th>
+                    <th>Cantidad en conteo:</th>
+                    <th width="150px">Diferencias ( + / - ):</th>
+                </tr>
+                @FILAS
+                <!--<tr>
+        <td style="text-align:center">@ID</td>
+        <td>@NOMBREPRODUCTO</td>
+        <td style="text-align: right;">@TOTAL EN SISTEMA</td>
+        <td></td>
+        <td></td>
+    </tr>-->
+            </table>
+
+            <!--Cuarto encabezado-->
+            <h4 style="text-align:center">Resultados</h4>
+
+            <!--Parte de firmas-->
+            <table style="text-align: center; border-color: white; width:100%; height:30%;">
+                <tr>
+                    <td style="border-color: white;"></td>
+                    <td style="border-color: white;"></td>
+                </tr>
+                <tr>
+                    <td style="height: 2px; border-color: white; ">_____________________________________</td>
+                    <td style="height: 2px; border-color: white; ">_____________________________________</td>
+                </tr>
+                <tr>
+                    <td style="border-color: white;">Firma del Contador</td>
+                    <td style="border-color: white;">Sello de Validación.</td>
+                </tr>
+            </table>
+        </body>
+</html>

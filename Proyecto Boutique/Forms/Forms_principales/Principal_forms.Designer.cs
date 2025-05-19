@@ -52,6 +52,8 @@
             this.btn_CrearUsuario = new System.Windows.Forms.Button();
             this.DataGrid_Usuarios = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.BotonReportesProductos = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -76,6 +78,8 @@
             this.btn_CrearProducto = new System.Windows.Forms.Button();
             this.DataGrid_Productos = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.BotonReportesMovimiento = new System.Windows.Forms.Button();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
@@ -94,12 +98,6 @@
             this.btn_EliminarMovimientos = new System.Windows.Forms.Button();
             this.btn_CrearMovimiento = new System.Windows.Forms.Button();
             this.DataGrid_Movimientos = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.btn_RepAuditoria = new System.Windows.Forms.Button();
-            this.btn_RepMovimientos = new System.Windows.Forms.Button();
-            this.btn_RepStock = new System.Windows.Forms.Button();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -112,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Usuarios)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -121,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Productos)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
@@ -128,8 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Movimientos)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -137,7 +135,6 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabControl1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(11, 24);
@@ -373,11 +370,11 @@
             // lbl_Usuarios
             // 
             this.lbl_Usuarios.AutoSize = true;
-            this.lbl_Usuarios.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Usuarios.Location = new System.Drawing.Point(72, 11);
+            this.lbl_Usuarios.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Usuarios.Location = new System.Drawing.Point(72, 17);
             this.lbl_Usuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Usuarios.Name = "lbl_Usuarios";
-            this.lbl_Usuarios.Size = new System.Drawing.Size(244, 45);
+            this.lbl_Usuarios.Size = new System.Drawing.Size(263, 39);
             this.lbl_Usuarios.TabIndex = 17;
             this.lbl_Usuarios.Text = "Usuarios existentes";
             this.lbl_Usuarios.Click += new System.EventHandler(this.lbl_Usuarios_Click);
@@ -413,6 +410,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.BotonReportesProductos);
+            this.tabPage5.Controls.Add(this.pictureBox8);
             this.tabPage5.Controls.Add(this.pictureBox15);
             this.tabPage5.Controls.Add(this.pictureBox14);
             this.tabPage5.Controls.Add(this.pictureBox12);
@@ -444,6 +443,28 @@
             this.tabPage5.Text = "Productos";
             this.tabPage5.UseVisualStyleBackColor = true;
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
+            // BotonReportesProductos
+            // 
+            this.BotonReportesProductos.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.BotonReportesProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotonReportesProductos.Location = new System.Drawing.Point(194, 504);
+            this.BotonReportesProductos.Name = "BotonReportesProductos";
+            this.BotonReportesProductos.Size = new System.Drawing.Size(172, 43);
+            this.BotonReportesProductos.TabIndex = 59;
+            this.BotonReportesProductos.Text = "Imprimir Reportes";
+            this.BotonReportesProductos.UseVisualStyleBackColor = true;
+            this.BotonReportesProductos.Click += new System.EventHandler(this.BotonReportesProductos_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::Proyecto_Boutique.Properties.Resources.archivo_pdf;
+            this.pictureBox8.Location = new System.Drawing.Point(143, 504);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(45, 43);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 58;
+            this.pictureBox8.TabStop = false;
             // 
             // pictureBox15
             // 
@@ -518,11 +539,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(76, 14);
+            this.label3.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(76, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(263, 45);
+            this.label3.Size = new System.Drawing.Size(279, 39);
             this.label3.TabIndex = 49;
             this.label3.Text = "Productos existentes";
             // 
@@ -569,7 +590,7 @@
             // 
             this.Btn_RegistrarColor.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.Btn_RegistrarColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_RegistrarColor.Location = new System.Drawing.Point(339, 486);
+            this.Btn_RegistrarColor.Location = new System.Drawing.Point(340, 461);
             this.Btn_RegistrarColor.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_RegistrarColor.Name = "Btn_RegistrarColor";
             this.Btn_RegistrarColor.Size = new System.Drawing.Size(133, 35);
@@ -664,7 +685,7 @@
             // 
             this.btn_CrearMarca.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_CrearMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CrearMarca.Location = new System.Drawing.Point(43, 486);
+            this.btn_CrearMarca.Location = new System.Drawing.Point(44, 461);
             this.btn_CrearMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CrearMarca.Name = "btn_CrearMarca";
             this.btn_CrearMarca.Size = new System.Drawing.Size(146, 35);
@@ -677,7 +698,7 @@
             // 
             this.btn_CrearCategorias.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_CrearCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CrearCategorias.Location = new System.Drawing.Point(193, 486);
+            this.btn_CrearCategorias.Location = new System.Drawing.Point(194, 461);
             this.btn_CrearCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CrearCategorias.Name = "btn_CrearCategorias";
             this.btn_CrearCategorias.Size = new System.Drawing.Size(142, 35);
@@ -712,11 +733,14 @@
             this.DataGrid_Productos.RowTemplate.Height = 24;
             this.DataGrid_Productos.Size = new System.Drawing.Size(1044, 366);
             this.DataGrid_Productos.TabIndex = 33;
+            this.DataGrid_Productos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Productos_CellContentClick);
             this.DataGrid_Productos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_Productos_RowsAdded);
             this.DataGrid_Productos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGrid_Productos_RowsRemoved);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.BotonReportesMovimiento);
+            this.tabPage3.Controls.Add(this.pictureBox21);
             this.tabPage3.Controls.Add(this.pictureBox20);
             this.tabPage3.Controls.Add(this.pictureBox22);
             this.tabPage3.Controls.Add(this.pictureBox19);
@@ -744,10 +768,32 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // BotonReportesMovimiento
+            // 
+            this.BotonReportesMovimiento.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.BotonReportesMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotonReportesMovimiento.Location = new System.Drawing.Point(867, 472);
+            this.BotonReportesMovimiento.Name = "BotonReportesMovimiento";
+            this.BotonReportesMovimiento.Size = new System.Drawing.Size(196, 43);
+            this.BotonReportesMovimiento.TabIndex = 67;
+            this.BotonReportesMovimiento.Text = "Imprimir Reportes";
+            this.BotonReportesMovimiento.UseVisualStyleBackColor = true;
+            this.BotonReportesMovimiento.Click += new System.EventHandler(this.BotonReportesMovimiento_Click);
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = global::Proyecto_Boutique.Properties.Resources.archivo_pdf;
+            this.pictureBox21.Location = new System.Drawing.Point(816, 472);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(45, 43);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 66;
+            this.pictureBox21.TabStop = false;
+            // 
             // pictureBox20
             // 
             this.pictureBox20.Image = global::Proyecto_Boutique.Properties.Resources.archivo_hoja_de_calculo;
-            this.pictureBox20.Location = new System.Drawing.Point(818, 465);
+            this.pictureBox20.Location = new System.Drawing.Point(817, 413);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(45, 43);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -757,7 +803,7 @@
             // pictureBox22
             // 
             this.pictureBox22.Image = global::Proyecto_Boutique.Properties.Resources.agregar;
-            this.pictureBox22.Location = new System.Drawing.Point(818, 337);
+            this.pictureBox22.Location = new System.Drawing.Point(817, 285);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(45, 43);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -767,7 +813,7 @@
             // pictureBox19
             // 
             this.pictureBox19.Image = global::Proyecto_Boutique.Properties.Resources.circulo_de_basura;
-            this.pictureBox19.Location = new System.Drawing.Point(818, 403);
+            this.pictureBox19.Location = new System.Drawing.Point(817, 351);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(45, 43);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -777,7 +823,7 @@
             // pictureBox18
             // 
             this.pictureBox18.Image = global::Proyecto_Boutique.Properties.Resources.Filtro;
-            this.pictureBox18.Location = new System.Drawing.Point(818, 105);
+            this.pictureBox18.Location = new System.Drawing.Point(817, 53);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(35, 38);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -787,7 +833,7 @@
             // pictureBox17
             // 
             this.pictureBox17.Image = global::Proyecto_Boutique.Properties.Resources.Busqueda;
-            this.pictureBox17.Location = new System.Drawing.Point(818, 218);
+            this.pictureBox17.Location = new System.Drawing.Point(817, 166);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(35, 38);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -807,19 +853,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(70, 18);
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(70, 24);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(301, 45);
+            this.label4.Size = new System.Drawing.Size(324, 39);
             this.label4.TabIndex = 57;
             this.label4.Text = "Historial de Movimientos";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btn_MostrarDetallesMovimientos
             // 
             this.btn_MostrarDetallesMovimientos.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_MostrarDetallesMovimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_MostrarDetallesMovimientos.Location = new System.Drawing.Point(868, 465);
+            this.btn_MostrarDetallesMovimientos.Location = new System.Drawing.Point(867, 413);
             this.btn_MostrarDetallesMovimientos.Margin = new System.Windows.Forms.Padding(2);
             this.btn_MostrarDetallesMovimientos.Name = "btn_MostrarDetallesMovimientos";
             this.btn_MostrarDetallesMovimientos.Size = new System.Drawing.Size(196, 43);
@@ -832,7 +879,7 @@
             // 
             this.rdbtn_UsuarioMovimiento.AutoSize = true;
             this.rdbtn_UsuarioMovimiento.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_UsuarioMovimiento.Location = new System.Drawing.Point(963, 144);
+            this.rdbtn_UsuarioMovimiento.Location = new System.Drawing.Point(962, 92);
             this.rdbtn_UsuarioMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.rdbtn_UsuarioMovimiento.Name = "rdbtn_UsuarioMovimiento";
             this.rdbtn_UsuarioMovimiento.Size = new System.Drawing.Size(82, 25);
@@ -844,7 +891,7 @@
             // lbl_OpcionesMovimiento
             // 
             this.lbl_OpcionesMovimiento.AutoSize = true;
-            this.lbl_OpcionesMovimiento.Location = new System.Drawing.Point(858, 105);
+            this.lbl_OpcionesMovimiento.Location = new System.Drawing.Point(857, 53);
             this.lbl_OpcionesMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_OpcionesMovimiento.Name = "lbl_OpcionesMovimiento";
             this.lbl_OpcionesMovimiento.Size = new System.Drawing.Size(163, 21);
@@ -854,7 +901,7 @@
             // lbl_BusquedaMovimiento
             // 
             this.lbl_BusquedaMovimiento.AutoSize = true;
-            this.lbl_BusquedaMovimiento.Location = new System.Drawing.Point(858, 235);
+            this.lbl_BusquedaMovimiento.Location = new System.Drawing.Point(857, 183);
             this.lbl_BusquedaMovimiento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_BusquedaMovimiento.Name = "lbl_BusquedaMovimiento";
             this.lbl_BusquedaMovimiento.Size = new System.Drawing.Size(89, 21);
@@ -865,7 +912,7 @@
             // 
             this.rdbtn_TipoMovimiento.AutoSize = true;
             this.rdbtn_TipoMovimiento.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_TipoMovimiento.Location = new System.Drawing.Point(963, 182);
+            this.rdbtn_TipoMovimiento.Location = new System.Drawing.Point(962, 130);
             this.rdbtn_TipoMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.rdbtn_TipoMovimiento.Name = "rdbtn_TipoMovimiento";
             this.rdbtn_TipoMovimiento.Size = new System.Drawing.Size(58, 25);
@@ -878,7 +925,7 @@
             // 
             this.rdbtn_ProductoMovimiento.AutoSize = true;
             this.rdbtn_ProductoMovimiento.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_ProductoMovimiento.Location = new System.Drawing.Point(868, 182);
+            this.rdbtn_ProductoMovimiento.Location = new System.Drawing.Point(867, 130);
             this.rdbtn_ProductoMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.rdbtn_ProductoMovimiento.Name = "rdbtn_ProductoMovimiento";
             this.rdbtn_ProductoMovimiento.Size = new System.Drawing.Size(91, 25);
@@ -891,7 +938,7 @@
             // 
             this.rdbtn_IDMovimiento.AutoSize = true;
             this.rdbtn_IDMovimiento.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_IDMovimiento.Location = new System.Drawing.Point(868, 144);
+            this.rdbtn_IDMovimiento.Location = new System.Drawing.Point(867, 92);
             this.rdbtn_IDMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.rdbtn_IDMovimiento.Name = "rdbtn_IDMovimiento";
             this.rdbtn_IDMovimiento.Size = new System.Drawing.Size(43, 25);
@@ -902,7 +949,7 @@
             // 
             // txtbox_BusquedaMovimiento
             // 
-            this.txtbox_BusquedaMovimiento.Location = new System.Drawing.Point(818, 261);
+            this.txtbox_BusquedaMovimiento.Location = new System.Drawing.Point(817, 209);
             this.txtbox_BusquedaMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_BusquedaMovimiento.Name = "txtbox_BusquedaMovimiento";
             this.txtbox_BusquedaMovimiento.Size = new System.Drawing.Size(246, 29);
@@ -913,7 +960,7 @@
             // 
             this.btn_EliminarMovimientos.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_EliminarMovimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarMovimientos.Location = new System.Drawing.Point(868, 403);
+            this.btn_EliminarMovimientos.Location = new System.Drawing.Point(867, 351);
             this.btn_EliminarMovimientos.Margin = new System.Windows.Forms.Padding(2);
             this.btn_EliminarMovimientos.Name = "btn_EliminarMovimientos";
             this.btn_EliminarMovimientos.Size = new System.Drawing.Size(196, 43);
@@ -926,7 +973,7 @@
             // 
             this.btn_CrearMovimiento.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_CrearMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CrearMovimiento.Location = new System.Drawing.Point(868, 337);
+            this.btn_CrearMovimiento.Location = new System.Drawing.Point(867, 285);
             this.btn_CrearMovimiento.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CrearMovimiento.Name = "btn_CrearMovimiento";
             this.btn_CrearMovimiento.Size = new System.Drawing.Size(196, 43);
@@ -950,81 +997,6 @@
             this.DataGrid_Movimientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Movimientos_CellContentClick);
             this.DataGrid_Movimientos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_Movimientos_RowsAdded);
             this.DataGrid_Movimientos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGrid_Movimientos_RowsRemoved);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.label5);
-            this.tabPage4.Controls.Add(this.pictureBox23);
-            this.tabPage4.Controls.Add(this.btn_RepAuditoria);
-            this.tabPage4.Controls.Add(this.btn_RepMovimientos);
-            this.tabPage4.Controls.Add(this.btn_RepStock);
-            this.tabPage4.Location = new System.Drawing.Point(4, 30);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1102, 561);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Reportes";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(78, 22);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(277, 45);
-            this.label5.TabIndex = 141;
-            this.label5.Text = "Impresión de Reportes";
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.Image = global::Proyecto_Boutique.Properties.Resources.archivo_hoja;
-            this.pictureBox23.Location = new System.Drawing.Point(22, 22);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(51, 45);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox23.TabIndex = 140;
-            this.pictureBox23.TabStop = false;
-            // 
-            // btn_RepAuditoria
-            // 
-            this.btn_RepAuditoria.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_RepAuditoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_RepAuditoria.Location = new System.Drawing.Point(706, 373);
-            this.btn_RepAuditoria.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_RepAuditoria.Name = "btn_RepAuditoria";
-            this.btn_RepAuditoria.Size = new System.Drawing.Size(260, 141);
-            this.btn_RepAuditoria.TabIndex = 139;
-            this.btn_RepAuditoria.Text = "Generar Reporte de Auditoria";
-            this.btn_RepAuditoria.UseVisualStyleBackColor = true;
-            this.btn_RepAuditoria.Click += new System.EventHandler(this.btn_RepAuditoria_Click);
-            // 
-            // btn_RepMovimientos
-            // 
-            this.btn_RepMovimientos.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_RepMovimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_RepMovimientos.Location = new System.Drawing.Point(369, 373);
-            this.btn_RepMovimientos.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_RepMovimientos.Name = "btn_RepMovimientos";
-            this.btn_RepMovimientos.Size = new System.Drawing.Size(281, 141);
-            this.btn_RepMovimientos.TabIndex = 138;
-            this.btn_RepMovimientos.Text = "Generar Reporte de Movimientos";
-            this.btn_RepMovimientos.UseVisualStyleBackColor = true;
-            this.btn_RepMovimientos.Click += new System.EventHandler(this.btn_RepMovimientos_Click);
-            // 
-            // btn_RepStock
-            // 
-            this.btn_RepStock.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_RepStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_RepStock.Location = new System.Drawing.Point(57, 373);
-            this.btn_RepStock.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_RepStock.Name = "btn_RepStock";
-            this.btn_RepStock.Size = new System.Drawing.Size(257, 141);
-            this.btn_RepStock.TabIndex = 137;
-            this.btn_RepStock.Text = "Generar Reporte de Stock";
-            this.btn_RepStock.UseVisualStyleBackColor = true;
-            this.btn_RepStock.Click += new System.EventHandler(this.btn_RepStock_Click);
             // 
             // btn_cerrarSesion
             // 
@@ -1071,6 +1043,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Usuarios)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -1081,6 +1054,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Productos)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
@@ -1088,9 +1062,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Movimientos)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1100,10 +1071,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button btn_RepAuditoria;
-        private System.Windows.Forms.Button btn_RepMovimientos;
-        private System.Windows.Forms.Button btn_RepStock;
         private System.Windows.Forms.Label lbl_Usuarios;
         private System.Windows.Forms.Button btn_CrearUsuario;
         private System.Windows.Forms.DataGridView DataGrid_Usuarios;
@@ -1167,7 +1134,9 @@
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.Button BotonReportesProductos;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button BotonReportesMovimiento;
+        private System.Windows.Forms.PictureBox pictureBox21;
     }
 }
