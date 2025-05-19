@@ -7,17 +7,11 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Boutique
 {
-
-    /*
-        Martin: MARTIN\\SQLEXPRESS
-        chuy; DESKTOP-BF3NJMJ
-        Sandra: LAPTOP-FVNNPBGP
-    */
     internal class databaseConnection
     {
-        string connection = "Data Source=MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
-        //Equipos:
-        //Chuy: DESKTOP-BF3NJMJ
+        static string nombreServidor = Environment.MachineName;
+        static string connection = $"Data Source={nombreServidor}; Initial Catalog= BOUTIQUE; Integrated Security=True";
+        
 
         public SqlConnection connectiondb = new SqlConnection();
 

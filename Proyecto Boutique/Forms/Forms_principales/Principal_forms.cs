@@ -1,5 +1,6 @@
 ﻿using iTextSharp.text.pdf;
 using Proyecto_Boutique.Forms.Forms_secundarios.Crear;
+using Proyecto_Boutique.GenerarPdf;
 using Proyecto_Boutique.Mostrar_Detalles;
 using System;
 using System.Collections.Generic;
@@ -765,7 +766,7 @@ namespace Proyecto_Boutique
 
         private void btn_RepStock_Click(object sender, EventArgs e)
         {
-            ReporteStockForm frm = new ReporteStockForm();
+            GeneracionDeReporteSTOCK frm = new GeneracionDeReporteSTOCK();
             frm.Show();
         }
 
