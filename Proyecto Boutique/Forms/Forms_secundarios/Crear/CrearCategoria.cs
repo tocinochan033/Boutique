@@ -33,9 +33,14 @@ namespace Proyecto_Boutique
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        public CrearCategoria()
+        private Principal_forms formsprincipal;
+
+
+        public CrearCategoria(Principal_forms princsforms)
         {
             InitializeComponent();
+
+            formsprincipal = princsforms;
         }
 
         private void btn_CrearCategoria_Click(object sender, EventArgs e)
@@ -93,7 +98,11 @@ namespace Proyecto_Boutique
                         limpiarcampos();
                         ObtenerRegistrosCategoria();
 
-                        actualizarID();                                              
+                        actualizarID();
+
+
+                        formsprincipal.ObtenerRegistrosUsuarios();
+
                     }
                     else
                     {

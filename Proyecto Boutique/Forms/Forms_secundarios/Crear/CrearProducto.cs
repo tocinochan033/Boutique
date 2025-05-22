@@ -29,9 +29,11 @@ namespace Proyecto_Boutique
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        public CrearProducto()
+        private Principal_forms formsprincipal;
+        public CrearProducto(Principal_forms princsforms)
         {
             InitializeComponent();
+            formsprincipal = princsforms;
         }
 
         private void CrearProducto_Load(object sender, EventArgs e)
@@ -201,7 +203,11 @@ namespace Proyecto_Boutique
 
                             limpiarcampos();
                             actualizarID();
-                        }
+
+                            formsprincipal.ObtenerRegistrosProductos();
+                            formsprincipal.ObtenerRegistrosProductosParaReportes();
+
+                    }
 
                         else
                         {
@@ -217,6 +223,7 @@ namespace Proyecto_Boutique
                 conexion.Close();
                 limpiarcampos();
             }
+            
         }
 
         private void limpiarcampos()
