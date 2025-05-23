@@ -849,14 +849,14 @@ namespace Proyecto_Boutique
                 btn_CrearUsuario.Visible = false;
                 btn_CrearProducto.Visible = false;
                 btn_CrearMovimiento.Visible = false;
-                btn_CrearMarca.Visible = false;
-                btn_CrearCategorias.Visible = false;
+
+
                 btn_Eliminar.Visible = false;
                 btn_EliminarProducto.Visible = false;
-                btn_EliminarMovimientos.Visible = false;
+  
                 pictureBox14.Visible = false;
                 pictureBox13.Visible = false;
-                pictureBox19.Visible = false;
+
                 pictureBox22.Visible = false;
 
                 tabControl1.TabPages.Remove(tabPage1); // Se oculta la pestaña de usuarios
@@ -960,7 +960,6 @@ namespace Proyecto_Boutique
         {
             try
             {
-                this.Hide();
                 if (DataGrid_Movimientos.SelectedRows.Count == 1)
                 {
 
