@@ -1089,12 +1089,22 @@ o dirigirse a inicio de sesion*/
             // No -> no hacer nada
 
             if (result == DialogResult.Yes)
-            {
-                this.Hide();
-                Inicio_Sesion login = new Inicio_Sesion();
-                login.Show();
-            }
+    {
+        // Cerrar todos los formularios excepto el login que vamos a crear
+        foreach (Form form in Application.OpenForms.OfType<Form>().ToArray())
+        {
+            if (form is Inicio_Sesion) continue; // Saltar si ya hay un login abierto
+            form.Close();
         }
+        
+        // Mostrar nuevo formulario de login
+        new Inicio_Sesion().Show();
+        this.Close(); // Cerrar el formulario actual
+    }
+
+        }
+
+
 
         private void DataGrid_Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
