@@ -960,7 +960,6 @@ namespace Proyecto_Boutique
         {
             try
             {
-                this.Hide();
                 if (DataGrid_Movimientos.SelectedRows.Count == 1)
                 {
 
