@@ -88,7 +88,7 @@ namespace Proyecto_Boutique
             {
                 conexion.Open();
                 //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-                String ConsultaColores = "Select * from COLOR";
+                String ConsultaColores = "Select * from COLOR  WHERE Visibilidad = 1";
 
                 //Se utiliza el objeto sqldataadapter creado anteriormente
                 adaptador = new SqlDataAdapter(ConsultaColores, conexion.getConnection());

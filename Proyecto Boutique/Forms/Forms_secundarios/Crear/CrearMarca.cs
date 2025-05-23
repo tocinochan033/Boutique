@@ -81,7 +81,7 @@ namespace Proyecto_Boutique.Forms.Forms_secundarios.Crear
             {
                 conexion.Open();
                 //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-                String ConsultaMarcas = "Select * from MARCA";
+                String ConsultaMarcas = "Select * from MARCA WHERE Visibilidad = 1";
 
                 //Se utiliza el objeto sqldataadapter creado anteriormente
                 adaptador = new SqlDataAdapter(ConsultaMarcas, conexion.getConnection());
