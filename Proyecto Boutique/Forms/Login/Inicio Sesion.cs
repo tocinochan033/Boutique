@@ -46,7 +46,7 @@ namespace Proyecto_Boutique
             {
                 db.Open();
 
-                string query = "SELECT ROL FROM USUARIO WHERE Nombre = @usuario AND Contrasena = @contrasena";
+                string query = "SELECT ROL FROM USUARIO WHERE Nombre = @usuario AND Contrasena = @contrasena AND Visibilidad = 1";
                 SqlCommand cmd = new SqlCommand(query, db.getConnection());
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@contrasena", contrasena);
