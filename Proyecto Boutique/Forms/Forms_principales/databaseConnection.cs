@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
+using System.IO;
 
 namespace Proyecto_Boutique
 {
@@ -15,15 +18,28 @@ namespace Proyecto_Boutique
     */
     internal class databaseConnection
     {
-        string connection = "Data Source=(local); Initial Catalog= BOUTIQUE; Integrated Security=True";
+        //string connection = "Data Source=MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
         //Equipos:
         //Chuy: DESKTOP-BF3NJMJ
+        private string connection;
+        public SqlConnection connectiondb;
 
-        public SqlConnection connectiondb = new SqlConnection();
+       // public SqlConnection connectiondb = new SqlConnection();
 
         public databaseConnection()
         {
-            connectiondb.ConnectionString = connection;
+            // Ruta del archivo JSON junto al .exe
+            string path = Path.Combine(AppContext.BaseDirectory, "appsettings.json");
+
+            // Construir el objeto de configuración
+            IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+
+            // Obtener la cadena de conexión
+            connection = config.GetConnectionString("DefaultConnection");
+            connectiondb = new SqlConnection(connection);
         }
 
         public void Open()
