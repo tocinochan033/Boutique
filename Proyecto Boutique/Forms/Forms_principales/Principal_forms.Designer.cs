@@ -79,12 +79,10 @@
             this.DataGrid_Productos = new System.Windows.Forms.DataGridView();
             this.datagridAuxiliar_Productos = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.datagridAuxiliar_Movimientos = new System.Windows.Forms.DataGridView();
             this.BotonReportesMovimiento = new System.Windows.Forms.Button();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -97,9 +95,9 @@
             this.rdbtn_ProductoMovimiento = new System.Windows.Forms.RadioButton();
             this.rdbtn_IDMovimiento = new System.Windows.Forms.RadioButton();
             this.txtbox_BusquedaMovimiento = new System.Windows.Forms.TextBox();
-            this.btn_EliminarMovimientos = new System.Windows.Forms.Button();
             this.btn_CrearMovimiento = new System.Windows.Forms.Button();
             this.DataGrid_Movimientos = new System.Windows.Forms.DataGridView();
+            this.datagridAuxiliar_Movimientos = new System.Windows.Forms.DataGridView();
             this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -123,15 +121,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridAuxiliar_Productos)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridAuxiliar_Movimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Movimientos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridAuxiliar_Movimientos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -782,7 +779,6 @@
             this.tabPage3.Controls.Add(this.pictureBox21);
             this.tabPage3.Controls.Add(this.pictureBox20);
             this.tabPage3.Controls.Add(this.pictureBox22);
-            this.tabPage3.Controls.Add(this.pictureBox19);
             this.tabPage3.Controls.Add(this.pictureBox18);
             this.tabPage3.Controls.Add(this.pictureBox17);
             this.tabPage3.Controls.Add(this.pictureBox16);
@@ -795,7 +791,6 @@
             this.tabPage3.Controls.Add(this.rdbtn_ProductoMovimiento);
             this.tabPage3.Controls.Add(this.rdbtn_IDMovimiento);
             this.tabPage3.Controls.Add(this.txtbox_BusquedaMovimiento);
-            this.tabPage3.Controls.Add(this.btn_EliminarMovimientos);
             this.tabPage3.Controls.Add(this.btn_CrearMovimiento);
             this.tabPage3.Controls.Add(this.DataGrid_Movimientos);
             this.tabPage3.Controls.Add(this.datagridAuxiliar_Movimientos);
@@ -807,24 +802,6 @@
             this.tabPage3.Text = "Movimientos";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // datagridAuxiliar_Movimientos
-            // 
-            this.datagridAuxiliar_Movimientos.AllowUserToAddRows = false;
-            this.datagridAuxiliar_Movimientos.BackgroundColor = System.Drawing.Color.Lavender;
-            this.datagridAuxiliar_Movimientos.ColumnHeadersHeight = 29;
-            this.datagridAuxiliar_Movimientos.EnableHeadersVisualStyles = false;
-            this.datagridAuxiliar_Movimientos.GridColor = System.Drawing.SystemColors.Control;
-            this.datagridAuxiliar_Movimientos.Location = new System.Drawing.Point(343, 330);
-            this.datagridAuxiliar_Movimientos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.datagridAuxiliar_Movimientos.MultiSelect = false;
-            this.datagridAuxiliar_Movimientos.Name = "datagridAuxiliar_Movimientos";
-            this.datagridAuxiliar_Movimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.datagridAuxiliar_Movimientos.RowHeadersWidth = 51;
-            this.datagridAuxiliar_Movimientos.RowTemplate.Height = 24;
-            this.datagridAuxiliar_Movimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridAuxiliar_Movimientos.Size = new System.Drawing.Size(229, 199);
-            this.datagridAuxiliar_Movimientos.TabIndex = 68;
             // 
             // BotonReportesMovimiento
             // 
@@ -864,24 +841,13 @@
             // pictureBox22
             // 
             this.pictureBox22.Image = global::Proyecto_Boutique.Properties.Resources.agregar;
-            this.pictureBox22.Location = new System.Drawing.Point(1089, 351);
+            this.pictureBox22.Location = new System.Drawing.Point(1089, 431);
             this.pictureBox22.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(60, 53);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox22.TabIndex = 64;
             this.pictureBox22.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = global::Proyecto_Boutique.Properties.Resources.circulo_de_basura;
-            this.pictureBox19.Location = new System.Drawing.Point(1089, 432);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(60, 53);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox19.TabIndex = 61;
-            this.pictureBox19.TabStop = false;
             // 
             // pictureBox18
             // 
@@ -1019,24 +985,11 @@
             this.txtbox_BusquedaMovimiento.TabIndex = 49;
             this.txtbox_BusquedaMovimiento.TextChanged += new System.EventHandler(this.txtbox_BusquedaMovimiento_TextChanged);
             // 
-            // btn_EliminarMovimientos
-            // 
-            this.btn_EliminarMovimientos.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_EliminarMovimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarMovimientos.Location = new System.Drawing.Point(1156, 432);
-            this.btn_EliminarMovimientos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_EliminarMovimientos.Name = "btn_EliminarMovimientos";
-            this.btn_EliminarMovimientos.Size = new System.Drawing.Size(261, 53);
-            this.btn_EliminarMovimientos.TabIndex = 48;
-            this.btn_EliminarMovimientos.Text = "Eliminar Movimiento";
-            this.btn_EliminarMovimientos.UseVisualStyleBackColor = true;
-            this.btn_EliminarMovimientos.Click += new System.EventHandler(this.btn_EliminarMovimientos_Click);
-            // 
             // btn_CrearMovimiento
             // 
             this.btn_CrearMovimiento.FlatAppearance.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_CrearMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CrearMovimiento.Location = new System.Drawing.Point(1156, 351);
+            this.btn_CrearMovimiento.Location = new System.Drawing.Point(1156, 431);
             this.btn_CrearMovimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CrearMovimiento.Name = "btn_CrearMovimiento";
             this.btn_CrearMovimiento.Size = new System.Drawing.Size(261, 53);
@@ -1065,6 +1018,24 @@
             this.DataGrid_Movimientos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_Movimientos_CellContentClick);
             this.DataGrid_Movimientos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_Movimientos_RowsAdded);
             this.DataGrid_Movimientos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGrid_Movimientos_RowsRemoved);
+            // 
+            // datagridAuxiliar_Movimientos
+            // 
+            this.datagridAuxiliar_Movimientos.AllowUserToAddRows = false;
+            this.datagridAuxiliar_Movimientos.BackgroundColor = System.Drawing.Color.Lavender;
+            this.datagridAuxiliar_Movimientos.ColumnHeadersHeight = 29;
+            this.datagridAuxiliar_Movimientos.EnableHeadersVisualStyles = false;
+            this.datagridAuxiliar_Movimientos.GridColor = System.Drawing.SystemColors.Control;
+            this.datagridAuxiliar_Movimientos.Location = new System.Drawing.Point(343, 330);
+            this.datagridAuxiliar_Movimientos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.datagridAuxiliar_Movimientos.MultiSelect = false;
+            this.datagridAuxiliar_Movimientos.Name = "datagridAuxiliar_Movimientos";
+            this.datagridAuxiliar_Movimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.datagridAuxiliar_Movimientos.RowHeadersWidth = 51;
+            this.datagridAuxiliar_Movimientos.RowTemplate.Height = 24;
+            this.datagridAuxiliar_Movimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridAuxiliar_Movimientos.Size = new System.Drawing.Size(229, 199);
+            this.datagridAuxiliar_Movimientos.TabIndex = 68;
             // 
             // btn_cerrarSesion
             // 
@@ -1123,15 +1094,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridAuxiliar_Productos)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridAuxiliar_Movimientos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid_Movimientos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridAuxiliar_Movimientos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1170,7 +1140,6 @@
         private System.Windows.Forms.Button Btn_RegistrarColor;
         private System.Windows.Forms.Button btn_EliminarProducto;
         private System.Windows.Forms.Button btn_ModificarProducto;
-        private System.Windows.Forms.Button btn_EliminarMovimientos;
         private System.Windows.Forms.RadioButton rdbtn_UsuarioMovimiento;
         private System.Windows.Forms.Label lbl_OpcionesMovimiento;
         private System.Windows.Forms.Label lbl_BusquedaMovimiento;
@@ -1200,7 +1169,6 @@
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox22;
-        private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox20;

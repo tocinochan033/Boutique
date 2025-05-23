@@ -853,10 +853,10 @@ namespace Proyecto_Boutique
 
                 btn_Eliminar.Visible = false;
                 btn_EliminarProducto.Visible = false;
-                btn_EliminarMovimientos.Visible = false;
+  
                 pictureBox14.Visible = false;
                 pictureBox13.Visible = false;
-                pictureBox19.Visible = false;
+
                 pictureBox22.Visible = false;
 
                 tabControl1.TabPages.Remove(tabPage1); // Se oculta la pestaña de usuarios
@@ -1120,7 +1120,7 @@ o dirigirse a inicio de sesion*/
                 string Pagina_HTML_texto2 = Properties.Resources.Reporte_de__Movimientos.ToString();
 
                 //Remplazo de valores
-                Pagina_HTML_texto2 = Pagina_HTML_texto2.Replace("@FECHADEGENERACION", DateTime.Now.ToString("dd / mm / yyyy"));
+                Pagina_HTML_texto2 = "Movimientos" + Pagina_HTML_texto2.Replace("@FECHADEGENERACION", DateTime.Now.ToString("dd / mm / yyyy"));
 
                 //Extraccion del dataview
                 string filas2 = string.Empty;
@@ -1184,7 +1184,7 @@ o dirigirse a inicio de sesion*/
             {
                 //Proceso para guardar los pdf
                 SaveFileDialog guardar = new SaveFileDialog();
-                guardar.FileName = "Conteo de Productos" + DateTime.Now.ToString("ddmmyyyy") + ".pdf"; // Nombre por defecto con el que se guarda
+                guardar.FileName = "Conteo de Productos" + DateTime.Now.ToString("ddmmyyyy") + ".PDF"; // Nombre por defecto con el que se guarda
 
 
                 //llamado al archivo hmtl para convertirlo a una cadena de texto
