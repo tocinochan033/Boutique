@@ -55,7 +55,7 @@
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(105, 232);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(277, 29);
@@ -80,7 +80,7 @@
             this.btn_enviar.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_enviar.ForeColor = System.Drawing.SystemColors.Window;
             this.btn_enviar.Location = new System.Drawing.Point(184, 283);
-            this.btn_enviar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_enviar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_enviar.Name = "btn_enviar";
             this.btn_enviar.Size = new System.Drawing.Size(119, 44);
             this.btn_enviar.TabIndex = 3;
@@ -104,7 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(60, 159);
+            this.label2.Location = new System.Drawing.Point(61, 159);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(377, 39);
@@ -134,7 +134,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(500, 375);
             this.MinimumSize = new System.Drawing.Size(500, 375);
             this.Name = "Recuperar_Contrasena";
