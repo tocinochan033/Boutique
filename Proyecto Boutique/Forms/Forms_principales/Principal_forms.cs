@@ -853,10 +853,10 @@ namespace Proyecto_Boutique
 
                 btn_Eliminar.Visible = false;
                 btn_EliminarProducto.Visible = false;
-                btn_EliminarMovimientos.Visible = false;
+  
                 pictureBox14.Visible = false;
                 pictureBox13.Visible = false;
-                pictureBox19.Visible = false;
+
                 pictureBox22.Visible = false;
 
                 tabControl1.TabPages.Remove(tabPage1); // Se oculta la pestaña de usuarios
