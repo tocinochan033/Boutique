@@ -849,8 +849,8 @@ namespace Proyecto_Boutique
                 btn_CrearUsuario.Visible = false;
                 btn_CrearProducto.Visible = false;
                 btn_CrearMovimiento.Visible = false;
-                btn_CrearMarca.Visible = false;
-                btn_CrearCategorias.Visible = false;
+
+
                 btn_Eliminar.Visible = false;
                 btn_EliminarProducto.Visible = false;
                 btn_EliminarMovimientos.Visible = false;
