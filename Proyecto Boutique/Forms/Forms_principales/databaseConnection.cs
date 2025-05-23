@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
+using System.IO;
 
 namespace Proyecto_Boutique
 {
@@ -15,7 +18,7 @@ namespace Proyecto_Boutique
     */
     internal class databaseConnection
     {
-        string connection = "Data Source=(local); Initial Catalog= BOUTIQUE; Integrated Security=True";
+        string connection = "Data Source=MARTIN\\SQLEXPRESS; Initial Catalog= BOUTIQUE; Integrated Security=True";
         //Equipos:
         //Chuy: DESKTOP-BF3NJMJ
 
