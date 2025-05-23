@@ -10,8 +10,8 @@ namespace Proyecto_Boutique
     {
         public DCorreoSoporte()
         {
-            remitenteCorreo = "minwcraft78@gmail.com";
-            password = "xfmv rzxg slvd qrdw";
+            remitenteCorreo = "boutiquesistema98@gmail.com";
+            password = "lotk kycg hert pymn";
             host = "smtp.gmail.com";
             port = 587;
             ssl = true;
