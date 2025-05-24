@@ -1,4 +1,6 @@
-﻿using iTextSharp.text.pdf;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
 using Proyecto_Boutique.Forms.Forms_secundarios.Crear;
 using Proyecto_Boutique.Mostrar_Detalles;
 using System;
@@ -7,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -77,6 +80,8 @@ namespace Proyecto_Boutique
                 VerificarFilasProductos();
                 ObtenerMovimientos();
                 VerificarFilasMovimientos();
+                ObtenerRegistrosProductosParaReportes();
+                ObtenerRegistrosMovimientosParaReportes();
 
                 credenciales();
             }
@@ -113,7 +118,7 @@ namespace Proyecto_Boutique
             }
         }
 
-        private void ObtenerRegistrosProductos()
+        public void ObtenerRegistrosProductos()
         {
             try
             {
@@ -140,7 +145,36 @@ namespace Proyecto_Boutique
             }
         }
 
-        private void ObtenerMovimientos()
+        public void ObtenerRegistrosProductosParaReportes()
+        {
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultarProductos = "SELECT P.ID_Producto, P.Nombre, C.Nombre AS Categoria, P.Cantidad FROM PRODUCTOS P INNER JOIN CATEGORIA C ON P.Categoria = C.ID_Categoria WHERE P.Visibilidad = 1";
+
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultarProductos, conexion.getConnection());
+
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtPRODUCTOS = new DataTable();
+
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtPRODUCTOS);
+
+                //Se envian los parametros al datagridview de usuarios
+                datagridAuxiliar_Productos.DataSource = dtPRODUCTOS;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
+        }
+
+
+
+        public void ObtenerMovimientos()
         {
             try
             {
@@ -167,6 +201,32 @@ namespace Proyecto_Boutique
             }
         }
 
+        public void ObtenerRegistrosMovimientosParaReportes()
+        {
+            try
+            {
+                conexion.Open();
+                //Creacion de consulta para visualizar todos los campos de las respectivas tablas
+                String ConsultaMovimientos = "SELECT M.ID_Movimiento, P.Nombre AS Producto, TM.Nombre AS TipoMovimiento, C.Causa AS Causa, P.Cantidad AS Cantidad, M.Fecha AS Fecha\r\nFROM MOVIMIENTOS M\r\nINNER JOIN PRODUCTOS P\r\nON M.Producto = P.ID_Producto\r\nINNER JOIN TIPOMOVIMIENTO TM\r\nON M.TipoMovimiento = TM.ID_Tipo\r\nINNER JOIN CAUSA C\r\nON M.Causa = C.ID_Causa";
+
+                //Se utiliza el objeto sqldataadapter creado anteriormente
+                adaptador = new SqlDataAdapter(ConsultaMovimientos, conexion.getConnection());
+
+                //Creacion de un objeto tipo DataTable para rellenar la informacion en el Datagridview
+                DataTable dtMOVIMIENTOS = new DataTable();
+
+                //Se pasan los datos del datatable al objeto adaptador
+                adaptador.Fill(dtMOVIMIENTOS);
+
+                //Se envian los parametros al datagridview de usuarios
+                datagridAuxiliar_Movimientos.DataSource = dtMOVIMIENTOS;
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
+        }
 
         //===========================================Metodos y procesos para abrir y cerrar ventanas (Cierre y creacion de elementos)========================================================
 
@@ -178,7 +238,7 @@ namespace Proyecto_Boutique
                 if (ventanaCrearUsuario == null)
                 {
                     //Se crea un objeto de la ventana CrearUsuario
-                    ventanaCrearUsuario = new CrearUsuario();
+                    ventanaCrearUsuario = new CrearUsuario(this);
 
                     //Comando auxiliar para el proceso
                     ventanaCrearUsuario.FormClosed += new FormClosedEventHandler(CierreVentanaCrearUsuario);
@@ -209,7 +269,7 @@ namespace Proyecto_Boutique
                 if (ventanaCrearProducto == null)
                 {
                     //Se crea un objeto de la ventana CrearUsuario
-                    ventanaCrearProducto = new CrearProducto();
+                    ventanaCrearProducto = new CrearProducto(this);
 
                     //Comando auxiliar para el proceso
                     ventanaCrearProducto.FormClosed += new FormClosedEventHandler(CierreVentanaCrearProducto);
@@ -238,7 +298,7 @@ namespace Proyecto_Boutique
                 if (ventanaCrearMovimiento == null)
                 {
                     //Se crea un objeto de la ventana CrearUsuario
-                    ventanaCrearMovimiento = new CrearMovimiento();
+                    ventanaCrearMovimiento = new CrearMovimiento(this);
 
                     //Comando auxiliar para el proceso
                     ventanaCrearMovimiento.FormClosed += new FormClosedEventHandler(CierreVentanaCrearMovimiento);
@@ -267,7 +327,7 @@ namespace Proyecto_Boutique
                 if (ventanaCrearCategoria == null)
                 {
                     //Se crea un objeto de la ventana CrearUsuario
-                    ventanaCrearCategoria = new CrearCategoria();
+                    ventanaCrearCategoria = new CrearCategoria(this);
 
                     //Comando auxiliar para el proceso
                     ventanaCrearCategoria.FormClosed += new FormClosedEventHandler(CierreVentanaCrearCategoria);
@@ -359,7 +419,7 @@ namespace Proyecto_Boutique
                 if (ventanaEditarProducto == null)
                 {
                     //Se crea un objeto de la ventana CrearUsuario
-                    ventanaEditarProducto = new EditarProducto();
+                    ventanaEditarProducto = new EditarProducto(this);
 
                     //Comando auxiliar para el proceso
                     ventanaEditarProducto.FormClosed += new FormClosedEventHandler(CierreVentanaModificarProducto);
@@ -389,7 +449,7 @@ namespace Proyecto_Boutique
                 if (ventanaEditarUsuario == null)
                 {
                     //Se crea un objeto de la ventana CrearUsuario
-                    ventanaEditarUsuario = new EditarUsuario();
+                    ventanaEditarUsuario = new EditarUsuario(this);
 
                     //Comando auxiliar para el proceso
                     ventanaEditarUsuario.FormClosed += new FormClosedEventHandler(CierreVentanaEditarUsuarios);
@@ -560,6 +620,7 @@ namespace Proyecto_Boutique
                         conexion.Close();
 
                         ObtenerRegistrosProductos();
+                        ObtenerRegistrosProductosParaReportes();
                     }
                 }
                 else
@@ -682,6 +743,7 @@ namespace Proyecto_Boutique
                         conexion.Close();
 
                         ObtenerMovimientos();
+                        ObtenerRegistrosMovimientosParaReportes();
                     }
                 }
                 else
@@ -765,14 +827,12 @@ namespace Proyecto_Boutique
 
         private void btn_RepStock_Click(object sender, EventArgs e)
         {
-            ReporteStockForm frm = new ReporteStockForm();
-            frm.Show();
+            
         }
 
         private void btn_RepMovimientos_Click(object sender, EventArgs e)
         {
-            ReporteMovimientosForm frm = new ReporteMovimientosForm();
-            frm.Show();
+            
         }
 
         private void btn_RepAuditoria_Click(object sender, EventArgs e)
@@ -789,11 +849,15 @@ namespace Proyecto_Boutique
                 btn_CrearUsuario.Visible = false;
                 btn_CrearProducto.Visible = false;
                 btn_CrearMovimiento.Visible = false;
-                btn_CrearMarca.Visible = false;
-                btn_CrearCategorias.Visible = false;
+
+
                 btn_Eliminar.Visible = false;
                 btn_EliminarProducto.Visible = false;
-                btn_EliminarMovimientos.Visible = false;
+  
+                pictureBox14.Visible = false;
+                pictureBox13.Visible = false;
+
+                pictureBox22.Visible = false;
 
                 tabControl1.TabPages.Remove(tabPage1); // Se oculta la pestaña de usuarios
             }
@@ -896,7 +960,6 @@ namespace Proyecto_Boutique
         {
             try
             {
-                this.Hide();
                 if (DataGrid_Movimientos.SelectedRows.Count == 1)
                 {
 
@@ -1026,14 +1089,176 @@ o dirigirse a inicio de sesion*/
             // No -> no hacer nada
 
             if (result == DialogResult.Yes)
+    {
+        // Cerrar todos los formularios excepto el login que vamos a crear
+        foreach (Form form in Application.OpenForms.OfType<Form>().ToArray())
+        {
+            if (form is Inicio_Sesion) continue; // Saltar si ya hay un login abierto
+            form.Close();
+        }
+        
+        // Mostrar nuevo formulario de login
+        new Inicio_Sesion().Show();
+        this.Close(); // Cerrar el formulario actual
+    }
+
+        }
+
+
+
+        private void DataGrid_Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BotonReportesMovimiento_Click(object sender, EventArgs e)
+        {
+            // REPORTE DE MOVIMIENTOS
+            try
             {
-                this.Hide();
-                Inicio_Sesion login = new Inicio_Sesion();
-                login.Show();
+                //Proceso para guardar los pdf
+                SaveFileDialog guardar = new SaveFileDialog();
+                guardar.FileName = "Reporte de Movimientos" + DateTime.Now.ToString("ddmmyyyy") + ".pdf"; // Nombre por defecto con el que se guarda
+
+
+                //llamado al archivo hmtl para convertirlo a una cadena de texto
+                string Pagina_HTML_texto2 = Properties.Resources.Reporte_de__Movimientos.ToString();
+
+                //Remplazo de valores
+                Pagina_HTML_texto2 = Pagina_HTML_texto2.Replace("@FECHADEGENERACION", DateTime.Now.ToString("dd / mm / yyyy"));
+
+                //Extraccion del dataview
+                string filas2 = string.Empty;
+         
+                foreach (DataGridViewRow row in datagridAuxiliar_Movimientos.Rows)
+                {
+                    filas2 += "<tr>";
+                    filas2 += "<td style=\"text-align:center\">" + row.Cells["ID_Movimiento"].Value.ToString() + "</td>";
+                    filas2 += "<td>" + row.Cells["Producto"].Value.ToString() + "</td>";
+                    filas2 += "<td>" + row.Cells["TipoMovimiento"].Value.ToString() + "</td>";
+                    filas2 += "<td>" + row.Cells["Causa"].Value.ToString() + "</td>";
+                    filas2 += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
+                    filas2 += "<td style=\"text-align: right;\">" + row.Cells["Fecha"].Value.ToString() + "</td>";
+                    filas2 += "</tr>";
+                }
+
+                Pagina_HTML_texto2 = Pagina_HTML_texto2.Replace("@FILAS", filas2);
+
+                //Condicional para el guardado
+                if (guardar.ShowDialog() == DialogResult.OK)
+                {
+                    //Guardado en memoria
+                    using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                    {
+                        //Caracteristicas del formato del pdf
+                        Document pdfDoc = new Document(PageSize.A4);
+                        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+
+                        pdfDoc.Open();
+                        pdfDoc.Add(new Phrase(""));
+
+                        //Agregar la imagen al pdf
+                        iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(Properties.Resources.LOGO_1, System.Drawing.Imaging.ImageFormat.Png);
+                        imagen.ScaleToFit(110, 95); //Tamaño de la imagen
+                        imagen.Alignment = iTextSharp.text.Image.UNDERLYING; //Propiedad de Superioridad
+                        imagen.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 95); //Margen izquierdo
+                        imagen.SetAbsolutePosition(pdfDoc.RightMargin, pdfDoc.Top - 105); //Margen derecho
+                        pdfDoc.Add(imagen);
+
+                        using (StringReader sr = new StringReader(Pagina_HTML_texto2))
+                        {
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                        }
+
+                        pdfDoc.Close();
+                        stream.Close();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void DataGrid_Usuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BotonReportesProductos_Click(object sender, EventArgs e)
+        {
+            // REPORTE DE ARTICULOS,PRODUCTOS,MERCANCIA
+            try
+            {
+                //Proceso para guardar los pdf
+                SaveFileDialog guardar = new SaveFileDialog();
+                guardar.FileName = "Conteo de Productos" + DateTime.Now.ToString("ddmmyyyy") + ".PDF"; // Nombre por defecto con el que se guarda
+
+
+                //llamado al archivo hmtl para convertirlo a una cadena de texto
+                string Pagina_HTML_texto = Properties.Resources.Reporte_de_Conteo.ToString();
+
+                //Remplazo de valores
+                Pagina_HTML_texto = Pagina_HTML_texto.Replace("@FECHADEGENERACION", DateTime.Now.ToString("dd / mm / yyyy"));
+
+                //Extraccion del dataview
+                string filas = string.Empty;
+   
+                foreach (DataGridViewRow row in datagridAuxiliar_Productos.Rows)
+                {
+                    filas += "<tr>";
+                    filas += "<td style=\"text-align:center\">" + row.Cells["ID_Producto"].Value.ToString() + "</td>";
+                    filas += "<td>" + row.Cells["Nombre"].Value.ToString() + "</td>";
+                    filas += "<td>" + row.Cells["Categoria"].Value.ToString() + "</td>";
+                    filas += "<td style=\"text-align: right;\">" + row.Cells["Cantidad"].Value.ToString() + "</td>";
+                    filas += "<td></td>";
+                    filas += "<td></td>";
+                    filas += "</tr>";
+                }
+
+                Pagina_HTML_texto = Pagina_HTML_texto.Replace("@FILAS", filas);
+
+                //Condicional para el guardado
+                if (guardar.ShowDialog() == DialogResult.OK)
+                {
+                    //Guardado en memoria
+                    using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                    {
+                        //Caracteristicas del formato del pdf
+                        Document pdfDoc = new Document(PageSize.A4);
+                        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+
+                        pdfDoc.Open();
+                        pdfDoc.Add(new Phrase(""));
+
+                        //Agregar la imagen al pdf
+                        iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(Properties.Resources.LOGO_1,System.Drawing.Imaging.ImageFormat.Png);
+                        imagen.ScaleToFit(110,95); //Tamaño de la imagen
+                        imagen.Alignment = iTextSharp.text.Image.UNDERLYING; //Propiedad de Superioridad
+                        imagen.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top - 95); //Margen izquierdo
+                        imagen.SetAbsolutePosition(pdfDoc.RightMargin, pdfDoc.Top - 105); //Margen derecho
+                        pdfDoc.Add(imagen);
+
+                        using (StringReader sr = new StringReader(Pagina_HTML_texto))
+                        {
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                        }
+
+                        pdfDoc.Close();
+                        stream.Close();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DataGrid_Productos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

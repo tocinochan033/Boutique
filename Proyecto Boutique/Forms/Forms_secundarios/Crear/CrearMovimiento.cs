@@ -34,16 +34,19 @@ namespace Proyecto_Boutique
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        public CrearMovimiento()
+        private Principal_forms formsprincipal;
+
+        public CrearMovimiento(Principal_forms princsforms)
         {
             InitializeComponent();
+
+            formsprincipal = princsforms;
         }
 
         private void CrearMovimiento_Load(object sender, EventArgs e)
         {
             try
             {
-                RefrescarCampoCausa();
                 RefrescarCampoTipoMovimiento();
                 RefrescarCampoProductos();
                 RefrescarCampoUsuario();
@@ -88,7 +91,7 @@ namespace Proyecto_Boutique
             }
         }
 
-        public void RefrescarCampoCausa()
+        public void RefrescarCampoCausaEntrada()
         {
             try
             {
@@ -99,7 +102,38 @@ namespace Proyecto_Boutique
                 conexion.Open();
 
                 //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
-                SqlCommand cm = new SqlCommand("select*from CAUSA WHERE Visibilidad = 1", conexion.getConnection());
+                SqlCommand cm = new SqlCommand("select*from CAUSA WHERE Visibilidad = 1 AND ID_Causa < 4 OR ID_Causa > 10", conexion.getConnection());
+
+                //Se crea un objeto sqldatareader para leer los Roles
+                SqlDataReader dr = cm.ExecuteReader();
+
+                //se crea un ciclo while para rellenar el combobox de Roles
+                while (dr.Read())
+                {
+                    cmb_Causa.Items.Add(dr.GetString(1));
+                }
+
+                //Se cierra la conexion
+                conexion.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un problema inesperado");
+            }
+        }
+
+        public void RefrescarCampoCausaSalida()
+        {
+            try
+            {
+                //Se limpian los elementos actuales del combobox "Rol"
+                cmb_Causa.Items.Clear();
+
+                //se abre conexion
+                conexion.Open();
+
+                //Comando de consulta para extraer los roles de la tabla "ROL" para rellenar el combobox de "Roles"
+                SqlCommand cm = new SqlCommand("select*from CAUSA WHERE Visibilidad = 1 AND ID_Causa > 3", conexion.getConnection());
 
                 //Se crea un objeto sqldatareader para leer los Roles
                 SqlDataReader dr = cm.ExecuteReader();
@@ -592,6 +626,9 @@ namespace Proyecto_Boutique
                             ObtenerRegistrosProductos();
                             ObtenerRegistrosUsuarios();
                             actualizarID();
+
+                            formsprincipal.ObtenerMovimientos();
+                            formsprincipal.ObtenerRegistrosMovimientosParaReportes();
                         }
                         else
                         {
@@ -662,6 +699,18 @@ namespace Proyecto_Boutique
 
         private void CrearMovimiento_FormClosed(object sender, FormClosedEventArgs e)
         {
+        }
+
+        private void cmb_TipoMovimiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmb_TipoMovimiento.SelectedIndex == 0)
+            {
+                RefrescarCampoCausaEntrada();
+            }
+            else if(cmb_TipoMovimiento.SelectedIndex == 1)
+            {
+                RefrescarCampoCausaSalida();
+            }
         }
     }
 }

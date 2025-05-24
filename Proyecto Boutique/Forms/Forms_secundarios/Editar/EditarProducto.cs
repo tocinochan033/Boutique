@@ -31,9 +31,15 @@ namespace Proyecto_Boutique
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        public EditarProducto()
+        private Principal_forms formsprincipal;
+
+        public EditarProducto(Principal_forms princsforms)
         {
             InitializeComponent();
+
+            formsprincipal = princsforms;
+
+
         }
 
         private void EditarProducto_Load(object sender, EventArgs e)
@@ -309,6 +315,10 @@ namespace Proyecto_Boutique
 
                     limpiarcampos();
                     ObtenerRegistrosProductos();
+
+                    formsprincipal.ObtenerRegistrosProductos();
+                   
+                    formsprincipal.ObtenerRegistrosProductosParaReportes();
 
                 }
 

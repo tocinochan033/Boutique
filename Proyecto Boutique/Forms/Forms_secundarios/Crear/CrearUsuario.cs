@@ -28,9 +28,13 @@ namespace Proyecto_Boutique
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        public CrearUsuario()
+        private Principal_forms formsprincipal;
+
+        public CrearUsuario(Principal_forms princsforms)
         {
             InitializeComponent();
+
+            formsprincipal = princsforms;
             try
             {
                 RefrescarCampoRol();
@@ -164,6 +168,8 @@ namespace Proyecto_Boutique
 
                             limpiarcampos();
                             actualizarID();
+
+                            formsprincipal.ObtenerRegistrosUsuarios();
                         }
 
                         else

@@ -90,7 +90,7 @@
             this.cmbTipoAccion.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoAccion.FormattingEnabled = true;
             this.cmbTipoAccion.Location = new System.Drawing.Point(144, 117);
-            this.cmbTipoAccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipoAccion.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoAccion.Name = "cmbTipoAccion";
             this.cmbTipoAccion.Size = new System.Drawing.Size(283, 29);
             this.cmbTipoAccion.TabIndex = 15;
@@ -101,7 +101,7 @@
             this.generar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.generar_btn.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generar_btn.Location = new System.Drawing.Point(451, 133);
-            this.generar_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.generar_btn.Margin = new System.Windows.Forms.Padding(2);
             this.generar_btn.Name = "generar_btn";
             this.generar_btn.Size = new System.Drawing.Size(118, 59);
             this.generar_btn.TabIndex = 13;
@@ -114,7 +114,7 @@
             this.cmbUsuario.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUsuario.FormattingEnabled = true;
             this.cmbUsuario.Location = new System.Drawing.Point(92, 163);
-            this.cmbUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUsuario.Name = "cmbUsuario";
             this.cmbUsuario.Size = new System.Drawing.Size(335, 29);
             this.cmbUsuario.TabIndex = 12;
@@ -123,7 +123,7 @@
             // 
             this.dtpFechaHasta.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaHasta.Location = new System.Drawing.Point(358, 72);
-            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(211, 29);
             this.dtpFechaHasta.TabIndex = 11;
@@ -132,7 +132,7 @@
             // 
             this.dtpFechaDesde.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaDesde.Location = new System.Drawing.Point(80, 72);
-            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(213, 29);
             this.dtpFechaDesde.TabIndex = 10;
@@ -140,13 +140,13 @@
             // lbl_Usuarios
             // 
             this.lbl_Usuarios.AutoSize = true;
-            this.lbl_Usuarios.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Usuarios.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold);
             this.lbl_Usuarios.Location = new System.Drawing.Point(11, 9);
             this.lbl_Usuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Usuarios.Name = "lbl_Usuarios";
-            this.lbl_Usuarios.Size = new System.Drawing.Size(217, 45);
+            this.lbl_Usuarios.Size = new System.Drawing.Size(235, 39);
             this.lbl_Usuarios.TabIndex = 20;
-            this.lbl_Usuarios.Text = "Reporte Auditoria";
+            this.lbl_Usuarios.Text = "Reporte Auditoría";
             // 
             // ReporteAuditoriaForms
             // 
@@ -164,7 +164,7 @@
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.dtpFechaDesde);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(599, 251);
             this.MinimumSize = new System.Drawing.Size(599, 251);
             this.Name = "ReporteAuditoriaForms";

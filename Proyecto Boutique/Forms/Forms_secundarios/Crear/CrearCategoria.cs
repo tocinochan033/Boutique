@@ -33,9 +33,14 @@ namespace Proyecto_Boutique
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        public CrearCategoria()
+        private Principal_forms formsprincipal;
+
+
+        public CrearCategoria(Principal_forms princsforms)
         {
             InitializeComponent();
+
+            formsprincipal = princsforms;
         }
 
         private void btn_CrearCategoria_Click(object sender, EventArgs e)
@@ -93,7 +98,11 @@ namespace Proyecto_Boutique
                         limpiarcampos();
                         ObtenerRegistrosCategoria();
 
-                        actualizarID();                                              
+                        actualizarID();
+
+
+                        formsprincipal.ObtenerRegistrosUsuarios();
+
                     }
                     else
                     {
@@ -163,7 +172,7 @@ namespace Proyecto_Boutique
             {
                 conexion.Open();
                 //Creacion de consulta para visualizar todos los campos de las respectivas tablas
-                String ConsultaCategoria = "Select * from CATEGORIA";
+                String ConsultaCategoria = "Select * from CATEGORIA WHERE Visibilidad = 1";
 
                 //Se utiliza el objeto sqldataadapter creado anteriormente
                 adaptador = new SqlDataAdapter(ConsultaCategoria, conexion.getConnection());

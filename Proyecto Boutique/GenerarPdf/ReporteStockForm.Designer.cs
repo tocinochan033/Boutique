@@ -77,7 +77,7 @@
             this.cbCategorias.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategorias.FormattingEnabled = true;
             this.cbCategorias.Location = new System.Drawing.Point(114, 122);
-            this.cbCategorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(262, 29);
             this.cbCategorias.TabIndex = 11;
@@ -86,7 +86,7 @@
             // 
             this.dtpFechaHasta.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaHasta.Location = new System.Drawing.Point(357, 67);
-            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(217, 29);
             this.dtpFechaHasta.TabIndex = 10;
@@ -95,7 +95,7 @@
             // 
             this.dtpFechaDesde.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaDesde.Location = new System.Drawing.Point(80, 67);
-            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(212, 29);
             this.dtpFechaDesde.TabIndex = 9;
@@ -106,7 +106,7 @@
             this.btnGenerar_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerar_Click.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar_Click.Location = new System.Drawing.Point(446, 106);
-            this.btnGenerar_Click.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerar_Click.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerar_Click.Name = "btnGenerar_Click";
             this.btnGenerar_Click.Size = new System.Drawing.Size(128, 52);
             this.btnGenerar_Click.TabIndex = 8;
@@ -117,11 +117,11 @@
             // lbl_Usuarios
             // 
             this.lbl_Usuarios.AutoSize = true;
-            this.lbl_Usuarios.Font = new System.Drawing.Font("Sugo Pro Classic Trial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Usuarios.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 24F, System.Drawing.FontStyle.Bold);
             this.lbl_Usuarios.Location = new System.Drawing.Point(11, 9);
             this.lbl_Usuarios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Usuarios.Name = "lbl_Usuarios";
-            this.lbl_Usuarios.Size = new System.Drawing.Size(196, 45);
+            this.lbl_Usuarios.Size = new System.Drawing.Size(207, 39);
             this.lbl_Usuarios.TabIndex = 22;
             this.lbl_Usuarios.Text = "Reportes Stock";
             // 
@@ -139,7 +139,7 @@
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.btnGenerar_Click);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(606, 215);
             this.MinimumSize = new System.Drawing.Size(606, 215);
             this.Name = "ReporteStockForm";
